@@ -1,0 +1,8 @@
+build/
+assets/
+vendor/
+*.exe
+*.obj
+*.o
+.cache/
+.vscode/
