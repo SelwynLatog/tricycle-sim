@@ -20,3 +20,15 @@ void push_cylinder(
     int segments,     // 12 is fine for wheels
     glm::vec3 color
 );
+
+void push_quad(
+    std::vector<float>& v,
+    glm::vec3 a, glm::vec3 b,
+    glm::vec3 c, glm::vec3 d,
+    glm::vec3 color
+);
+// flat quad at Y=0 with upward normal, layout: px py pz nx ny nz
+void push_ground_quad(
+    std::vector<float>& v,
+    float half_extent
+);

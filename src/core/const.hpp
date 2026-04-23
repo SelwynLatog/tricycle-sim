@@ -27,4 +27,7 @@ namespace Const{
     inline constexpr float TRIKE_STEER_SPEED = 90.0f; //degrees /sec
     inline constexpr float TRIKE_WHEELBASE = 1.8f; // metres, front to rear angle
 
+    // tricycle model path
+    inline constexpr const char* TRIKE_MODEL_PATH = "../assets/TRAYSIKEL.obj";
+
 }

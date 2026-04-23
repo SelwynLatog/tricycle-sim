@@ -3,8 +3,7 @@
 #include <GLFW/glfw3.h>
 #include <string>
 
-struct Window
-{
+struct Window{
     GLFWwindow* handle= nullptr;
     int width= 0;
     int height=0;
