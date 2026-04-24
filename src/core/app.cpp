@@ -63,14 +63,12 @@ static ObjMesh s_trike;
 static Mesh s_ground;    // flat asphalt quad, pos+normal layout
 
 // orbit camera
-static float s_cam_yaw= 45.0f;
-static float s_cam_pitch= 25.0f;
-static float s_cam_dist= 5.0f;
+static float s_cam_yaw= Const::CAM_YAW_DEFAULT;
+static float s_cam_pitch= Const::CAM_PITCH_DEFAULT;
+static float s_cam_dist= Const::CAM_DIST_DEFAULT;
 static glm::vec3 s_model_center= glm::vec3(0.0f);
 static float s_model_scale= 1.0f;
-
-// light direction: coming from upper-front-right in world space
-static const glm::vec3 LIGHT_DIR = glm::normalize(glm::vec3(1.0f, 2.0f, 1.0f));
+static const glm::vec3 LIGHT_DIR = glm::normalize(glm::vec3(Const::LIGHT_DIR_X, Const::LIGHT_DIR_Y, Const::LIGHT_DIR_Z));
 
 // helpers
 static void shader_set_vec3_v(const Shader& s, const char* name, glm::vec3 v){
@@ -122,11 +120,11 @@ void app_init(App& app){
 
     // temp: nudge manually for now
     // blender models have a slight gap on lowest vertex
-    s_model_center.y -= 0.03f;
+    s_model_center.y -= Const::MODEL_FLOOR_FUDGE;
 
     // auto-scale: normalize longest axis to 2 metres
     float longest = std::max(maxX-minX, std::max(maxY-minY, maxZ-minZ));
-    s_model_scale = (longest > 0.0f) ? 2.0f / longest : 1.0f;
+    s_model_scale = (longest > 0.0f) ? Const::MODEL_NORMALIZE_SIZE / longest : 1.0f;
 
     std::cout << "[bbox] center: ("
         << s_model_center.x << ", "
@@ -156,11 +154,11 @@ void app_run(App& app){
         if (dt > Const::MAX_DELTA) dt = Const::MAX_DELTA;
 
         // camera orbit input
-        if (glfwGetKey(app.window.handle, GLFW_KEY_LEFT)  == GLFW_PRESS) s_cam_yaw   -= 60.0f * dt;
-        if (glfwGetKey(app.window.handle, GLFW_KEY_RIGHT) == GLFW_PRESS) s_cam_yaw   += 60.0f * dt;
-        if (glfwGetKey(app.window.handle, GLFW_KEY_UP)    == GLFW_PRESS) s_cam_pitch += 40.0f * dt;
-        if (glfwGetKey(app.window.handle, GLFW_KEY_DOWN)  == GLFW_PRESS) s_cam_pitch -= 40.0f * dt;
-        s_cam_pitch = glm::clamp(s_cam_pitch, 5.0f, 85.0f);
+        if (glfwGetKey(app.window.handle, GLFW_KEY_LEFT)  == GLFW_PRESS) s_cam_yaw   -= Const::CAM_YAW_SPEED   * dt;
+        if (glfwGetKey(app.window.handle, GLFW_KEY_RIGHT) == GLFW_PRESS) s_cam_yaw   += Const::CAM_YAW_SPEED   * dt;
+        if (glfwGetKey(app.window.handle, GLFW_KEY_UP)    == GLFW_PRESS) s_cam_pitch += Const::CAM_PITCH_SPEED * dt;
+        if (glfwGetKey(app.window.handle, GLFW_KEY_DOWN)  == GLFW_PRESS) s_cam_pitch -= Const::CAM_PITCH_SPEED * dt;
+        s_cam_pitch = glm::clamp(s_cam_pitch, Const::CAM_PITCH_MIN, Const::CAM_PITCH_MAX);
 
         // fixed timestep (physics stub)
         app.accumulator += dt;
@@ -183,11 +181,13 @@ void app_run(App& app){
 
         glm::vec3 target = glm::vec3(0.0f, 0.5f, 0.0f);
         glm::mat4 view = glm::lookAt(eye, target, glm::vec3(0, 1, 0));
+
         glm::mat4 proj = glm::perspective(
-            glm::radians(55.0f),
+            glm::radians(Const::CAM_FOV),
             (float)Const::WINDOW_WIDTH / (float)Const::WINDOW_HEIGHT,
-            0.1f, 200.0f
+            Const::CAM_NEAR, Const::CAM_FAR
         );
+
         glm::mat3 normal_mat = glm::mat3(glm::transpose(glm::inverse(model)));
 
         // render
@@ -204,11 +204,11 @@ void app_run(App& app){
         // had a hard time rendering ground, was conceptually correct
         // issue was how transformed was applied
         // fix is to push ground down by smallest epsilon to avoid z-fighting
-        glm::mat4 ground_model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -0.002f, 0.0f));
+        glm::mat4 ground_model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, Const::GROUND_Y_OFFSET, 0.0f));
         glm::mat3 ground_normal_mat = glm::mat3(1.0f);
         shader_set_mat4(s_shader, "u_model", glm::value_ptr(ground_model));
         shader_set_mat3(s_shader, "u_normal_mat", glm::value_ptr(ground_normal_mat));
-        shader_set_vec3_v(s_shader, "u_kd", glm::vec3(0.18f, 0.18f, 0.18f)); // dark asphalt
+        shader_set_vec3_v(s_shader, "u_kd", glm::vec3(Const::GROUND_KD)); // dark asphalt
         glBindVertexArray(s_ground.vao);
         glDrawArrays(GL_TRIANGLES, 0, s_ground.count);
         glBindVertexArray(0);
