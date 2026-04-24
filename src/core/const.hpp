@@ -31,7 +31,7 @@ namespace Const{
     inline constexpr const char* TRIKE_MODEL_PATH = "../assets/TRAYSIKEL.obj";
 
     // cam
-    inline constexpr float CAM_YAW_DEFAULT= 45.0f;
+    inline constexpr float CAM_YAW_DEFAULT= 180.0f;
     inline constexpr float CAM_PITCH_DEFAULT= 25.0f;
     inline constexpr float CAM_DIST_DEFAULT= 10.0f;
     inline constexpr float CAM_PITCH_MIN= 5.0f;

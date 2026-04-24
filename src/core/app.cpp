@@ -186,13 +186,19 @@ void app_run(App& app){
                         * glm::translate(glm::mat4(1.0f), -s_model_center * s_model_scale)
                         * glm::scale(glm::mat4(1.0f), glm::vec3(s_model_scale));
 
-        glm::vec3 eye = {
-            s_cam_dist * cosf(pitch_r) * sinf(yaw_r),
-            s_cam_dist * sinf(pitch_r),
-            s_cam_dist * cosf(pitch_r) * cosf(yaw_r)
-        };
+        // chase cam: orbit origin is behind the trike based on its heading
+        // yaw_r is the manual orbit offset on top of the trike's heading
+        float cam_yaw_world = app.trike.heading + yaw_r;
+        glm::vec3 cam_origin = app.trike.position + glm::vec3(0.0f, Const::CAM_ORBIT_TARGET_Y, 0.0f);
 
-        glm::vec3 target = glm::vec3(0.0f, 0.5f, 0.0f);
+        glm::vec3 eye = cam_origin + glm::vec3(
+            s_cam_dist * cosf(pitch_r) * sinf(cam_yaw_world),
+            s_cam_dist * sinf(pitch_r),
+            s_cam_dist * cosf(pitch_r) * cosf(cam_yaw_world)
+        );
+
+        glm::vec3 target = cam_origin;
+       
         glm::mat4 view = glm::lookAt(eye, target, glm::vec3(0, 1, 0));
 
         glm::mat4 proj = glm::perspective(
