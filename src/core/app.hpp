@@ -1,8 +1,11 @@
 #pragma once
 #include "window.hpp"
+#include "../physics/trike_state.hpp"
+#include "../physics/trike_physics.hpp"
 
 struct App {
     Window window;
+    TrikeState trike;
     float  last_time = 0.0f;
     float  accumulator = 0.0f;
     bool   running = false;

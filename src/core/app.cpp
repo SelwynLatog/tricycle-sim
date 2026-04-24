@@ -152,6 +152,14 @@ void app_run(App& app){
         float dt  = now - app.last_time;
         app.last_time = now;
         if (dt > Const::MAX_DELTA) dt = Const::MAX_DELTA;
+        
+        // driving input
+        TrikeInput input;
+        input.throttle = (glfwGetKey(app.window.handle, GLFW_KEY_W) == GLFW_PRESS) ? 1.0f : 0.0f;
+        input.brake    = (glfwGetKey(app.window.handle, GLFW_KEY_S) == GLFW_PRESS) ? 1.0f : 0.0f;
+        input.steer    = 0.0f;
+        if (glfwGetKey(app.window.handle, GLFW_KEY_A) == GLFW_PRESS) input.steer -= 1.0f;
+        if (glfwGetKey(app.window.handle, GLFW_KEY_D) == GLFW_PRESS) input.steer += 1.0f;
 
         // camera orbit input
         if (glfwGetKey(app.window.handle, GLFW_KEY_LEFT)  == GLFW_PRESS) s_cam_yaw   -= Const::CAM_YAW_SPEED   * dt;
@@ -160,18 +168,23 @@ void app_run(App& app){
         if (glfwGetKey(app.window.handle, GLFW_KEY_DOWN)  == GLFW_PRESS) s_cam_pitch -= Const::CAM_PITCH_SPEED * dt;
         s_cam_pitch = glm::clamp(s_cam_pitch, Const::CAM_PITCH_MIN, Const::CAM_PITCH_MAX);
 
-        // fixed timestep (physics stub)
+        // fixed timestep
         app.accumulator += dt;
-        while (app.accumulator >= Const::FIXED_TIMESTEP)
+        while (app.accumulator >= Const::FIXED_TIMESTEP){
+            trike_physics_update(app.trike, input, Const::FIXED_TIMESTEP);
             app.accumulator -= Const::FIXED_TIMESTEP;
-
+        }
+        
         // camera matrices
         float yaw_r   = glm::radians(s_cam_yaw);
         float pitch_r = glm::radians(s_cam_pitch);
 
-        // scale then translate to origin — model always fits in 2m regardless of source units
-        glm::mat4 model = glm::scale(glm::mat4(1.0f), glm::vec3(s_model_scale));
-        model = glm::translate(glm::mat4(1.0f), -s_model_center * s_model_scale) * model;
+        // build trike world transform from physics state
+        // order: scale -> center -> physics rotation -> physics pos
+        glm::mat4 model = glm::translate(glm::mat4(1.0f), app.trike.position)
+                        * glm::rotate(glm::mat4(1.0f), app.trike.heading, glm::vec3(0, 1, 0))
+                        * glm::translate(glm::mat4(1.0f), -s_model_center * s_model_scale)
+                        * glm::scale(glm::mat4(1.0f), glm::vec3(s_model_scale));
 
         glm::vec3 eye = {
             s_cam_dist * cosf(pitch_r) * sinf(yaw_r),
