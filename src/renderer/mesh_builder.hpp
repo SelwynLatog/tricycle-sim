@@ -32,3 +32,7 @@ void push_ground_quad(
     std::vector<float>& v,
     float half_extent
 );
+
+// three axis lines at world origin: x=red, y=green, z=blue
+// vertex layout: px py pz r g b
+void push_axis_gizmo(std::vector<float>& v, float length);

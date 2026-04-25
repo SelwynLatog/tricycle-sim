@@ -116,3 +116,15 @@ void push_ground_quad(std::vector<float>& v, float half_extent){
     push({ S, 0.0f,  S});
     push({-S, 0.0f,  S});
 }
+
+void push_axis_gizmo(std::vector<float>& v, float length){
+    // x axis - red
+    push_vertex(v, {0.0f,   0.0f, 0.0f}, {1.0f, 0.0f, 0.0f});
+    push_vertex(v, {length, 0.0f, 0.0f}, {1.0f, 0.0f, 0.0f});
+    // y axis - green
+    push_vertex(v, {0.0f, 0.0f,   0.0f}, {0.0f, 1.0f, 0.0f});
+    push_vertex(v, {0.0f, length, 0.0f}, {0.0f, 1.0f, 0.0f});
+    // z axis - blue
+    push_vertex(v, {0.0f, 0.0f, 0.0f  }, {0.0f, 0.0f, 1.0f});
+    push_vertex(v, {0.0f, 0.0f, length}, {0.0f, 0.0f, 1.0f});
+}

@@ -11,6 +11,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
+#include <cstdio>
 
 //  shaders
 //  vertex: transforms pos + normal into clip space + world space
@@ -28,21 +29,28 @@ uniform mat4 u_proj;
 uniform mat3 u_normal_mat;
 
 out vec3 v_world_normal;
+out vec3 v_world_pos;
 
 void main(){
-    gl_Position = u_proj * u_view * u_model * vec4(a_pos, 1.0);
+    vec4 world= u_model * vec4(a_pos, 1.0);
+    gl_Position = u_proj * u_view * world;
     // transform normal into world space
     v_world_normal = normalize(u_normal_mat * a_normal);
+    v_world_pos= world.xyz;
 }
 )";
 
 static const char* FRAG_SRC = R"(
 #version 330 core
 in  vec3 v_world_normal;
+in  vec3 v_world_pos;
 out vec4 frag_color;
 
 uniform vec3 u_kd;          // diffuse color from MTL
+uniform vec3 u_kd_alt;
 uniform vec3 u_light_dir;   // normalized direction TOWARD the light (world space)
+uniform float u_checker_scale;
+uniform int u_use_checker;
 
 void main(){
     // Lambert diffuse: how much does this surface face the light?
@@ -51,8 +59,41 @@ void main(){
     // ambient: a base brightness so nothing goes fully black
     float ambient = 0.55;
 
-    vec3 color = u_kd * (ambient + diff * 0.85);
-    frag_color = vec4(color, 1.0);
+    vec3 lit = u_kd * (ambient + diff * 0.85);
+
+    // checkboard ground tile
+    // alternate tile color based on world XZ pos
+    // only applied when u_use_checker=1 
+    if (u_use_checker==1){
+        vec2 tile = floor(v_world_pos.xz * u_checker_scale);
+        float parity = mod(tile.x + tile.y, 2.0);
+        vec3 kd= mix(u_kd, u_kd_alt, parity);
+        lit= kd * (ambient + diff * 0.85);
+    }
+
+    frag_color= vec4(lit,1.0);
+}
+)";
+
+static const char* GIZMO_VERT_SRC = R"(
+#version 330 core
+layout(location = 0) in vec3 a_pos;
+layout(location = 1) in vec3 a_color;
+uniform mat4 u_view;
+uniform mat4 u_proj;
+out vec3 v_color;
+void main(){
+    gl_Position = u_proj * u_view * vec4(a_pos, 1.0);
+    v_color = a_color;
+}
+)";
+
+static const char* GIZMO_FRAG_SRC = R"(
+#version 330 core
+in  vec3 v_color;
+out vec4 frag_color;
+void main(){
+    frag_color = vec4(v_color, 1.0);
 }
 )";
 
@@ -62,12 +103,16 @@ static Shader  s_shader;
 static ObjMesh s_trike;
 static Mesh s_ground;    // flat asphalt quad, pos+normal layout
 
+static Shader s_gizmo_shader;
+static Mesh s_gizmo;
+
 // orbit camera
 static float s_cam_yaw= Const::CAM_YAW_DEFAULT;
 static float s_cam_pitch= Const::CAM_PITCH_DEFAULT;
 static float s_cam_dist= Const::CAM_DIST_DEFAULT;
 static glm::vec3 s_model_center= glm::vec3(0.0f);
 static float s_model_scale= 1.0f;
+static float s_debug_print_timer = 0.0f;
 static const glm::vec3 LIGHT_DIR = glm::normalize(glm::vec3(Const::LIGHT_DIR_X, Const::LIGHT_DIR_Y, Const::LIGHT_DIR_Z));
 
 // helpers
@@ -138,6 +183,12 @@ void app_init(App& app){
     push_ground_quad(ground_verts, 200.0f);
     mesh_init(s_ground, ground_verts);
 
+    // axis gizmo at world origin
+    shader_init(s_gizmo_shader, GIZMO_VERT_SRC, GIZMO_FRAG_SRC);
+    std::vector<float> gizmo_verts;
+    push_axis_gizmo(gizmo_verts, Const::GIZMO_LENGTH);
+    mesh_init(s_gizmo, gizmo_verts);
+
     app.last_time= (float)glfwGetTime();
     app.accumulator= 0.0f;
     app.running= true;
@@ -174,15 +225,34 @@ void app_run(App& app){
             trike_physics_update(app.trike, input, Const::FIXED_TIMESTEP);
             app.accumulator -= Const::FIXED_TIMESTEP;
         }
-        
+        // debug readout - overwrites same terminal line every second
+        s_debug_print_timer += dt;
+        if (s_debug_print_timer >= 0.1f) {
+            s_debug_print_timer = 0.0f;
+            printf("\r pos(%.2f, %.2f, %.2f)  heading=%.1f deg  speed=%.2f m/s  steer=%.1f deg    ",
+                app.trike.position.x,
+                app.trike.position.y,
+                app.trike.position.z,
+                glm::degrees(app.trike.heading),
+                app.trike.speed,
+                glm::degrees(app.trike.steer_angle));
+            fflush(stdout);
+        }
+
         // camera matrices
         float yaw_r   = glm::radians(s_cam_yaw);
         float pitch_r = glm::radians(s_cam_pitch);
 
         // build trike world transform from physics state
         // order: scale -> center -> physics rotation -> physics pos
+        // for current model the default obj is sideways as I thought when I added axis indicators it was goofy as hell
+        // for now the easiest fix is just adding an extra 90 degrees rotation
+
+        // TODO: Add model import config- small per model descriptor that sits
+        // alongside the OBJ file and specifies axis remapping, scale override,and floor fudge
         glm::mat4 model = glm::translate(glm::mat4(1.0f), app.trike.position)
                         * glm::rotate(glm::mat4(1.0f), app.trike.heading, glm::vec3(0, 1, 0))
+                        * glm::rotate(glm::mat4(1.0f), glm::radians(90.0f), glm::vec3(0, 1, 0))
                         * glm::translate(glm::mat4(1.0f), -s_model_center * s_model_scale)
                         * glm::scale(glm::mat4(1.0f), glm::vec3(s_model_scale));
 
@@ -228,9 +298,28 @@ void app_run(App& app){
         shader_set_mat4(s_shader, "u_model", glm::value_ptr(ground_model));
         shader_set_mat3(s_shader, "u_normal_mat", glm::value_ptr(ground_normal_mat));
         shader_set_vec3_v(s_shader, "u_kd", glm::vec3(Const::GROUND_KD)); // dark asphalt
+
+        // draw ground grid
+        glUniform3f(glGetUniformLocation(s_shader.id, "u_kd_alt"),
+            Const::GROUND_KD_ALT, Const::GROUND_KD_ALT, Const::GROUND_KD_ALT);
+        glUniform1f(glGetUniformLocation(s_shader.id, "u_checker_scale"),
+            1.0f / Const::GROUND_GRID_TILE_SIZE);
+        glUniform1i(glGetUniformLocation(s_shader.id, "u_use_checker"), 1);
+
         glBindVertexArray(s_ground.vao);
         glDrawArrays(GL_TRIANGLES, 0, s_ground.count);
         glBindVertexArray(0);
+
+        glUniform1i(glGetUniformLocation(s_shader.id, "u_use_checker"), 0);
+
+        // draw axis gizmo at world origin
+        shader_bind(s_gizmo_shader);
+        shader_set_mat4(s_gizmo_shader, "u_view", glm::value_ptr(view));
+        shader_set_mat4(s_gizmo_shader, "u_proj", glm::value_ptr(proj));
+        glBindVertexArray(s_gizmo.vao);
+        glDrawArrays(GL_LINES, 0, s_gizmo.count);
+        glBindVertexArray(0);
+        shader_bind(s_shader);
 
         // draw trike
         shader_set_mat4(s_shader, "u_model", glm::value_ptr(model));
@@ -254,6 +343,8 @@ void app_run(App& app){
 
 // app_shutdown
 void app_shutdown(App& app){
+    mesh_destroy(s_gizmo);
+    shader_destroy(s_gizmo_shader);
     mesh_destroy(s_ground);
     obj_mesh_destroy(s_trike);
     shader_destroy(s_shader);

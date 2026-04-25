@@ -33,7 +33,7 @@ namespace Const{
     // cam
     inline constexpr float CAM_YAW_DEFAULT= 180.0f;
     inline constexpr float CAM_PITCH_DEFAULT= 25.0f;
-    inline constexpr float CAM_DIST_DEFAULT= 10.0f;
+    inline constexpr float CAM_DIST_DEFAULT= 6.0f;
     inline constexpr float CAM_PITCH_MIN= 5.0f;
     inline constexpr float CAM_PITCH_MAX= 85.0f;
     inline constexpr float CAM_YAW_SPEED= 60.0f;  // degrees/sec
@@ -58,4 +58,11 @@ namespace Const{
     // model
     inline constexpr float MODEL_NORMALIZE_SIZE= 2.0f;  // auto-scale longest axis to this (metres)
     inline constexpr float MODEL_FLOOR_FUDGE= 0.03f; // nudge model down so wheels kiss ground
+
+    // ground grid
+    inline constexpr float GROUND_GRID_TILE_SIZE= 4.0f;
+    inline constexpr float GROUND_KD_ALT= 0.22f;
+
+    // axis gizmo cords
+    inline constexpr float GIZMO_LENGTH = 3.0f;  // metres
 }
