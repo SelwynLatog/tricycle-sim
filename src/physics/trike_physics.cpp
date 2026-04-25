@@ -45,6 +45,13 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
         if (std::abs(state.steer_angle)> 0.001f){
             float turn_rate = (state.speed * std::tan(state.steer_angle))/ Const::TRIKE_WHEELBASE;
 
+            // speed sensitivity- prevent trike from spinning like a beyblade at same speeds
+            // low speed turn is tight
+            // high speed turn is very loose
+            // dividing by speed-based factor prevents beyblade spinning at low speed
+            float speed_factor = 1.0f + std::abs(state.speed) * 0.15f;
+            turn_rate /= speed_factor;
+
             // sidecar drag:: asymmetric resistance
             // sidecar is on the right (+Z), so left turns (positive turn_rate) are harder
             float sidecar_resist = (turn_rate > 0.0f) ? 0.6f : 1.0f;

@@ -189,6 +189,8 @@ void app_init(App& app){
     push_axis_gizmo(gizmo_verts, Const::GIZMO_LENGTH);
     mesh_init(s_gizmo, gizmo_verts);
 
+    hud_init(app.hud, Const::WINDOW_WIDTH, Const::WINDOW_HEIGHT);
+
     app.last_time= (float)glfwGetTime();
     app.accumulator= 0.0f;
     app.running= true;
@@ -336,6 +338,8 @@ void app_run(App& app){
             obj_mesh_draw_group(s_trike, i);
         }
 
+        hud_draw(app.hud, app.trike);
+
         window_swap_buffers(app.window);
         window_poll_events();
     }
@@ -343,6 +347,7 @@ void app_run(App& app){
 
 // app_shutdown
 void app_shutdown(App& app){
+    hud_destroy(app.hud);
     mesh_destroy(s_gizmo);
     shader_destroy(s_gizmo_shader);
     mesh_destroy(s_ground);

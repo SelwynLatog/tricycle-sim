@@ -1,0 +1,10 @@
+#pragma once
+#include "font.hpp"
+#include "../physics/trike_state.hpp"
+struct Hud {
+    Font font;
+};
+
+void hud_init(Hud& h, int window_width, int window_height);
+void hud_draw(const Hud& h, const TrikeState& trike);
+void hud_destroy(Hud& h);
