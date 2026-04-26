@@ -27,13 +27,20 @@ namespace Const{
     inline constexpr float TRIKE_STEER_SPEED = 90.0f; //degrees /sec
     inline constexpr float TRIKE_WHEELBASE = 1.8f; // metres, front to rear angle
 
+    // Mesh default front
+    // Some 3d models are stupidly set to side as their forward
+    // the forward is towards Z axis
+    // in this case, the model's def font is on the LEFT
+    // nevermind my stupid ahh can just rotate the model in blender
+    inline constexpr float TRIKE_MODEL_YAW_OFFSET = 0.0f; // degrees: OBJ forward vs +X axis
+
     // tricycle model path
     inline constexpr const char* TRIKE_MODEL_PATH = "../assets/TRAYSIKEL.obj";
 
     // cam
-    inline constexpr float CAM_YAW_DEFAULT= 180.0f;
+    inline constexpr float CAM_YAW_DEFAULT= 0.0f;
     inline constexpr float CAM_PITCH_DEFAULT= 25.0f;
-    inline constexpr float CAM_DIST_DEFAULT= 6.0f;
+    inline constexpr float CAM_DIST_DEFAULT= 10.0f;
     inline constexpr float CAM_PITCH_MIN= 5.0f;
     inline constexpr float CAM_PITCH_MAX= 85.0f;
     inline constexpr float CAM_YAW_SPEED= 60.0f;  // degrees/sec
@@ -42,6 +49,9 @@ namespace Const{
     inline constexpr float CAM_NEAR= 0.1f;
     inline constexpr float CAM_FAR= 200.0f;
     inline constexpr float CAM_ORBIT_TARGET_Y= 0.5f;
+    inline constexpr float CAM_LERP_SPEED= 5.0f; // how fast cam catches to trike
+    inline constexpr float CAM_LOOKAHEAD= 1.5f; //metres ahead of trike at max speed
+
 
     // lighting
     inline constexpr float LIGHT_DIR_X= 1.0f;

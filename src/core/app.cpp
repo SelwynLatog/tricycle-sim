@@ -10,6 +10,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtc/constants.hpp>
 #include <iostream>
 #include <cstdio>
 
@@ -113,7 +114,10 @@ static float s_cam_dist= Const::CAM_DIST_DEFAULT;
 static glm::vec3 s_model_center= glm::vec3(0.0f);
 static float s_model_scale= 1.0f;
 static float s_debug_print_timer = 0.0f;
+static glm::vec3 s_cam_pos = glm::vec3(-6.0f, 3.0f, 0.0f); //smoothed cam world
 static const glm::vec3 LIGHT_DIR = glm::normalize(glm::vec3(Const::LIGHT_DIR_X, Const::LIGHT_DIR_Y, Const::LIGHT_DIR_Z));
+static bool s_free_cam = false;
+static bool s_f_pressed_last = false;
 
 // helpers
 static void shader_set_vec3_v(const Shader& s, const char* name, glm::vec3 v){
@@ -213,6 +217,9 @@ void app_run(App& app){
         input.steer    = 0.0f;
         if (glfwGetKey(app.window.handle, GLFW_KEY_A) == GLFW_PRESS) input.steer -= 1.0f;
         if (glfwGetKey(app.window.handle, GLFW_KEY_D) == GLFW_PRESS) input.steer += 1.0f;
+        bool f_down = glfwGetKey(app.window.handle, GLFW_KEY_F) == GLFW_PRESS;
+        if (f_down && !s_f_pressed_last) s_free_cam = !s_free_cam;
+        s_f_pressed_last = f_down;
 
         // camera orbit input
         if (glfwGetKey(app.window.handle, GLFW_KEY_LEFT)  == GLFW_PRESS) s_cam_yaw   -= Const::CAM_YAW_SPEED   * dt;
@@ -227,20 +234,7 @@ void app_run(App& app){
             trike_physics_update(app.trike, input, Const::FIXED_TIMESTEP);
             app.accumulator -= Const::FIXED_TIMESTEP;
         }
-        // debug readout - overwrites same terminal line every second
-        s_debug_print_timer += dt;
-        if (s_debug_print_timer >= 0.1f) {
-            s_debug_print_timer = 0.0f;
-            printf("\r pos(%.2f, %.2f, %.2f)  heading=%.1f deg  speed=%.2f m/s  steer=%.1f deg    ",
-                app.trike.position.x,
-                app.trike.position.y,
-                app.trike.position.z,
-                glm::degrees(app.trike.heading),
-                app.trike.speed,
-                glm::degrees(app.trike.steer_angle));
-            fflush(stdout);
-        }
-
+        
         // camera matrices
         float yaw_r   = glm::radians(s_cam_yaw);
         float pitch_r = glm::radians(s_cam_pitch);
@@ -254,24 +248,48 @@ void app_run(App& app){
         // alongside the OBJ file and specifies axis remapping, scale override,and floor fudge
         glm::mat4 model = glm::translate(glm::mat4(1.0f), app.trike.position)
                         * glm::rotate(glm::mat4(1.0f), app.trike.heading, glm::vec3(0, 1, 0))
-                        * glm::rotate(glm::mat4(1.0f), glm::radians(90.0f), glm::vec3(0, 1, 0))
+                        * glm::rotate(glm::mat4(1.0f), glm::radians(Const::TRIKE_MODEL_YAW_OFFSET), glm::vec3(0, 1, 0))
                         * glm::translate(glm::mat4(1.0f), -s_model_center * s_model_scale)
                         * glm::scale(glm::mat4(1.0f), glm::vec3(s_model_scale));
 
         // chase cam: orbit origin is behind the trike based on its heading
         // yaw_r is the manual orbit offset on top of the trike's heading
-        float cam_yaw_world = app.trike.heading + yaw_r;
+        // added lerp + look ahead
+
+        // why this? instead of just app.trike.heading + yaw_r?
+        // because the OBJ model is stupidly set to side orientation by default
+        // this causes the trike to look like its sliding even though direction is set forward
+        // if i can actually model a decent mesh this wouldn't be a problem, but I can't (skill issue)
+        // so i had to download a free trike model
+        float cam_yaw_world = app.trike.heading + yaw_r+ glm::radians(180.0f);
+
         glm::vec3 cam_origin = app.trike.position + glm::vec3(0.0f, Const::CAM_ORBIT_TARGET_Y, 0.0f);
 
-        glm::vec3 eye = cam_origin + glm::vec3(
-            s_cam_dist * cosf(pitch_r) * sinf(cam_yaw_world),
+        glm::vec3 ideal_eye = cam_origin + glm::vec3(
+            s_cam_dist * cosf(pitch_r) * cosf(cam_yaw_world),
             s_cam_dist * sinf(pitch_r),
-            s_cam_dist * cosf(pitch_r) * cosf(cam_yaw_world)
+            s_cam_dist * cosf(pitch_r) * sinf(cam_yaw_world)
         );
 
-        glm::vec3 target = cam_origin;
-       
-        glm::mat4 view = glm::lookAt(eye, target, glm::vec3(0, 1, 0));
+        // lerp cam toward ideal position
+        // this smooths out snapping on sharp turns
+        s_cam_pos= glm::mix(s_cam_pos, ideal_eye, Const::CAM_LERP_SPEED * dt);
+
+        // look-ahead
+        // shift target forward proportional to speed
+        // so at high speed cam see the road ahead, not just the trike's back
+        float fwd_angle = app.trike.heading;
+        glm::vec3 forward = glm::vec3(cosf(fwd_angle), 0.0f, sinf(fwd_angle));
+        float lookahead= (app.trike.speed / Const::TRIKE_MAX_SPEED) * Const::CAM_LOOKAHEAD;
+        glm::vec3 target= cam_origin + forward * lookahead;
+        
+        glm::mat4 view;
+        if (s_free_cam) {
+            glm::vec3 debug_eye = app.trike.position + glm::vec3(0.0f, 15.0f, 0.0f);
+            view = glm::lookAt(debug_eye, app.trike.position, glm::vec3(1, 0, 0));
+        } else {
+            view = glm::lookAt(s_cam_pos, target, glm::vec3(0, 1, 0));
+        }
 
         glm::mat4 proj = glm::perspective(
             glm::radians(Const::CAM_FOV),

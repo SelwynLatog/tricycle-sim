@@ -20,8 +20,7 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
     float brake = input.brake * Const::TRIKE_BRAKE_FORCE;
 
     // brake always opposes current motion
-    float brake_force = brake * (state.speed>= 0.0f ?  -1.0f : 1.0f);
-
+    float brake_force = brake * (state.speed > 0.0f ? -1.0f : (state.speed < 0.0f ? 1.0f : 0.0f));
     // rolling friction : proportional to speed, always opposes motion
     float friction = -state.speed * Const::TRIKE_FRICTION;
 
@@ -64,13 +63,12 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
         state.heading = std::remainder(state.heading, 2.0f * glm::pi<float>());
 
         //integrate position
-        // heading 0 = facing +X,
-        // so forward vec is (cos(heading), 0 , sin(heading))
         glm::vec3 forward = {
             std::cos(state.heading),
             0.0f,
             std::sin(state.heading)
         };
+
         state.position += forward * state.speed * dt;
     
 }

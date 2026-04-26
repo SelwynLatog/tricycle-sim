@@ -80,6 +80,13 @@ void hud_draw(const Hud& h, const TrikeState& trike){
     draw_line(fmt("SPEED %.1f km/h", kmh),              1.0f, 1.0f, 0.2f);
     draw_line(fmt("POS X:%.1f  Z:%.1f",
                   trike.position.x, trike.position.z),     1.0f, 1.0f, 1.0f);
+
+     // compass accounts for model yaw offset so it shows visual facing direction
+    float visual_heading= trike.heading + glm::radians(Const::TRIKE_MODEL_YAW_OFFSET);
+    float visual_deg= glm::degrees(visual_heading);
+    if (visual_deg < 0) visual_deg += 360.0f;
+    if (visual_deg >= 360.0f) visual_deg -= 360.0f;
+
     draw_line(fmt("HEADING %s  (%.0f deg)",
                   heading_to_compass(trike.heading), hdg_deg), 1.0f, 1.0f, 1.0f);
     draw_line(fmt("STEER %s", steer_str.c_str()),        1.0f, 1.0f, 1.0f);

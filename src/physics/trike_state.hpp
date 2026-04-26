@@ -1,5 +1,6 @@
 #pragma once
 #include <glm/glm.hpp>
+#include <glm/gtc/constants.hpp>
 
 // full kinematic state of the tricycle
 // all values are in SI units (meters, radians, seconds)
