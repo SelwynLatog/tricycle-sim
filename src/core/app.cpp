@@ -118,6 +118,7 @@ static glm::vec3 s_cam_pos = glm::vec3(-6.0f, 3.0f, 0.0f); //smoothed cam world
 static const glm::vec3 LIGHT_DIR = glm::normalize(glm::vec3(Const::LIGHT_DIR_X, Const::LIGHT_DIR_Y, Const::LIGHT_DIR_Z));
 static bool s_free_cam = false;
 static bool s_f_pressed_last = false;
+static float s_model_half_height = 1.0f;
 
 // helpers
 static void shader_set_vec3_v(const Shader& s, const char* name, glm::vec3 v){
@@ -174,6 +175,10 @@ void app_init(App& app){
     // auto-scale: normalize longest axis to 2 metres
     float longest = std::max(maxX-minX, std::max(maxY-minY, maxZ-minZ));
     s_model_scale = (longest > 0.0f) ? Const::MODEL_NORMALIZE_SIZE / longest : 1.0f;
+
+    // scaled half-height: distance from model center to top/bottom in world units
+    float raw_half_height = (maxY - minY) * 0.5f;
+    s_model_half_height = raw_half_height * s_model_scale;
 
     std::cout << "[bbox] center: ("
         << s_model_center.x << ", "
@@ -243,15 +248,30 @@ void app_run(App& app){
         // order: scale -> center -> physics rotation -> physics pos
         // for current model the default obj is sideways as I thought when I added axis indicators it was goofy as hell
         // for now the easiest fix is just adding an extra 90 degrees rotation
-
         // TODO: Add model import config- small per model descriptor that sits
         // alongside the OBJ file and specifies axis remapping, scale override,and floor fudge
-        glm::mat4 model = glm::translate(glm::mat4(1.0f), app.trike.position)
-                        * glm::rotate(glm::mat4(1.0f), app.trike.heading, glm::vec3(0, 1, 0))
-                        * glm::rotate(glm::mat4(1.0f), glm::radians(Const::TRIKE_MODEL_YAW_OFFSET), glm::vec3(0, 1, 0))
-                        * glm::translate(glm::mat4(1.0f), -s_model_center * s_model_scale)
-                        * glm::scale(glm::mat4(1.0f), glm::vec3(s_model_scale));
+        float wheel_radius = 0.28f * s_model_scale;
 
+        // TEMP: there is no collision implementation so hitboxes are nonexistent
+        // rollover is goofy because it goes under y ground plane
+        // in the future this will be cleaned alright its already late
+        glm::vec3 render_pos = app.trike.position;
+        if (app.trike.is_tipping) {
+            render_pos.y = s_model_half_height * std::abs(std::cos(app.trike.roll_angle));
+        } else if (app.trike.is_rolled_over) {
+            render_pos.y = 0.0f;
+        }
+
+        // scaled center in model space
+        glm::vec3 scaled_center = s_model_center * s_model_scale;
+
+        glm::mat4 model = glm::translate(glm::mat4(1.0f), render_pos)
+                        * glm::rotate(glm::mat4(1.0f), app.trike.heading, glm::vec3(0, 1, 0))
+                        * glm::rotate(glm::mat4(1.0f), app.trike.roll_angle, glm::vec3(1, 0, 0))
+                        * glm::rotate(glm::mat4(1.0f), glm::radians(Const::TRIKE_MODEL_YAW_OFFSET), glm::vec3(0, 1, 0))
+                        * glm::translate(glm::mat4(1.0f), -scaled_center)
+                        * glm::scale(glm::mat4(1.0f), glm::vec3(s_model_scale));
+        
         // chase cam: orbit origin is behind the trike based on its heading
         // yaw_r is the manual orbit offset on top of the trike's heading
         // added lerp + look ahead

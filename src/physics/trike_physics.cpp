@@ -3,8 +3,27 @@
 #include <glm/gtc/constants.hpp>
 #include <algorithm>
 #include <cmath>
+#include <cstdio>
 
 void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
+    // if tipped over, count down respawn timer then reset
+    if (state.is_rolled_over){
+        state.rollover_timer+= dt;
+        if (state.rollover_timer>= Const::TRIKE_RESPAWN_DELAY){
+            state.position= glm::vec3(0.0f);
+            state.heading= 0.0f;
+            state.tumble_vel = glm::vec3(0.0f);
+            state.speed= 0.0f;
+            state.lateral_speed= 0.0f;
+            state.steer_angle= 0.0f;
+            state.roll_angle= 0.0f;
+            state.roll_rate= 0.0f;
+            state.is_rolled_over= false;
+            state.is_tipping= false;
+            state.rollover_timer= 0.0f;
+        }
+        return;
+    }
 
     // Steer
     // movement current stear angle toward the target at a fixed rate
@@ -70,5 +89,110 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
         };
 
         state.position += forward * state.speed * dt;
-    
+
+        // lateral dynamics
+        // compute local right vector
+        // perpendicular to heading, in XZ plane
+        glm::vec3 right ={
+            std::cos(state.heading + glm::half_pi<float>()),
+            0.0f,
+            std::sin(state.heading + glm::half_pi<float>())
+        };
+
+        // lateral friction bleeds off sideways slip each tick
+        float lateral_friction= -state.lateral_speed * Const::TRIKE_LATERAL_FRICTION;
+        float lateral_accel= lateral_friction/ Const::TRIKE_MASS;
+        state.lateral_speed+= lateral_accel * dt;
+
+        // cornering builds lateral slip proportional to turn rate and speed
+        // feeds actual slip into the system
+        // trike roll won't physically drift outward during hard turns without this
+        float slip_input = (state.speed * std::tan(state.steer_angle)) * 0.35f;
+        state.lateral_speed += slip_input * dt;
+
+
+        // dead stop lateral creep
+        if (std::abs(state.lateral_speed) < 0.01f) state.lateral_speed = 0.0f;
+
+        // integrate lateral pos
+        state.position += right * state.lateral_speed * dt;
+
+        // roll dynamics
+        // lateral acceleration is what tips the trike
+        // a = v^2 / R, R = wheelbase / tan(steer_angle)
+        float lateral_accel_g= 0.0f;
+        if (std::abs(state.steer_angle) > 0.001f){
+            float turn_radius= Const::TRIKE_WHEELBASE / std::tan(std::abs(state.steer_angle));
+            lateral_accel_g= (state.speed * state.speed) / turn_radius;
+
+            // sign
+            // right turn= positive roll tips right
+            // left turn= negative roll tips left
+            if (state.steer_angle < 0.0f) lateral_accel_g = -lateral_accel_g;
+        }
+
+        // sidecar asymmetry= sidecar on the right resists right rolls & amplifies left rolls
+        float sidecar_bias= (lateral_accel_g > 0.0f) ? 0.6f : 1.3f;
+        lateral_accel_g*= sidecar_bias;
+
+        // torque trying to tip the trike
+        // lateral_accel * CG_height * total_mass
+        float tip_torque= lateral_accel_g * Const::TRIKE_CG_HEIGHT;
+
+        // restoring torque from suspension + gravity
+        // pulls roll back to 0
+        float restore= -state.roll_angle * Const::TRIKE_ROLL_STIFFNESS;
+
+        // damping bleeds off roll oscillation
+        float damping= -state.roll_rate * Const::TRIKE_ROLL_DAMPING;
+
+        if (!state.is_tipping){
+            float roll_accel= tip_torque + restore + damping;
+            state.roll_rate+= roll_accel * dt;
+            state.roll_angle+= state.roll_rate * dt;
+        }
+
+        // rollover check
+        if (!state.is_tipping && std::abs(state.roll_angle) >= glm::radians(Const::TRIKE_ROLLOVER_THRESHOLD)) {
+            state.is_tipping= true;
+            state.tumble_vel  = forward * state.speed + right * state.lateral_speed;
+            state.speed= 0.0f;
+            printf("[TIPPING] roll=%.2f rate=%.2f\n", state.roll_angle, state.roll_rate);
+        }
+
+        // goofy tipping animation
+        // past threshold gravity takes over
+        // you roll goofily
+        if (state.is_tipping){
+            float fall_dir= (state.roll_angle> 0.0f) ? 1.0f : -1.0f;
+
+            // trike slides in the direction it was rolling when it tipped
+            // bleeds off over time simulating friction with the ground
+            state.tumble_vel *= (1.0f - 1.2f * dt);
+            state.position   += state.tumble_vel * dt;
+
+            // gravity keeps accelerating the spin
+            state.roll_rate+= fall_dir * 5.0f * dt;
+
+            // bleed off spin rate over time so it eventually stops
+            state.roll_rate*= (1.0f - 0.12f * dt);
+
+            state.roll_angle += state.roll_rate * dt;
+
+            // wrap angle so it spins full 360s visually
+            state.roll_angle= std::remainder(state.roll_angle, glm::two_pi<float>());
+
+            // keep on ground lvl
+            state.position.y = 0.0f;
+
+            // stop when spin rate is nearly dead
+            if (std::abs(state.roll_rate) < 0.08f) {
+                state.roll_angle     = 0.0f;
+                state.roll_rate      = 0.0f;
+                state.is_rolled_over = true;
+                state.is_tipping     = false;
+                state.rollover_timer = 0.0f;
+            }
+
+        }
 }

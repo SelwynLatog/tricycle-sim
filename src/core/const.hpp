@@ -35,8 +35,8 @@ namespace Const{
 
     inline constexpr float TRIKE_LATERAL_FRICTION= 12.0f; // resists sideways slip N/(m/s)
     inline constexpr float TRIKE_ROLL_STIFFNESS= 18.0f; // suspension spring restoring roll
-    inline constexpr float TRIKE_ROLL_DAMPING= 4.5f; // damping on roll oscillation
-    inline constexpr float TRIKE_ROLLOVER_THRESHOLD= 35.0f; // degrees, tip point
+    inline constexpr float TRIKE_ROLL_DAMPING= 6.0f; // damping on roll oscillation
+    inline constexpr float TRIKE_ROLLOVER_THRESHOLD= 45.0f; // degrees, tip point
     inline constexpr float TRIKE_RESPAWN_DELAY= 2.5f; // seconds before reset after tip
 
     // Mesh default front

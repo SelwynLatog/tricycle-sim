@@ -19,5 +19,7 @@ struct TrikeState{
     
     // rollover state
     bool is_rolled_over= false; // true means trike has tipped, physics is frozen
+    bool is_tipping= false; // init goofy rollover state when true
+    glm::vec3 tumble_vel  = glm::vec3(0.0f); // velocity during barrel roll tumble
     float rollover_timer= 0.0f; // count up after tip, respawn at threshold
 };
