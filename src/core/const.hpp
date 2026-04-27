@@ -27,6 +27,18 @@ namespace Const{
     inline constexpr float TRIKE_STEER_SPEED = 90.0f; //degrees /sec
     inline constexpr float TRIKE_WHEELBASE = 1.8f; // metres, front to rear angle
 
+    // rollover & lateral dynamics
+    inline constexpr float TRIKE_CG_HEIGHT= 0.65f; // metres, center of gravity above ground
+    inline constexpr float TRIKE_TRACK_WIDTH= 1.20f; // metres, mc wheel to sidecar wheel
+    inline constexpr float TRIKE_SIDECAR_MASS= 60.0f; // kg, sidecar estimate depends some regions have bulkier models
+    // but for our place typically pretty light
+
+    inline constexpr float TRIKE_LATERAL_FRICTION= 12.0f; // resists sideways slip N/(m/s)
+    inline constexpr float TRIKE_ROLL_STIFFNESS= 18.0f; // suspension spring restoring roll
+    inline constexpr float TRIKE_ROLL_DAMPING= 4.5f; // damping on roll oscillation
+    inline constexpr float TRIKE_ROLLOVER_THRESHOLD= 35.0f; // degrees, tip point
+    inline constexpr float TRIKE_RESPAWN_DELAY= 2.5f; // seconds before reset after tip
+
     // Mesh default front
     // Some 3d models are stupidly set to side as their forward
     // the forward is towards Z axis
