@@ -1,5 +1,6 @@
 #include "app.hpp"
 #include "const.hpp"
+#include "../physics/trike_aabb.hpp"
 #include "../renderer/shader.hpp"
 #include "../renderer/mesh.hpp"
 #include "../renderer/mesh_builder.hpp"
@@ -239,6 +240,9 @@ void app_run(App& app){
             trike_physics_update(app.trike, input, Const::FIXED_TIMESTEP);
             app.accumulator -= Const::FIXED_TIMESTEP;
         }
+
+        // update AABB to match current physics state
+        aabb_update(app.trike.aabb, app.trike.position, app.trike.heading);
         
         // camera matrices
         float yaw_r   = glm::radians(s_cam_yaw);
@@ -374,6 +378,44 @@ void app_run(App& app){
             shader_set_vec3_v(s_shader, "u_kd", kd);
 
             obj_mesh_draw_group(s_trike, i);
+        }
+
+        // draw AABB wireframe
+        {
+            const Aabb& box = app.trike.aabb;
+            glm::vec3 lo = box.min, hi = box.max;
+
+            glm::vec3 corners[8] = {
+                {lo.x, lo.y, lo.z}, {hi.x, lo.y, lo.z},
+                {hi.x, lo.y, hi.z}, {lo.x, lo.y, hi.z},
+                {lo.x, hi.y, lo.z}, {hi.x, hi.y, lo.z},
+                {hi.x, hi.y, hi.z}, {lo.x, hi.y, hi.z},
+            };
+            int edges[24] = {
+                0,1, 1,2, 2,3, 3,0,
+                4,5, 5,6, 6,7, 7,4,
+                0,4, 1,5, 2,6, 3,7
+            };
+
+            std::vector<float> wire_verts;
+            glm::vec3 wire_col = {0.0f, 1.0f, 0.3f};
+            for (int e = 0; e < 24; e += 2){
+                glm::vec3 a = corners[edges[e]];
+                glm::vec3 b = corners[edges[e+1]];
+                wire_verts.insert(wire_verts.end(), {a.x,a.y,a.z, wire_col.r,wire_col.g,wire_col.b});
+                wire_verts.insert(wire_verts.end(), {b.x,b.y,b.z, wire_col.r,wire_col.g,wire_col.b});
+            }
+
+            Mesh wire_mesh;
+            mesh_init(wire_mesh, wire_verts);
+            shader_bind(s_gizmo_shader);
+            shader_set_mat4(s_gizmo_shader, "u_view", glm::value_ptr(view));
+            shader_set_mat4(s_gizmo_shader, "u_proj", glm::value_ptr(proj));
+            glBindVertexArray(wire_mesh.vao);
+            glDrawArrays(GL_LINES, 0, wire_mesh.count);
+            glBindVertexArray(0);
+            mesh_destroy(wire_mesh);
+            shader_bind(s_shader);
         }
 
         hud_draw(app.hud, app.trike);

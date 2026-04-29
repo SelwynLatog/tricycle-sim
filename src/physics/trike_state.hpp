@@ -1,6 +1,7 @@
 #pragma once
 #include <glm/glm.hpp>
 #include <glm/gtc/constants.hpp>
+#include "trike_aabb.hpp"
 
 // full dynamic state of the tricycle
 // all values are in SI units (meters, radians, seconds)
@@ -23,4 +24,9 @@ struct TrikeState{
     bool is_tipping= false; // init goofy rollover state when true
     glm::vec3 tumble_vel  = glm::vec3(0.0f); // velocity during barrel roll tumble
     float rollover_timer= 0.0f; // count up after tip, respawn at threshold
+
+    // world-space AABB
+    // used for collision detection against obstacles and world bounds
+    Aabb aabb;
+    
 };

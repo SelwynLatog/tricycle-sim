@@ -16,6 +16,7 @@ add_executable(tricycle-sim
     src/tricycle/tricycle_mesh.cpp
     src/tricycle/tricycle_model.cpp
     src/physics/trike_physics.cpp
+    src/physics/trike_aabb.cpp
     src/renderer/font.cpp
     src/renderer/hud.cpp
     vendor/glad/src/glad.c
