@@ -12,6 +12,7 @@ struct TrikeState{
     float speed = 0.0f; // signed scalar m/s, positive = forward longitudinal
     float steer_angle = 0.0f; // current float wheel angle, radians
     float lateral_speed= 0.0f;
+    float velocity_heading= 0.0f; // direction trike is actually moving lags behind body heading
     
     // roll dynamics
     float roll_angle= 0.0f; // body roll, radians.positive= rolling right

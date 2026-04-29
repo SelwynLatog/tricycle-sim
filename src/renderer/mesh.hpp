@@ -13,3 +13,4 @@ struct Mesh {
 void mesh_init(Mesh& m, const std::vector<float>& verts);
 void mesh_destroy(Mesh& m);
 void mesh_draw(const Mesh& m);
+void push_sphere(std::vector<float>& v, float radius, int stacks, int slices, glm::vec3 color);

@@ -16,6 +16,7 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
             state.speed= 0.0f;
             state.lateral_speed= 0.0f;
             state.steer_angle= 0.0f;
+            state.velocity_heading= 0.0f;
             state.roll_angle= 0.0f;
             state.roll_rate= 0.0f;
             state.is_rolled_over= false;
@@ -35,7 +36,8 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
     state.steer_angle  += std::clamp(steer_diff, -steer_delta, steer_delta);
 
     // Longitudinal forces
-    float engine = input.throttle * Const::TRIKE_ENGINE_FORCE;
+    float steer_load = 1.0f - 0.3f * std::abs(state.steer_angle) / glm::radians(Const::TRIKE_MAX_STEER_ANGLE);
+    float engine = input.throttle * Const::TRIKE_ENGINE_FORCE * steer_load;
     float brake = input.brake * Const::TRIKE_BRAKE_FORCE;
 
     // brake always opposes current motion
@@ -67,7 +69,7 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
             // low speed turn is tight
             // high speed turn is very loose
             // dividing by speed-based factor prevents beyblade spinning at low speed
-            float speed_factor = 1.0f + std::abs(state.speed) * 0.15f;
+            float speed_factor = 1.0f + (state.speed * state.speed) * 0.04f;
             turn_rate /= speed_factor;
 
             // sidecar drag:: asymmetric resistance
@@ -81,11 +83,16 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
         // wrap heading to [-pi, pi]
         state.heading = std::remainder(state.heading, 2.0f * glm::pi<float>());
 
+        // blend velocity heading toward body heading
+        //creates organic lag on cornering
+        float slip_angle = state.heading - state.velocity_heading;
+        state.velocity_heading += slip_angle * std::min(1.0f, 8.0f * dt);
+
         //integrate position
         glm::vec3 forward = {
-            std::cos(state.heading),
+            std::cos(state.velocity_heading),
             0.0f,
-            std::sin(state.heading)
+            std::sin(state.velocity_heading)
         };
 
         state.position += forward * state.speed * dt;
@@ -121,7 +128,7 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
         // lateral acceleration is what tips the trike
         // a = v^2 / R, R = wheelbase / tan(steer_angle)
         float lateral_accel_g= 0.0f;
-        if (std::abs(state.steer_angle) > 0.001f){
+        if (std::abs(state.steer_angle) > 0.001f && std::abs(state.speed) >= 3.0f){
             float turn_radius= Const::TRIKE_WHEELBASE / std::tan(std::abs(state.steer_angle));
             lateral_accel_g= (state.speed * state.speed) / turn_radius;
 
@@ -132,7 +139,7 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
         }
 
         // sidecar asymmetry= sidecar on the right resists right rolls & amplifies left rolls
-        float sidecar_bias= (lateral_accel_g > 0.0f) ? 0.6f : 1.3f;
+        float sidecar_bias= (lateral_accel_g > 0.0f) ? 0.7f : 1.15f;
         lateral_accel_g*= sidecar_bias;
 
         // torque trying to tip the trike
@@ -168,7 +175,7 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
 
             // trike slides in the direction it was rolling when it tipped
             // bleeds off over time simulating friction with the ground
-            state.tumble_vel *= (1.0f - 1.2f * dt);
+            state.tumble_vel *= (1.0f - 2.5f * dt);
             state.position   += state.tumble_vel * dt;
 
             // gravity keeps accelerating the spin
