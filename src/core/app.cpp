@@ -251,6 +251,38 @@ void app_run(App& app){
 
         // update AABB to match current physics state
         aabb_update(app.trike.aabb, app.trike.position, app.trike.heading);
+
+        // Collision detection + positional correction
+        // check trike AABB against every obstace
+        // push out on overlap
+        for (const auto& obs : app.obstacles){
+            if (!aabb_overlap(app.trike.aabb, obs.aabb)) continue;
+
+            //compute min translation vec to separate two boxes
+            glm::vec3 mtv= aabb_mtv(app.trike.aabb, obs.aabb);
+
+            // push trike position out of the obstacles
+            app.trike.position+= mtv;
+
+            // kill velocity along the MTV axis so trike dont tunnel through
+            glm::vec3 mtv_normal = glm::length(mtv) > 0.0f ? glm::normalize(mtv) : glm::vec3(0.0f);
+            float speed_along_normal= app.trike.speed * glm::dot(
+                glm::vec3(std::cos(app.trike.heading), 0.0f, std::sin(app.trike.heading)),mtv_normal
+            );
+
+            if (speed_along_normal <0.0f) app.trike.speed-= speed_along_normal;
+
+            float lat_along_normal= app.trike.lateral_speed * glm::dot(
+              glm::vec3(std::cos(app.trike.heading + glm::half_pi<float>()), 0.0f,
+                          std::sin(app.trike.heading + glm::half_pi<float>())),
+                mtv_normal     
+            );
+            if (lat_along_normal <0.0f) app.trike.lateral_speed-= lat_along_normal;
+
+            // AABB update block post position correction
+            aabb_update(app.trike.aabb, app.trike.position, app.trike.heading);
+        }
+
         
         // camera matrices
         float yaw_r   = glm::radians(s_cam_yaw);
@@ -412,7 +444,7 @@ void app_run(App& app){
                 wire_verts.insert(wire_verts.end(), {a.x,a.y,a.z, color.r,color.g,color.b});
                 wire_verts.insert(wire_verts.end(), {b.x,b.y,b.z, color.r,color.g,color.b});
             }
-               
+
             Mesh wire_mesh;
             mesh_init(wire_mesh, wire_verts);
             shader_bind(s_gizmo_shader);
