@@ -199,6 +199,14 @@ void app_init(App& app){
     push_axis_gizmo(gizmo_verts, Const::GIZMO_LENGTH);
     mesh_init(s_gizmo, gizmo_verts);
 
+    // spawn static obstacles
+    // position in center-bottom
+    // half extents is half width/height/depth
+    app.obstacles.push_back(make_obstacle({10.0f, 0.0f,  0.0f}, {0.75f, 1.0f, 0.75f})); // dead ahead
+    app.obstacles.push_back(make_obstacle({ 0.0f, 0.0f, 10.0f}, {1.0f,  1.5f, 0.5f}));  // off to the side
+    app.obstacles.push_back(make_obstacle({15.0f, 0.0f,  8.0f}, {0.5f,  0.8f, 0.5f}));  // further out
+
+
     hud_init(app.hud, Const::WINDOW_WIDTH, Const::WINDOW_HEIGHT);
 
     app.last_time= (float)glfwGetTime();
@@ -381,8 +389,8 @@ void app_run(App& app){
         }
 
         // draw AABB wireframe
-        {
-            const Aabb& box = app.trike.aabb;
+        // draw obstacle AABB
+        auto draw_aabb_wire= [&](const Aabb& box, glm::vec3 color){
             glm::vec3 lo = box.min, hi = box.max;
 
             glm::vec3 corners[8] = {
@@ -398,14 +406,13 @@ void app_run(App& app){
             };
 
             std::vector<float> wire_verts;
-            glm::vec3 wire_col = {0.0f, 1.0f, 0.3f};
             for (int e = 0; e < 24; e += 2){
                 glm::vec3 a = corners[edges[e]];
                 glm::vec3 b = corners[edges[e+1]];
-                wire_verts.insert(wire_verts.end(), {a.x,a.y,a.z, wire_col.r,wire_col.g,wire_col.b});
-                wire_verts.insert(wire_verts.end(), {b.x,b.y,b.z, wire_col.r,wire_col.g,wire_col.b});
+                wire_verts.insert(wire_verts.end(), {a.x,a.y,a.z, color.r,color.g,color.b});
+                wire_verts.insert(wire_verts.end(), {b.x,b.y,b.z, color.r,color.g,color.b});
             }
-
+               
             Mesh wire_mesh;
             mesh_init(wire_mesh, wire_verts);
             shader_bind(s_gizmo_shader);
@@ -416,8 +423,13 @@ void app_run(App& app){
             glBindVertexArray(0);
             mesh_destroy(wire_mesh);
             shader_bind(s_shader);
-        }
+        };
 
+        draw_aabb_wire(app.trike.aabb, {0.0f, 1.0f, 0.3f});
+
+        for (const auto& obs : app.obstacles)
+             draw_aabb_wire(obs.aabb, {1.0f, 0.9f, 0.0f});
+             
         hud_draw(app.hud, app.trike);
 
         window_swap_buffers(app.window);

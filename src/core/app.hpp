@@ -2,7 +2,9 @@
 #include "window.hpp"
 #include "../physics/trike_state.hpp"
 #include "../physics/trike_physics.hpp"
+#include "../physics/obstacle.hpp"
 #include "../renderer/hud.hpp"
+#include <vector>
 
 struct App {
     Window window;
@@ -11,6 +13,8 @@ struct App {
     float  last_time = 0.0f;
     float  accumulator = 0.0f;
     bool   running = false;
+
+    std::vector<Obstacle> obstacles;
 };
 
 void app_init(App& app);
