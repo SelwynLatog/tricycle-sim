@@ -258,8 +258,10 @@ void app_run(App& app){
         // Collision detection + positional correction
         // check trike AABB against every obstace
         // push out on overlap
-        for (const auto& obs : app.obstacles){
-           
+        for (auto& obs : app.obstacles){
+            
+            if (obs.hit_timer > 0.0f) obs.hit_timer -= dt;
+
             if (!aabb_overlap(app.trike.aabb, obs.aabb)) continue;
 
             // push trike out of obstacle
@@ -289,9 +291,10 @@ void app_run(App& app){
             // we ignore micro contacts from resting against wall
             if (closing > 0.1f){
                 
-                // record impact for HUD + cam shake
+                // record impact for HUD + cam shake + obstacle flash
                 app.trike.last_impact_force = closing;
                 app.trike.impact_timer = 0.35f; // seconds post-impact fx
+                obs.hit_timer= 0.35f; // flash specified object
 
                 if (spd_along < 0.0f) app.trike.speed += (-spd_along) * (1.0f + Const::RESTITUTION) * spd_dot;
                 if (lat_along < 0.0f) app.trike.lateral_speed += (-lat_along) * (1.0f + Const::RESTITUTION) * lat_dot;
@@ -461,6 +464,50 @@ void app_run(App& app){
 
             obj_mesh_draw_group(s_trike, i);
         }
+
+        // draw solid obtsacle mesh
+        // will clean and transfer to another file wip
+        shader_bind(s_shader);
+        shader_set_mat4(s_shader, "u_view", glm::value_ptr(view));
+        shader_set_mat4(s_shader, "u_proj", glm::value_ptr(proj));
+        shader_set_vec3_v(s_shader, "u_light_dir", LIGHT_DIR);
+        glUniform1i(glGetUniformLocation(s_shader.id, "u_use_checker"), 0);
+
+        for (const auto& obs : app.obstacles){
+            
+            // flash interpolates toward red-based timer on hit_timer
+            float flash= glm::clamp(obs.hit_timer / 0.35f, 0.0f, 1.0f);
+            glm::vec3 base= glm::vec3(0.45f, 0.43f, 0.40f); // concrete
+            glm::vec3 hit= glm::vec3(0.9f,  0.15f, 0.10f); // impact red
+            glm::vec3 color= glm::mix(base, hit, flash);
+
+            // build model matrix from AABB center and half extents
+            // push_box origin is center-bottom
+            glm::vec3 obs_pos = glm::vec3(
+                (obs.aabb.min.x + obs.aabb.max.x) * 0.5f,
+                obs.aabb.min.y,
+                (obs.aabb.min.z + obs.aabb.max.z) * 0.5f);
+
+            glm::mat4 obs_model = glm::translate(glm::mat4(1.0f), obs_pos);
+            glm::mat3 obs_normal= glm::mat3(glm::transpose(glm::inverse(obs_model)));
+
+            shader_set_mat4(s_shader, "u_model", glm::value_ptr(obs_model));
+            shader_set_mat3(s_shader, "u_normal_mat", glm::value_ptr(obs_normal));
+            shader_set_vec3_v(s_shader, "u_kd", color);
+
+            // build and draw a throwaway box mesh from the obstacle's half extents
+            // not efficient but fine for now before cleanup aight
+            std::vector<float> box_verts;
+            push_box(box_verts, glm::vec3(0.0f), obs.half_extents  * 2.0f, color);
+
+            Mesh box_mesh;
+            mesh_init(box_mesh, box_verts);
+            glBindVertexArray(box_mesh.vao);
+            glDrawArrays(GL_TRIANGLES, 0, box_mesh.count);
+            glBindVertexArray(0);
+            mesh_destroy(box_mesh);
+        }
+
 
         // draw AABB wireframe
         // draw obstacle AABB

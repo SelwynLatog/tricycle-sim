@@ -15,6 +15,9 @@ struct Obstacle{
     // world space aabb
     // built once at spawn
     Aabb aabb;
+
+    // count down after impact
+    float hit_timer= 0.0f;
 };
 
 // call once when spawning
