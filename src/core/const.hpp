@@ -34,8 +34,8 @@ namespace Const{
     // but for our place typically pretty light
 
     inline constexpr float TRIKE_LATERAL_FRICTION= 12.0f; // resists sideways slip N/(m/s)
-    inline constexpr float TRIKE_ROLL_STIFFNESS= 18.0f; // suspension spring restoring roll
-    inline constexpr float TRIKE_ROLL_DAMPING= 9.0f; // damping on roll oscillation
+    inline constexpr float TRIKE_ROLL_STIFFNESS= 28.0f; // suspension spring restoring roll
+    inline constexpr float TRIKE_ROLL_DAMPING= 14.0f; // damping on roll oscillation
     inline constexpr float TRIKE_ROLLOVER_THRESHOLD= 52.0f; // degrees, tip point
     inline constexpr float TRIKE_RESPAWN_DELAY= 2.5f; // seconds before reset after tip
 
@@ -87,4 +87,9 @@ namespace Const{
 
     // axis gizmo cords
     inline constexpr float GIZMO_LENGTH = 3.0f;  // metres
+
+    // restitution - small bounce back along normal
+    // 0.18 fairly dead collision
+    // feels heavy not pinball
+    inline constexpr float RESTITUTION= 0.18f;
 }

@@ -252,35 +252,77 @@ void app_run(App& app){
         // update AABB to match current physics state
         aabb_update(app.trike.aabb, app.trike.position, app.trike.heading);
 
+        // tick impact timer down each frame regardless of new collisions
+        if (app.trike.impact_timer > 0.0f) app.trike.impact_timer -= dt;
+
         // Collision detection + positional correction
         // check trike AABB against every obstace
         // push out on overlap
         for (const auto& obs : app.obstacles){
+           
             if (!aabb_overlap(app.trike.aabb, obs.aabb)) continue;
 
-            //compute min translation vec to separate two boxes
+            // push trike out of obstacle
             glm::vec3 mtv= aabb_mtv(app.trike.aabb, obs.aabb);
+            app.trike.position += mtv;
 
-            // push trike position out of the obstacles
-            app.trike.position+= mtv;
-
-            // kill velocity along the MTV axis so trike dont tunnel through
             glm::vec3 mtv_normal = glm::length(mtv) > 0.0f ? glm::normalize(mtv) : glm::vec3(0.0f);
-            float speed_along_normal= app.trike.speed * glm::dot(
-                glm::vec3(std::cos(app.trike.heading), 0.0f, std::sin(app.trike.heading)),mtv_normal
-            );
 
-            if (speed_along_normal <0.0f) app.trike.speed-= speed_along_normal;
+            // local forward and right vecs
+            glm::vec3 fwd= {std::cos(app.trike.heading), 0.0f , std::sin(app.trike.heading)};
+            glm::vec3 rgt= {std::cos(app.trike.heading + glm::half_pi<float>()), 0.0f,
+                             std::sin(app.trike.heading + glm::half_pi<float>())};
+            
+            float spd_dot= glm::dot(fwd, mtv_normal);
+            float lat_dot= glm::dot(rgt, mtv_normal);
 
-            float lat_along_normal= app.trike.lateral_speed * glm::dot(
-              glm::vec3(std::cos(app.trike.heading + glm::half_pi<float>()), 0.0f,
-                          std::sin(app.trike.heading + glm::half_pi<float>())),
-                mtv_normal     
-            );
-            if (lat_along_normal <0.0f) app.trike.lateral_speed-= lat_along_normal;
+            // velocity components along the collision normal
+            float spd_along= app.trike.speed * spd_dot;
+            float lat_along= app.trike.lateral_speed * lat_dot;
 
-            // AABB update block post position correction
+            // total closing speed= impact force proxy
+            // only count if actually moving into the surface
+            float closing= 0.0f;
+            if (spd_along < 0.0f) closing += std::abs(spd_along);
+            if (lat_along < 0.0f) closing += std::abs(lat_along);
+            
+            // we ignore micro contacts from resting against wall
+            if (closing > 0.1f){
+                
+                // record impact for HUD + cam shake
+                app.trike.last_impact_force = closing;
+                app.trike.impact_timer = 0.35f; // seconds post-impact fx
+
+                if (spd_along < 0.0f) app.trike.speed += (-spd_along) * (1.0f + Const::RESTITUTION) * spd_dot;
+                if (lat_along < 0.0f) app.trike.lateral_speed += (-lat_along) * (1.0f + Const::RESTITUTION) * lat_dot;
+
+                // lose a fraction of total speed on impact
+                float bleed= glm::clamp(closing * 0.06f, 0.05f, 0.4f);
+                app.trike.speed *= (1.0f - bleed);
+                app.trike.lateral_speed *= (1.0f - bleed);
+
+                // roll spike
+                // side hits threaten a tip
+                // dot of MTV against right vector tells us how sideways the hit was
+                // pure side hit = lat_dot near 1.0, head-on = near 0.0
+                float side_factor = std::abs(lat_dot);
+
+                // sign which way top tip
+                if (side_factor > 0.3f && closing > 1.5f) app.trike.roll_rate += side_factor * closing * 0.4f 
+                * (lat_dot > 0.0f ? 1.0f : -1.0f);
+
+            }
+            else{
+
+                // resting contact
+                // just kill penetrating component
+                // no bounce
+                if (spd_along <0.0f) app.trike.speed -= spd_along;
+                if (lat_along <0.0f) app.trike.lateral_speed -= lat_along;
+            }
+
             aabb_update(app.trike.aabb, app.trike.position, app.trike.heading);
+
         }
 
         

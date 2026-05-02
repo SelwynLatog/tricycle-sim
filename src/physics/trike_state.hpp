@@ -25,6 +25,12 @@ struct TrikeState{
     glm::vec3 tumble_vel  = glm::vec3(0.0f); // velocity during barrel roll tumble
     float rollover_timer= 0.0f; // count up after tip, respawn at threshold
 
+    // impact state
+    // set on collision
+    // used by response + cam shake + HUD
+    float last_impact_force= 0.0f; // magnitude of velocity the moment of impact
+    float impact_timer= 0.0f; // counts down after impact, drives flash/shake
+
     // world-space AABB
     // used for collision detection against obstacles and world bounds
     Aabb aabb;
