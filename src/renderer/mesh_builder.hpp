@@ -12,6 +12,15 @@ void push_box(
     glm::vec3 color
 );
 
+// same as push_box but vertex layout is px py pz nx ny nz
+// use this when drawing with the lighting shader
+void push_box_lit(
+    std::vector<float>& v,
+    glm::vec3 origin,
+    glm::vec3 size,
+    glm::vec3 color
+);
+
 void push_cylinder(
     std::vector<float>& v,
     glm::vec3 center,   // centre of the cylinder

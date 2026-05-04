@@ -54,6 +54,28 @@ void push_box(std::vector<float>& v, glm::vec3 o, glm::vec3 s, glm::vec3 col){
     push_quad(v, {x0,y0,z0},{x0,y0,z1},{x0,y1,z1},{x0,y1,z0}, side);
 }
 
+void push_box_lit(std::vector<float>& v, glm::vec3 o, glm::vec3 s, glm::vec3){
+    float x0=o.x-s.x*0.5f, x1=o.x+s.x*0.5f;
+    float y0=o.y, y1=o.y+s.y;
+    float z0=o.z-s.z*0.5f, z1=o.z+s.z*0.5f;
+
+    auto push = [&](glm::vec3 p, glm::vec3 n){
+        v.push_back(p.x); v.push_back(p.y); v.push_back(p.z);
+        v.push_back(n.x); v.push_back(n.y); v.push_back(n.z);
+    };
+    auto quad = [&](glm::vec3 a, glm::vec3 b, glm::vec3 c, glm::vec3 d, glm::vec3 n){
+        push(a,n); push(b,n); push(c,n);
+        push(a,n); push(c,n); push(d,n);
+    };
+
+    quad({x0,y1,z0},{x1,y1,z0},{x1,y1,z1},{x0,y1,z1}, { 0, 1, 0}); // top
+    quad({x0,y0,z1},{x1,y0,z1},{x1,y0,z0},{x0,y0,z0}, { 0,-1, 0}); // bottom
+    quad({x0,y0,z1},{x1,y0,z1},{x1,y1,z1},{x0,y1,z1}, { 0, 0, 1}); // front
+    quad({x1,y0,z0},{x0,y0,z0},{x0,y1,z0},{x1,y1,z0}, { 0, 0,-1}); // back
+    quad({x1,y0,z1},{x1,y0,z0},{x1,y1,z0},{x1,y1,z1}, { 1, 0, 0}); // right
+    quad({x0,y0,z0},{x0,y0,z1},{x0,y1,z1},{x0,y1,z0}, {-1, 0, 0}); // left
+}
+
 //  push_cylinder
 void push_cylinder(std::vector<float>& v,
     glm::vec3 center, float radius, float depth, int seg, glm::vec3 col){

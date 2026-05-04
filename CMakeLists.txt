@@ -19,6 +19,7 @@ add_executable(tricycle-sim
     src/physics/trike_aabb.cpp
     src/renderer/font.cpp
     src/renderer/hud.cpp
+    src/renderer/scene.cpp
     vendor/glad/src/glad.c
 )
 

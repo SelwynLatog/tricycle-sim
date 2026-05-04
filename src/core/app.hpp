@@ -4,15 +4,17 @@
 #include "../physics/trike_physics.hpp"
 #include "../physics/obstacle.hpp"
 #include "../renderer/hud.hpp"
+#include "../renderer/scene.hpp"
 #include <vector>
 
 struct App {
     Window window;
     TrikeState trike;
     Hud hud;
-    float  last_time = 0.0f;
-    float  accumulator = 0.0f;
-    bool   running = false;
+    SceneState scene;
+    float last_time = 0.0f;
+    float accumulator = 0.0f;
+    bool running = false;
 
     std::vector<Obstacle> obstacles;
 };

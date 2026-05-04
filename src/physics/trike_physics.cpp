@@ -36,6 +36,8 @@ void trike_physics_update(TrikeState& state, const TrikeInput& input, float dt){
     state.steer_angle  += std::clamp(steer_diff, -steer_delta, steer_delta);
 
     // Longitudinal forces
+    // tight turn basically steals engine power
+    // full lock = -30% force if you're wondering about the float vals
     float steer_load = 1.0f - 0.3f * std::abs(state.steer_angle) / glm::radians(Const::TRIKE_MAX_STEER_ANGLE);
     float engine = input.throttle * Const::TRIKE_ENGINE_FORCE * steer_load;
     float brake = input.brake * Const::TRIKE_BRAKE_FORCE;
