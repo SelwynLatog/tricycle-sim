@@ -4,6 +4,7 @@
 #include "obj_mesh.hpp"
 #include "../physics/trike_state.hpp"
 #include "../physics/obstacle.hpp"
+#include "../tricycle/tricycle_mesh.hpp"
 #include <glm/glm.hpp>
 #include <vector>
 
@@ -16,7 +17,8 @@ struct SceneState {
     Mesh ground;
     Mesh gizmo;
 
-    ObjMesh trike_mesh;
+    ObjMesh trike_mesh; // OBJ file
+    Mesh proc_mesh; // hard coded mesh
 
     // computed at load time from OBJ bounding box
     glm::vec3 model_center = glm::vec3(0.0f);

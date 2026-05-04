@@ -57,11 +57,12 @@ static const char* GIZMO_VERT_SRC = R"(
 #version 330 core
 layout(location = 0) in vec3 a_pos;
 layout(location = 1) in vec3 a_color;
+uniform mat4 u_model;
 uniform mat4 u_view;
 uniform mat4 u_proj;
 out vec3 v_color;
 void main(){
-    gl_Position = u_proj * u_view * vec4(a_pos, 1.0);
+    gl_Position = u_proj * u_view * u_model * vec4(a_pos, 1.0);
     v_color = a_color;
 }
 )";
@@ -119,6 +120,7 @@ static void draw_wire_aabb(
     shader_bind(gizmo_shader);
     set_mat4(gizmo_shader, "u_view", view);
     set_mat4(gizmo_shader, "u_proj", proj);
+    set_mat4(gizmo_shader, "u_model", glm::mat4(1.0f));
     glBindVertexArray(wire.vao);
     glDrawArrays(GL_LINES, 0, wire.count);
     glBindVertexArray(0);
@@ -158,30 +160,43 @@ void scene_init(SceneState& scene){
     shader_init(scene.shader, VERT_SRC, FRAG_SRC);
     shader_init(scene.gizmo_shader, GIZMO_VERT_SRC, GIZMO_FRAG_SRC);
 
-    // load trike OBJ
-    ObjData data;
-    if (!obj_load(Const::TRIKE_MODEL_PATH, data))
-        std::cerr << "failed to load trike OBJ\n";
-    obj_mesh_init(scene.trike_mesh, std::move(data));
+    // toggle between using proc mesh or a OBJ model
+    // I'll use it for debugging purposes
+    // I want to get the physics close to "realistic" because
+    // at the moment still has some shitty issues that I can't scratch my head around
+    if constexpr (Const::USE_PROC_MESH){
+        std::vector<float> proc_verts;
+        build_tricycle_mesh(proc_verts);
+        mesh_init(scene.proc_mesh, proc_verts);
 
-    // auto-center + auto-scale from bounding box
-    float minX=1e9f,maxX=-1e9f,minY=1e9f,maxY=-1e9f,minZ=1e9f,maxZ=-1e9f;
-    for (int i = 0; i < (int)scene.trike_mesh.data.vertices.size(); i += 6){
-        float x = scene.trike_mesh.data.vertices[i];
-        float y = scene.trike_mesh.data.vertices[i+1];
-        float z = scene.trike_mesh.data.vertices[i+2];
-        minX=std::min(minX,x); maxX=std::max(maxX,x);
-        minY=std::min(minY,y); maxY=std::max(maxY,y);
-        minZ=std::min(minZ,z); maxZ=std::max(maxZ,z);
+        scene.model_center = glm::vec3(0.0f);
+        scene.model_scale = 1.0f;
+        scene.model_half_height = 0.625f;
+    } else {
+        ObjData data;
+        if (!obj_load(Const::TRIKE_MODEL_PATH, data))
+            std::cerr << "failed to load trike OBJ\n";
+        obj_mesh_init(scene.trike_mesh, std::move(data));
+
+        float minX=1e9f,maxX=-1e9f,minY=1e9f,maxY=-1e9f,minZ=1e9f,maxZ=-1e9f;
+        for (int i = 0; i < (int)scene.trike_mesh.data.vertices.size(); i += 6){
+            float x = scene.trike_mesh.data.vertices[i];
+            float y = scene.trike_mesh.data.vertices[i+1];
+            float z = scene.trike_mesh.data.vertices[i+2];
+            minX=std::min(minX,x); maxX=std::max(maxX,x);
+            minY=std::min(minY,y); maxY=std::max(maxY,y);
+            minZ=std::min(minZ,z); maxZ=std::max(maxZ,z);
+        }
+
+        scene.model_center = glm::vec3(
+            (minX+maxX)*0.5f, minY, (minZ+maxZ)*0.5f);
+        scene.model_center.y -= Const::MODEL_FLOOR_FUDGE;
+
+        float longest = std::max(maxX-minX, std::max(maxY-minY, maxZ-minZ));
+        scene.model_scale = (longest > 0.0f) ? Const::MODEL_NORMALIZE_SIZE / longest : 1.0f;
+        scene.model_half_height = (maxY-minY) * 0.5f * scene.model_scale;
     }
 
-    scene.model_center = glm::vec3(
-        (minX+maxX)*0.5f, minY, (minZ+maxZ)*0.5f);
-    scene.model_center.y -= Const::MODEL_FLOOR_FUDGE;
-
-    float longest = std::max(maxX-minX, std::max(maxY-minY, maxZ-minZ));
-    scene.model_scale       = (longest > 0.0f) ? Const::MODEL_NORMALIZE_SIZE / longest : 1.0f;
-    scene.model_half_height = (maxY-minY) * 0.5f * scene.model_scale;
 
     // ground
     std::vector<float> gv;
@@ -226,21 +241,21 @@ void scene_draw(
     shader_bind(scene.gizmo_shader);
     set_mat4(scene.gizmo_shader, "u_view", view);
     set_mat4(scene.gizmo_shader, "u_proj", proj);
+    set_mat4(scene.gizmo_shader, "u_model", glm::mat4(1.0f));
     glBindVertexArray(scene.gizmo.vao);
     glDrawArrays(GL_LINES, 0, scene.gizmo.count);
     glBindVertexArray(0);
 
     // trike 
     glm::vec3 render_pos = trike.position;
-    if (trike.is_tipping)
-        render_pos.y = scene.model_half_height * std::abs(std::cos(trike.roll_angle));
-    else if (trike.is_rolled_over)
-        render_pos.y = 0.0f;
+    if (trike.is_tipping) render_pos.y = scene.model_half_height * std::abs(std::cos(trike.roll_angle));
+
+    else if (trike.is_rolled_over) render_pos.y = 0.0f;
 
     glm::vec3 sc = scene.model_center * scene.model_scale;
     glm::mat4 tm =
         glm::translate(glm::mat4(1.0f), render_pos)
-        * glm::rotate(glm::mat4(1.0f), trike.heading, glm::vec3(0,1,0))
+        * glm::rotate(glm::mat4(1.0f), trike.heading,    glm::vec3(0,1,0))
         * glm::rotate(glm::mat4(1.0f), trike.roll_angle, glm::vec3(0,0,1))
         * glm::rotate(glm::mat4(1.0f), glm::radians(Const::TRIKE_MODEL_YAW_OFFSET), glm::vec3(0,1,0))
         * glm::translate(glm::mat4(1.0f), -sc)
@@ -252,11 +267,25 @@ void scene_draw(
     set_mat4(scene.shader, "u_model",      tm);
     set_mat3(scene.shader, "u_normal_mat", tnm);
 
-    for (int i = 0; i < (int)scene.trike_mesh.data.groups.size(); ++i){
-        const ObjGroup&    grp = scene.trike_mesh.data.groups[i];
-        const ObjMaterial* mat = obj_find_material(scene.trike_mesh.data, grp.mat_name);
-        set_vec3(scene.shader, "u_kd", mat ? mat->kd : glm::vec3(0.8f));
-        obj_mesh_draw_group(scene.trike_mesh, i);
+    if constexpr (Const::USE_PROC_MESH){
+        // proc mesh uses rgb color layout not normals 
+        // for now I'll draw with gizmo shader
+        // lighting won't apply but colors are baked per face in mesh_builder
+        shader_bind(scene.gizmo_shader);
+        set_mat4(scene.gizmo_shader, "u_view", view);
+        set_mat4(scene.gizmo_shader, "u_proj", proj);
+        set_mat4(scene.gizmo_shader, "u_model", tm);
+        glBindVertexArray(scene.proc_mesh.vao);
+        glDrawArrays(GL_TRIANGLES, 0, scene.proc_mesh.count);
+        glBindVertexArray(0);
+        shader_bind(scene.shader);
+    } else {
+        for (int i = 0; i < (int)scene.trike_mesh.data.groups.size(); ++i){
+            const ObjGroup&    grp = scene.trike_mesh.data.groups[i];
+            const ObjMaterial* mat = obj_find_material(scene.trike_mesh.data, grp.mat_name);
+            set_vec3(scene.shader, "u_kd", mat ? mat->kd : glm::vec3(0.8f));
+            obj_mesh_draw_group(scene.trike_mesh, i);
+        }
     }
 
     // obstacle solid meshes
@@ -293,6 +322,7 @@ void scene_draw(
 
 void scene_destroy(SceneState& scene){
     obj_mesh_destroy(scene.trike_mesh);
+    mesh_destroy(scene.proc_mesh);
     mesh_destroy(scene.ground);
     mesh_destroy(scene.gizmo);
     shader_destroy(scene.shader);

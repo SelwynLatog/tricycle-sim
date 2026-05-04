@@ -46,6 +46,11 @@ namespace Const{
     // nevermind my stupid ahh can just rotate the model in blender
     inline constexpr float TRIKE_MODEL_YAW_OFFSET = 0.0f; // degrees: OBJ forward vs +X axis
 
+    // mesh moddle toggle
+    // true - use pure coded mesh at tricycle_mesh.cpp
+    // false - use OBJ file at TRIKE_MODEL_PATH
+    // no OBJ means I can determine if directional issues are physics or OBJ related visually
+    inline constexpr bool USE_PROC_MESH = false;
     // tricycle model path
     inline constexpr const char* TRIKE_MODEL_PATH = "../assets/TRAYSIKEL.obj";
 
