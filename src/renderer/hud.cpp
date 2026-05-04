@@ -77,9 +77,8 @@ void hud_draw(const Hud& h, const TrikeState& trike){
     };
 
     // white for labels, yellow for values
-    draw_line(fmt("SPEED %.1f km/h", kmh),              1.0f, 1.0f, 0.2f);
-    draw_line(fmt("POS X:%.1f  Z:%.1f",
-                  trike.position.x, trike.position.z),     1.0f, 1.0f, 1.0f);
+    draw_line(fmt("SPEED %.1f km/h", kmh), 1.0f, 1.0f, 0.2f);
+    draw_line(fmt("POS X:%.1f  Z:%.1f", trike.position.x, trike.position.z), 1.0f, 1.0f, 1.0f);
 
      // compass accounts for model yaw offset so it shows visual facing direction
     float visual_heading= trike.heading + glm::radians(Const::TRIKE_MODEL_YAW_OFFSET);
@@ -89,6 +88,13 @@ void hud_draw(const Hud& h, const TrikeState& trike){
 
     draw_line(fmt("HEADING %s  (%.0f deg)",
                   heading_to_compass(trike.heading), hdg_deg), 1.0f, 1.0f, 1.0f);
-    draw_line(fmt("STEER %s", steer_str.c_str()),        1.0f, 1.0f, 1.0f);
-    draw_line(fmt("STATE %s", state_str),                sr, sg, sb);
+    draw_line(fmt("STEER %s", steer_str.c_str()), 1.0f, 1.0f, 1.0f);
+    draw_line(fmt("STATE %s", state_str), sr, sg, sb);
+
+    // impact readout
+    // fades with timer so it naturally disappears
+    if (trike.impact_timer > 0.0f ){
+        float fade= glm::clamp(trike.impact_timer / 0.35f, 0.0f, 1.0f);
+        draw_line(fmt("IMPACT %.f N", trike.last_impact_force * Const::TRIKE_MASS), 1.0F, 0.2f * fade, 0.2f * fade);
+    }
 }

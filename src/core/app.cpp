@@ -391,6 +391,20 @@ void app_run(App& app){
         glm::vec3 forward = glm::vec3(cosf(fwd_angle), 0.0f, sinf(fwd_angle));
         float lookahead= (app.trike.speed / Const::TRIKE_MAX_SPEED) * Const::CAM_LOOKAHEAD;
         glm::vec3 target= cam_origin + forward * lookahead;
+
+        // cam shake on impact
+        // offset target by a decaying pseudo-rand vec on impact
+        // uses impact_timer as both trigger & decay envelope
+        // sin/cos of timer differentiate frequencies
+        // this hopefully results to cheap deterministic shake
+        if (app.trike.impact_timer > 0.0f){
+            float t = app.trike.impact_timer;
+            float mag = glm::clamp(app.trike.last_impact_force * 0.04f, 0.0f, 0.4f);
+            float decay = t / 0.35f; // 1.0 at impact, 0.0 when timer expires
+            target.x += std::sin(t * 47.0f) * mag * decay;
+            target.y += std::cos(t * 31.0f) * mag * decay;
+            target.z += std::sin(t * 23.0f) * mag * decay;
+        }
         
         glm::mat4 view;
         if (s_free_cam) {
