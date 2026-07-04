@@ -65,6 +65,7 @@ struct EditorRenderer{
         GLint light_color, ambient, diff_intensity;
         GLint reflect_tex, refl_view_proj;
         GLint normal_tex, foam_tex, foam_shore_tex;
+        GLint max_depth;
     } ocean_loc;
 
     // shadow map recevied from scene

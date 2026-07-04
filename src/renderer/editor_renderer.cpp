@@ -355,6 +355,7 @@ void editor_renderer_init(EditorRenderer& er){
         OL.normal_tex = glGetUniformLocation(id, "u_normal_tex");
         OL.foam_tex = glGetUniformLocation(id, "u_foam_tex");
         OL.foam_shore_tex = glGetUniformLocation(id, "u_foam_shore_tex");
+        OL.max_depth = glGetUniformLocation(id, "u_max_depth");
     }
 
     er.ocean_normal_tex = load_water_texture("../assets/shaders/textures/water_normal.png");
@@ -1117,6 +1118,7 @@ void editor_renderer_draw_ocean(EditorRenderer& er, Ocean& ocean, const HeightFi
     glUniform3f(OL.light_color, er.light_color.r, er.light_color.g, er.light_color.b);
     glUniform1f(OL.ambient, er.ambient);
     glUniform1f(OL.diff_intensity, er.diff_intensity);
+    glUniform1f(OL.max_depth, ocean.max_depth);
 
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, er.reflect_tex);
@@ -1184,16 +1186,6 @@ void editor_renderer_build_terrain_surface(EditorRenderer& er, const HeightField
     };
     for (int r = 0; r < hf.rows - 1; r++){
         for (int c = 0; c < hf.cols - 1; c++){
-            // skip quads that fall inside any ocean zone
-            float cx = hf.origin.x + (c + 0.5f) * hf.cell_size;
-            float cz = hf.origin.z + (r + 0.5f) * hf.cell_size;
-            bool in_ocean = ocean.enabled
-                && hf.heights[r * hf.cols + c] < ocean.y_level
-                && hf.heights[(r+1) * hf.cols + c] < ocean.y_level
-                && hf.heights[r * hf.cols + (c+1)] < ocean.y_level
-                && hf.heights[(r+1) * hf.cols + (c+1)] < ocean.y_level;
-            if (in_ocean) continue;
-
             glm::vec3 p00 = get_pos(r, c);
             glm::vec3 p10 = get_pos(r+1, c);
             glm::vec3 p01 = get_pos(r,c+1);

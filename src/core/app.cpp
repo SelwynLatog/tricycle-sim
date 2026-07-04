@@ -420,6 +420,11 @@ void app_run(App& app){
                 scene_draw_sky(app.scene, refl_view, proj);
                 scene_draw(app.scene, app.trike, app.obstacles, app.map.lights, refl_view, proj, false);
                 editor_renderer_draw_roads(app.editor_renderer, app.map.roads, refl_view, proj);
+                editor_renderer_draw_ocean(app.editor_renderer, app.map.ocean, app.map.terrain, refl_view, proj, dt,
+                    app.map.terrain.origin.x,
+                    app.map.terrain.origin.x + app.map.terrain.cols * app.map.terrain.cell_size,
+                    app.map.terrain.origin.z,
+                    app.map.terrain.origin.z + app.map.terrain.rows * app.map.terrain.cell_size);
                 editor_renderer_draw_terrain_surface(app.editor_renderer, app.map.terrain, refl_view, proj, app.map.ocean);
                 editor_renderer_draw_props(app.editor_renderer, app.map, refl_view, proj,
                     {}, app.dynamic_sims, app.map.lights, true);
@@ -452,13 +457,13 @@ void app_run(App& app){
                     app.editor.ghost_pos, app.editor.brush_radius, app.editor.placement_valid);
 
             editor_renderer_draw_roads(app.editor_renderer, app.map.roads, view, proj);
+            editor_renderer_draw_terrain_surface(app.editor_renderer, app.map.terrain, view, proj,
+                app.map.ocean);
             editor_renderer_draw_ocean(app.editor_renderer, app.map.ocean, app.map.terrain, view, proj, dt,
                 app.map.terrain.origin.x,
                 app.map.terrain.origin.x + app.map.terrain.cols * app.map.terrain.cell_size,
                 app.map.terrain.origin.z,
                 app.map.terrain.origin.z + app.map.terrain.rows * app.map.terrain.cell_size);
-            editor_renderer_draw_terrain_surface(app.editor_renderer, app.map.terrain, view, proj,
-                app.map.ocean);
             editor_renderer_draw(app.editor_renderer, app.editor, app.map, view, proj,
                 app.editor.show_hitboxes, app.map.lights);
 
@@ -881,13 +886,13 @@ void app_run(App& app){
         scene_draw(app.scene, app.trike, app.obstacles, frame_lights, view, proj, app.editor.show_hitboxes);
 
         editor_renderer_draw_roads(app.editor_renderer, app.map.roads, view, proj);
+        editor_renderer_draw_terrain_surface(app.editor_renderer, app.map.terrain, view, proj,
+            app.map.ocean);
         editor_renderer_draw_ocean(app.editor_renderer, app.map.ocean, app.map.terrain, view, proj, dt,
             app.map.terrain.origin.x,
             app.map.terrain.origin.x + app.map.terrain.cols * app.map.terrain.cell_size,
             app.map.terrain.origin.z,
             app.map.terrain.origin.z + app.map.terrain.rows * app.map.terrain.cell_size);
-        editor_renderer_draw_terrain_surface(app.editor_renderer, app.map.terrain, view, proj,
-            app.map.ocean);
         editor_renderer_draw_props(app.editor_renderer, app.map, view, proj,
             flash_map, app.dynamic_sims, frame_lights, true);
         scene_draw_driver(app.scene, app.player, app.trike, view, proj,

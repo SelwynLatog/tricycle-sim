@@ -131,7 +131,6 @@ void main() {
     n += sine_wave_normal(normalize(vec2(-1.0, -0.4)), wl3, amp3, 1.4, cos(phase3));
 
     vec3 world  = a_pos + d;
-    world.y    += u_y_level - a_pos.y;
     v_world_pos = world;
     v_normal    = normalize(n);
     gl_Position = u_proj * u_view * vec4(world, 1.0);

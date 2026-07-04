@@ -9,6 +9,7 @@ struct Ocean {
     float time = 0.0f;
     Mesh mesh;
     bool mesh_dirty = true;
+    float max_depth = 1.0f;
 };
 
 struct HeightField;

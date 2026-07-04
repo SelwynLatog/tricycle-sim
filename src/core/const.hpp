@@ -340,7 +340,7 @@ namespace Const{
     inline constexpr float DYN_DEFAULT_FRICTION = 0.75f;
 
     // ocean
-    inline constexpr float OCEAN_Y_LEVEL = -0.4f; // world Y of water surface
+    inline constexpr float OCEAN_Y_LEVEL = -0.6f; // world Y of water surface
     inline constexpr float OCEAN_GRID_SPACING = 0.35f; // metres between wave verts
     inline constexpr float OCEAN_SUBMERGE_MARGIN = 0.15f; // terrain must be this far below ocean y_level to render water
     inline constexpr float OCEAN_WAVE_AMP = 0.12f; // metres, peak displacement
@@ -350,6 +350,7 @@ namespace Const{
     inline constexpr float OCEAN_WAVE_FREQ2 = 0.27f; // second layer spatial freq
     inline constexpr float OCEAN_WAVE_SPEED2 = 1.3f; // second layer time mult
     inline constexpr float OCEAN_SHALLOW_DIST = 12.0f; // metres from shore edge for teal tint
+    inline constexpr float OCEAN_SKIRT_DEPTH = 0.5f; // metres the boundary curtain hangs below surface must clear wave amp + local terrain relief
 
     // rain
     inline constexpr bool RAIN_FORCE_ENABLE = false; // enable to insta trigger rain at build, debug
