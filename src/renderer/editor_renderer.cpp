@@ -1194,24 +1194,35 @@ void editor_renderer_build_terrain_surface(EditorRenderer& er, const HeightField
             int si = cell_surface(r, c);
             auto& bucket = buckets[si];
 
-            float u0 = (float)c, v0 = (float)r;
-            float u1 = (float)(c+1), v1 = (float)(r+1);
+            /*float u0 = (float)c, v0 = (float)r;
+            float u1 = (float)(c+1), v1 = (float)(r+1);*/
 
-            auto push_tri = [&](glm::vec3 a, glm::vec3 b, glm::vec3 cc,
-                                glm::vec2 uva, glm::vec2 uvb, glm::vec2 uvc){
-                glm::vec3 n = glm::normalize(glm::cross(b - a, cc - a));
-                auto push = [&](glm::vec3 p, glm::vec3 n_, glm::vec2 uv){
-                    bucket.insert(bucket.end(), {
-                        p.x, p.y, p.z, n_.x, n_.y, n_.z, uv.x, uv.y
-                    });
-                };
-                push(a, n, uva);
-                push(b, n, uvb);
-                push(cc, n, uvc);
+            float tex_scale = 1.0f / 4.0f; // world units per texture repeat
+            float u0 = p00.x * tex_scale, v0 = p00.z * tex_scale;
+            float u1 = p11.x * tex_scale, v1 = p11.z * tex_scale;
+
+            // smooth per-vertex normals from the heightfield instead of flat
+            // per-triangle normals - flat normals is what caused the visible
+            // diagonal seam down the middle of every quad (each tri lighting
+            // independently), giving that hard "faceted grid" look
+            glm::vec3 n00 = heightfield_normal(hf, p00.x, p00.z);
+            glm::vec3 n10 = heightfield_normal(hf, p10.x, p10.z);
+            glm::vec3 n01 = heightfield_normal(hf, p01.x, p01.z);
+            glm::vec3 n11 = heightfield_normal(hf, p11.x, p11.z);
+
+            auto push = [&](glm::vec3 p, glm::vec3 n_, glm::vec2 uv){
+                bucket.insert(bucket.end(), {
+                    p.x, p.y, p.z, n_.x, n_.y, n_.z, uv.x, uv.y
+                });
             };
 
-            push_tri(p00, p10, p01, {u0,v0}, {u0,v1}, {u1,v0});
-            push_tri(p10, p11, p01, {u0,v1}, {u1,v1}, {u1,v0});
+            push(p00, n00, {u0,v0});
+            push(p10, n10, {u0,v1});
+            push(p01, n01, {u1,v0});
+
+            push(p10, n10, {u0,v1});
+            push(p11, n11, {u1,v1});
+            push(p01, n01, {u1,v0});
         }
     }
 
