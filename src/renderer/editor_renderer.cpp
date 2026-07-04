@@ -78,6 +78,7 @@ static void tex_cache_save(const std::string& path, int w, int h, const unsigned
     f.write((char*)&h, 4);
     f.write((char*)px, w * h * 4);
 }
+static GLuint load_water_texture(const std::string& path);
 
 static GLuint load_texture(EditorRenderer& er, const std::string& path){
     if (path.empty()) return 0;
@@ -115,9 +116,34 @@ static GLuint load_texture(EditorRenderer& er, const std::string& path){
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    if (!from_cache) stbi_image_free(px);
+   if (!from_cache) stbi_image_free(px);
     er.tex_cache[path] = id;
     std::cout << "[tex] " << (from_cache ? "cache hit" : "loaded") << " " << w << "x" << h << " " << path << "\n";
+    return id;
+}
+
+// loads a water-detail texture (normal map / foam) with linear filtering,
+// no disk cache needed since these load once at startup
+static GLuint load_water_texture(const std::string& path){
+    stbi_set_flip_vertically_on_load(1);
+    int w, h, ch;
+    unsigned char* px = stbi_load(path.c_str(), &w, &h, &ch, 4);
+    if (!px){
+        std::cerr << "[water_tex] failed to load: " << path << "\n";
+        return 0;
+    }
+    GLuint id;
+    glGenTextures(1, &id);
+    glBindTexture(GL_TEXTURE_2D, id);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, px);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    stbi_image_free(px);
+    std::cout << "[water_tex] loaded " << w << "x" << h << " " << path << "\n";
     return id;
 }
 
@@ -312,7 +338,7 @@ void editor_renderer_init(EditorRenderer& er){
     cache_obj();
     cache_road();
 
-    {
+     {
         GLuint id = er.ocean_shader.id;
         auto& OL = er.ocean_loc;
         OL.view = glGetUniformLocation(id, "u_view");
@@ -324,8 +350,16 @@ void editor_renderer_init(EditorRenderer& er){
         OL.light_color = glGetUniformLocation(id, "u_light_color");
         OL.ambient = glGetUniformLocation(id, "u_ambient");
         OL.diff_intensity = glGetUniformLocation(id, "u_diff_intensity");
+        OL.reflect_tex = glGetUniformLocation(id, "u_reflect_tex");
+        OL.refl_view_proj = glGetUniformLocation(id, "u_refl_view_proj");
+        OL.normal_tex = glGetUniformLocation(id, "u_normal_tex");
+        OL.foam_tex = glGetUniformLocation(id, "u_foam_tex");
+        OL.foam_shore_tex = glGetUniformLocation(id, "u_foam_shore_tex");
     }
 
+    er.ocean_normal_tex = load_water_texture("../assets/shaders/textures/water_normal.png");
+    er.ocean_foam_tex = load_water_texture("../assets/shaders/textures/foam.png");
+    er.ocean_foam_shore_tex = load_water_texture("../assets/shaders/textures/foam_shore.png");
     er.depth_loc.light_space = glGetUniformLocation(er.depth_shader.id, "u_light_space");
     er.depth_loc.model = glGetUniformLocation(er.depth_shader.id, "u_model");
 
@@ -1056,12 +1090,12 @@ void editor_renderer_draw_roads(EditorRenderer& er, const std::vector<RoadSpline
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void editor_renderer_draw_ocean(EditorRenderer& er, Ocean& ocean,
+void editor_renderer_draw_ocean(EditorRenderer& er, Ocean& ocean, const HeightField& hf,
     const glm::mat4& view, const glm::mat4& proj, float dt,
     float terrain_x_min, float terrain_x_max, float terrain_z_min, float terrain_z_max){
     if (!ocean.enabled) return;
     if (ocean.mesh_dirty)
-        ocean_build_mesh(ocean, terrain_x_min, terrain_x_max, terrain_z_min, terrain_z_max);
+        ocean_build_mesh(ocean, hf, terrain_x_min, terrain_x_max, terrain_z_min, terrain_z_max);
 
     ocean.time += dt;
 
@@ -1083,6 +1117,25 @@ void editor_renderer_draw_ocean(EditorRenderer& er, Ocean& ocean,
     glUniform3f(OL.light_color, er.light_color.r, er.light_color.g, er.light_color.b);
     glUniform1f(OL.ambient, er.ambient);
     glUniform1f(OL.diff_intensity, er.diff_intensity);
+
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, er.reflect_tex);
+    glUniform1i(OL.reflect_tex, 0);
+    glUniformMatrix4fv(OL.refl_view_proj, 1, GL_FALSE, glm::value_ptr(er.reflect_view_proj));
+
+    glActiveTexture(GL_TEXTURE2);
+    glBindTexture(GL_TEXTURE_2D, er.ocean_normal_tex);
+    glUniform1i(OL.normal_tex, 2);
+
+    glActiveTexture(GL_TEXTURE3);
+    glBindTexture(GL_TEXTURE_2D, er.ocean_foam_tex);
+    glUniform1i(OL.foam_tex, 3);
+
+    glActiveTexture(GL_TEXTURE4);
+    glBindTexture(GL_TEXTURE_2D, er.ocean_foam_shore_tex);
+    glUniform1i(OL.foam_shore_tex, 4);
+
+    glActiveTexture(GL_TEXTURE0);
 
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -2058,4 +2111,7 @@ void editor_renderer_destroy(EditorRenderer& er){
     for (auto& [path, id] : er.tex_cache)
         if (id) glDeleteTextures(1, &id);
     er.tex_cache.clear();
+    if (er.ocean_normal_tex) glDeleteTextures(1, &er.ocean_normal_tex);
+    if (er.ocean_foam_tex) glDeleteTextures(1, &er.ocean_foam_tex);
+    if (er.ocean_foam_shore_tex) glDeleteTextures(1, &er.ocean_foam_shore_tex);
 }

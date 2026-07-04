@@ -342,6 +342,7 @@ namespace Const{
     // ocean
     inline constexpr float OCEAN_Y_LEVEL = -0.4f; // world Y of water surface
     inline constexpr float OCEAN_GRID_SPACING = 0.35f; // metres between wave verts
+    inline constexpr float OCEAN_SUBMERGE_MARGIN = 0.15f; // terrain must be this far below ocean y_level to render water
     inline constexpr float OCEAN_WAVE_AMP = 0.12f; // metres, peak displacement
     inline constexpr float OCEAN_WAVE_FREQ = 0.18f; // spatial frequency
     inline constexpr float OCEAN_WAVE_SPEED = 0.9f; // time multiplier

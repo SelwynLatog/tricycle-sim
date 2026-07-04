@@ -1,11 +1,13 @@
 #include "../core/const.hpp"
 #include "ocean.hpp"
+#include "height_field.hpp"
 #include <glad/glad.h>
 #include <fstream>
 #include <iostream>
 #include <cmath>
+#include <unordered_map>
 
-void ocean_build_mesh(Ocean& ocean, float x_min, float x_max, float z_min, float z_max){
+void ocean_build_mesh(Ocean& ocean, const HeightField& hf, float x_min, float x_max, float z_min, float z_max){
     if (ocean.mesh.vao) mesh_destroy(ocean.mesh);
 
     float spacing = Const::OCEAN_GRID_SPACING;
@@ -18,8 +20,16 @@ void ocean_build_mesh(Ocean& ocean, float x_min, float x_max, float z_min, float
     float w = x_max - x_min;
     float d = z_max - z_min;
 
+    // margin below y_level a cell's terrain must clear to count as "real water".
+    // isolated shallow dips (potholes, road seams) that dip just under y_level
+    // but aren't meaningfully below it get treated as dry land instead.
+    float submerge_margin = Const::OCEAN_SUBMERGE_MARGIN; // e.g. 0.15f
+
     std::vector<float> verts;
     verts.reserve(rows * cols * 6);
+    // per-vertex water/land flag so index generation can skip dry quads
+    std::vector<bool> is_wet;
+    is_wet.reserve(rows * cols);
 
     for (int r = 0; r < rows; r++){
         for (int c = 0; c < cols; c++){
@@ -38,6 +48,9 @@ void ocean_build_mesh(Ocean& ocean, float x_min, float x_max, float z_min, float
             float cb = 0.58f + depth * (0.42f - 0.58f);
 
             verts.insert(verts.end(), { x, y, z, cr, cg, cb });
+
+            float terrain_h = heightfield_sample(hf, x, z);
+            is_wet.push_back(terrain_h < y - submerge_margin);
         }
     }
 
@@ -49,10 +62,16 @@ void ocean_build_mesh(Ocean& ocean, float x_min, float x_max, float z_min, float
             unsigned int tr = tl + 1;
             unsigned int bl = tl + cols;
             unsigned int br = bl + 1;
+
+            // only emit this quad if ALL four corners are actually submerged -
+            // this is what stops isolated dry-land dips (roads, potholes) from
+            // getting covered by ocean just because they briefly dip below y_level
+            bool all_wet = is_wet[tl] && is_wet[tr] && is_wet[bl] && is_wet[br];
+            if (!all_wet) continue;
+
             indices.insert(indices.end(), { tl, bl, tr, bl, br, tr });
         }
     }
-
     glGenVertexArrays(1, &ocean.mesh.vao);
     GLuint vbo, ebo;
     glGenBuffers(1, &vbo);

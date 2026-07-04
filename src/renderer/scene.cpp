@@ -244,6 +244,33 @@ void scene_init(SceneState& scene){
     glDrawBuffer(GL_NONE);
     glReadBuffer(GL_NONE);
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+    // planar reflection FBO
+    scene.reflect_w = Const::WINDOW_WIDTH / 2;
+    scene.reflect_h = Const::WINDOW_HEIGHT / 2;
+    glGenFramebuffers(1, &scene.reflect_fbo);
+    glGenTextures(1, &scene.reflect_color_tex);
+    glBindTexture(GL_TEXTURE_2D, scene.reflect_color_tex);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, scene.reflect_w, scene.reflect_h,
+        0, GL_RGB, GL_UNSIGNED_BYTE, nullptr);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+    glGenRenderbuffers(1, &scene.reflect_depth_rbo);
+    glBindRenderbuffer(GL_RENDERBUFFER, scene.reflect_depth_rbo);
+    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, scene.reflect_w, scene.reflect_h);
+
+    glBindFramebuffer(GL_FRAMEBUFFER, scene.reflect_fbo);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, scene.reflect_color_tex, 0);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, scene.reflect_depth_rbo);
+    if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+        std::cerr << "[reflect] framebuffer incomplete\n";
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    glBindRenderbuffer(GL_RENDERBUFFER, 0);
+
     
     // toggle between using proc mesh or a OBJ model
     // I'll use it for debugging purposes
@@ -381,6 +408,16 @@ void scene_shadow_pass(SceneState& scene, const std::vector<Obstacle>& obstacles
     glm::mat4 light_view = glm::lookAt(light_pos, snapped, glm::vec3(0,1,0));
     float s = Const::SHADOW_ORTHO_SIZE;
     scene.light_space_mat = glm::ortho(-s, s, -s, s, Const::SHADOW_NEAR, Const::SHADOW_FAR) * light_view;
+}
+
+glm::mat4 scene_build_reflect_view(const glm::mat4& view, float water_y){
+    // reflect the camera across the y = water_y plane:
+    // shift down to the plane, flip Y, shift back
+    glm::mat4 mirror =
+        glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, water_y, 0.0f)) *
+        glm::scale(glm::mat4(1.0f), glm::vec3(1.0f, -1.0f, 1.0f)) *
+        glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -water_y, 0.0f));
+    return view * mirror;
 }
 
 void scene_trike_shadow_draw(SceneState& scene, const TrikeState& trike){
@@ -980,6 +1017,9 @@ void scene_destroy(SceneState& scene){
     shader_destroy(scene.shadow_shader);
     if (scene.shadow_fbo) glDeleteFramebuffers(1, &scene.shadow_fbo);
     if (scene.shadow_depth_tex) glDeleteTextures(1, &scene.shadow_depth_tex);
+    if (scene.reflect_fbo) glDeleteFramebuffers(1, &scene.reflect_fbo);
+    if (scene.reflect_color_tex) glDeleteTextures(1, &scene.reflect_color_tex);
+    if (scene.reflect_depth_rbo) glDeleteRenderbuffers(1, &scene.reflect_depth_rbo);
     trike_model_destroy(scene.trike_model);
     obj_mesh_destroy(scene.trike_mesh);
     mesh_destroy(scene.proc_mesh);

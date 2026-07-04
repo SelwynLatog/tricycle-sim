@@ -400,8 +400,38 @@ void app_run(App& app){
             app.editor_renderer.fog_color = app.scene.fog_color;
             app.editor_renderer.fog_near = app.scene.fog_near;
             app.editor_renderer.fog_far = app.scene.fog_far;
+    
             // -1 hides pose overlay unless we're actively in pose mode
-            app.editor_renderer.pose_npc_id = (app.editor.mode == MODE_POSE) ? app.editor.pose_npc_id : -1;
+        app.editor_renderer.pose_npc_id = (app.editor.mode == MODE_POSE) ? app.editor.pose_npc_id : -1;
+
+            // PLANAR REFLECTION PASS
+            // same mirrored-world trick as drive mode
+            if (app.map.ocean.enabled){
+                glm::mat4 refl_view = scene_build_reflect_view(view, app.map.ocean.y_level);
+                app.scene.reflect_view_proj = proj * refl_view;
+
+                glBindFramebuffer(GL_FRAMEBUFFER, app.scene.reflect_fbo);
+                glViewport(0, 0, app.scene.reflect_w, app.scene.reflect_h);
+                glClearColor(Const::CLEAR_R, Const::CLEAR_G, Const::CLEAR_B, 1.0f);
+                glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+                glFrontFace(GL_CW);
+
+                scene_draw_sky(app.scene, refl_view, proj);
+                scene_draw(app.scene, app.trike, app.obstacles, app.map.lights, refl_view, proj, false);
+                editor_renderer_draw_roads(app.editor_renderer, app.map.roads, refl_view, proj);
+                editor_renderer_draw_terrain_surface(app.editor_renderer, app.map.terrain, refl_view, proj, app.map.ocean);
+                editor_renderer_draw_props(app.editor_renderer, app.map, refl_view, proj,
+                    {}, app.dynamic_sims, app.map.lights, true);
+
+                glFrontFace(GL_CCW);
+                glBindFramebuffer(GL_FRAMEBUFFER, 0);
+                int fb_w, fb_h;
+                glfwGetFramebufferSize(app.window.handle, &fb_w, &fb_h);
+                glViewport(0, 0, fb_w, fb_h);
+            }
+            app.editor_renderer.reflect_tex = app.scene.reflect_color_tex;
+            app.editor_renderer.reflect_view_proj = app.scene.reflect_view_proj;
 
             // MAIN DRAW
             scene_draw_sky(app.scene, view, proj);
@@ -422,7 +452,7 @@ void app_run(App& app){
                     app.editor.ghost_pos, app.editor.brush_radius, app.editor.placement_valid);
 
             editor_renderer_draw_roads(app.editor_renderer, app.map.roads, view, proj);
-            editor_renderer_draw_ocean(app.editor_renderer, app.map.ocean, view, proj, dt,
+            editor_renderer_draw_ocean(app.editor_renderer, app.map.ocean, app.map.terrain, view, proj, dt,
                 app.map.terrain.origin.x,
                 app.map.terrain.origin.x + app.map.terrain.cols * app.map.terrain.cell_size,
                 app.map.terrain.origin.z,
@@ -795,9 +825,6 @@ void app_run(App& app){
         if (app.player.headlights_on && app.player.mode == PLAYER_DRIVING)
             frame_lights.push_back(trike_headlight(app.trike.position, app.trike.heading));
 
-        scene_draw_sky(app.scene, view, proj);
-        scene_draw(app.scene, app.trike, app.obstacles, frame_lights, view, proj, app.editor.show_hitboxes);
-
         // build flash map from current hit timers
         std::map<int, float> flash_map;
         for (const auto& obs : app.obstacles)
@@ -807,8 +834,54 @@ void app_run(App& app){
             if (sim.hit_timer > 0.0f)
                 flash_map[id] = sim.hit_timer;
 
+        // PLANAR REFLECTION PASS
+        // renders the world mirrored across the water plane into scene.reflect_fbo
+        // ocean.frag samples this texture for nearby prop/trike reflections
+        if (app.map.ocean.enabled){
+            glm::mat4 refl_view = scene_build_reflect_view(view, app.map.ocean.y_level);
+            app.scene.reflect_view_proj = proj * refl_view;
+
+            glBindFramebuffer(GL_FRAMEBUFFER, app.scene.reflect_fbo);
+            glViewport(0, 0, app.scene.reflect_w, app.scene.reflect_h);
+            glClearColor(Const::CLEAR_R, Const::CLEAR_G, Const::CLEAR_B, 1.0f);
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+            // mirroring the view flips triangle winding, cull the opposite face
+            glFrontFace(GL_CW);
+
+            scene_draw_sky(app.scene, refl_view, proj);
+            scene_draw(app.scene, app.trike, app.obstacles, frame_lights, refl_view, proj, false);
+            editor_renderer_draw_roads(app.editor_renderer, app.map.roads, refl_view, proj);
+            editor_renderer_draw_terrain_surface(app.editor_renderer, app.map.terrain, refl_view, proj, app.map.ocean);
+            editor_renderer_draw_props(app.editor_renderer, app.map, refl_view, proj,
+                flash_map, app.dynamic_sims, frame_lights, true);
+            scene_draw_driver(app.scene, app.player, app.trike, refl_view, proj,
+                app.editor_renderer.obj_shader,
+                app.editor.pose_quat, app.editor.pose_offset, app.editor.pose_seat);
+            for (const auto& npc : app.npcs){
+                glm::vec3 d = npc.position - app.trike.position;
+                d.y = 0.0f;
+                float npc_cull_sq = my_settings.npc_cull_dist * my_settings.npc_cull_dist;
+                if (glm::dot(d, d) > npc_cull_sq) continue;
+                auto it = app.npc_model_cache.find(npc.model_path);
+                DriverModel* mdl = (it != app.npc_model_cache.end()) ? &it->second : &app.scene.driver_model;
+                npc_draw(npc, *mdl, app.editor_renderer.obj_shader, refl_view, proj);
+            }
+
+            glFrontFace(GL_CCW);
+            glBindFramebuffer(GL_FRAMEBUFFER, 0);
+            int fb_w, fb_h;
+            glfwGetFramebufferSize(app.window.handle, &fb_w, &fb_h);
+            glViewport(0, 0, fb_w, fb_h);
+        }
+        app.editor_renderer.reflect_tex = app.scene.reflect_color_tex;
+        app.editor_renderer.reflect_view_proj = app.scene.reflect_view_proj;
+
+        scene_draw_sky(app.scene, view, proj);
+        scene_draw(app.scene, app.trike, app.obstacles, frame_lights, view, proj, app.editor.show_hitboxes);
+
         editor_renderer_draw_roads(app.editor_renderer, app.map.roads, view, proj);
-        editor_renderer_draw_ocean(app.editor_renderer, app.map.ocean, view, proj, dt,
+        editor_renderer_draw_ocean(app.editor_renderer, app.map.ocean, app.map.terrain, view, proj, dt,
             app.map.terrain.origin.x,
             app.map.terrain.origin.x + app.map.terrain.cols * app.map.terrain.cell_size,
             app.map.terrain.origin.z,

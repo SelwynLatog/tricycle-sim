@@ -59,15 +59,27 @@ struct EditorRenderer{
 
     // ocean wave shader + time accumulator
     Shader ocean_shader;
-     struct {
+    struct {
         GLint view, proj, time, y_level;
         GLint light_dir, cam_pos;
         GLint light_color, ambient, diff_intensity;
+        GLint reflect_tex, refl_view_proj;
+        GLint normal_tex, foam_tex, foam_shore_tex;
     } ocean_loc;
 
     // shadow map recevied from scene
     GLuint shadow_depth_tex = 0;
     glm::mat4 light_space_mat = glm::mat4(1.0f);
+
+    // planar reflection texture + matrix, pushed from scene.reflect_color_tex /
+    // scene.reflect_view_proj each frame
+    GLuint reflect_tex = 0;
+    glm::mat4 reflect_view_proj = glm::mat4(1.0f);
+
+    // water surface detail textures (tuxalin/water shader ref assets)
+    GLuint ocean_normal_tex = 0;
+    GLuint ocean_foam_tex = 0;
+    GLuint ocean_foam_shore_tex = 0;
 
     // lighting set each frame from scene_update_daytime output
     glm::vec3 sun_dir = glm::vec3(1,2,1);
@@ -172,7 +184,7 @@ void editor_renderer_draw_terrain_surface(EditorRenderer& er, const HeightField&
 
 void editor_renderer_draw_roads(EditorRenderer& er, const std::vector<RoadSpline>& roads, const glm::mat4& view, const glm::mat4& proj);
 
-void editor_renderer_draw_ocean(EditorRenderer& er, Ocean& ocean, const glm::mat4& view, const glm::mat4& proj, float dt, float terrain_x_min, float terrain_x_max, float terrain_z_min, float terrain_z_max);
+void editor_renderer_draw_ocean(EditorRenderer& er, Ocean& ocean, const HeightField& hf, const glm::mat4& view, const glm::mat4& proj, float dt, float terrain_x_min, float terrain_x_max, float terrain_z_min, float terrain_z_max);
 
 void editor_renderer_draw_pose_mode(EditorRenderer& er, const EditorState& editor,
     const DriverModel& driver, const TrikeModel& trike,

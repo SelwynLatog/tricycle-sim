@@ -61,6 +61,17 @@ struct SceneState {
     GLuint shadow_depth_tex = 0;
     glm::mat4 light_space_mat = glm::mat4(1.0f);
 
+    // planar reflection
+    // color tex sampled by assets/shaders/ocean.frag
+    // depth rbo only so depth test works correctly while
+    // rendering the mirrored scene into this FBO
+    GLuint reflect_fbo = 0;
+    GLuint reflect_color_tex = 0;
+    GLuint reflect_depth_rbo = 0;
+    int reflect_w = 0;
+    int reflect_h = 0;
+    glm::mat4 reflect_view_proj = glm::mat4(1.0f);
+
     // cached uniform locations
     struct {
         GLint view, proj, model, normal_mat;
@@ -144,3 +155,8 @@ void scene_draw_driver(
     glm::vec3 pose_seat);
 
 void scene_shadow_resize(SceneState& scene);
+
+// mirrors a view matrix across the horizontal plane y = water_y
+// used to render the world from the "other side" of the water surface for planar reflections
+// reused by both drive mode and editor mode.
+glm::mat4 scene_build_reflect_view(const glm::mat4& view, float water_y);
