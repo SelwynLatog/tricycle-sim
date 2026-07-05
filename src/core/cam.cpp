@@ -1,4 +1,5 @@
 #include "cam.hpp"
+#include "app.hpp"
 #include "const.hpp"
 #include "../physics/trike_state.hpp"
 #include "../physics/player_state.hpp"

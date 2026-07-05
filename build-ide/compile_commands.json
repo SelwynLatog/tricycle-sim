@@ -1,0 +1,242 @@
+[
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/main.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/main.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/main.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/app.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/app.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/app.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/app.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/app_global_keys.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/app_global_keys.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/app_global_keys.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/app_global_keys.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/editor.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/editor.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/editor.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/editor.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/drive.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/drive.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/drive.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/drive.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/dynamics.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/dynamics.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/dynamics.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/dynamics.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/window.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/window.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/window.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/window.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/editor_cam.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/editor_cam.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/editor_cam.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/editor_cam.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/editor_input.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/editor_input.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/editor_input.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/editor_input.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/cam.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/cam.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/cam.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/cam.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/npc_update.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/npc_update.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/settings.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/settings.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/settings.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/settings.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/shader.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/shader.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/shader.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/shader.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/mesh.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/mesh.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/mesh_builder.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/mesh_builder.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/obj_loader.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/obj_loader.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/obj_mesh.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/obj_mesh.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/editor_renderer.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/editor_renderer.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/editor_renderer.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/editor_renderer.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/font.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/font.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/font.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/font.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/hud.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/hud.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/hud.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/hud.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/scene.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/scene.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/tricycle/tricycle_mesh.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/tricycle/tricycle_mesh.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/tricycle/tricycle_model.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/tricycle/tricycle_model.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/tricycle/driver_model.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/tricycle/driver_model.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/tricycle/driver_anim.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/tricycle/driver_anim.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/physics/trike_physics.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/physics/trike_physics.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/physics/trike_aabb.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/physics/trike_aabb.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/physics/collision.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/physics/collision.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/physics/collision.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/physics/collision.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/world/world_map.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/world_map.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/world/world_map.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/world/world_map.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/world/road_builder.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/road_builder.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/world/road_builder.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/world/road_builder.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/world/height_field.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/height_field.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/world/height_field.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/world/height_field.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/world/road_spline.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/road_spline.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/world/road_spline.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/world/road_spline.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/world/ocean.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/ocean.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/world/ocean.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/world/ocean.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/world/npc.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/npc.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/world/npc.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/world/npc.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/animal_anim.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/world/animal_anim.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/ambience_zone.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/world/ambience_zone.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/world/rain.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/rain.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/world/rain.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/world/rain.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/audio/audio.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/audio/audio.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/audio/audio.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/audio/audio.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/gcc.exe  @CMakeFiles/byahengine.dir/includes_C.rsp -g -o CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.obj -c C:/Users/Selwyn/Documents/byahengine/vendor/glad/src/glad.c",
+  "file": "C:/Users/Selwyn/Documents/byahengine/vendor/glad/src/glad.c",
+  "output": "CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/stb_impl.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/stb_impl.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/stb_impl.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/stb_impl.cpp.obj"
+}
+]

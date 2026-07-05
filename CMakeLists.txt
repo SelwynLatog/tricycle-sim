@@ -7,6 +7,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(byahengine
     src/main.cpp
     src/core/app.cpp
+    src/core/app_global_keys.cpp
+    src/core/editor.cpp
+    src/core/drive.cpp
+    src/core/dynamics.cpp
     src/core/window.cpp
     src/core/editor_cam.cpp
     src/core/editor_input.cpp

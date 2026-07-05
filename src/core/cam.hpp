@@ -1,6 +1,7 @@
 #pragma once
-#include "app.hpp"
 #include <glm/glm.hpp>
+
+struct App;
 
 // camera state lives here so app.cpp and cam.cpp share it without globals
 struct CamState {

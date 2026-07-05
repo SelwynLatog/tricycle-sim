@@ -1,5 +1,6 @@
 #pragma once
 #include "window.hpp"
+#include "cam.hpp"
 #include "editor_state.hpp"
 #include "../physics/player_state.hpp"
 #include "../physics/trike_state.hpp"
@@ -19,6 +20,7 @@
 
 struct App {
     Window window;
+    CamState cam;
     TrikeState trike;
     PlayerState player;
     Hud hud;
@@ -58,3 +60,6 @@ void app_shutdown(App& app);
 
 // rebuild app.obstacles from all Static WorldMap objects
 void world_map_to_obstacles(App& app);
+
+// build DynamicSim entries for any DYNAMIC object not already simulated
+void init_dynamic_sims(App& app);
