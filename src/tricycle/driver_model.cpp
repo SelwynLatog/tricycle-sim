@@ -160,6 +160,7 @@ void driver_model_init(DriverModel& d, const char* path, NpcType type) {
     d.model_center = glm::vec3((minX+maxX)*0.5f, minY, (minZ+maxZ)*0.5f);
     d.half_height = model_height * d.model_scale;
     d.model_foot_z = minZ;
+    d.root_pivot = d.model_center;
 
     // slice and upload each bone part
     for (int b = 0; b < BONE_COUNT; b++) {
@@ -259,7 +260,7 @@ void driver_model_draw(
         float lean = glm::clamp(player.speed / 4.0f, 0.0f, 1.0f) * glm::radians(8.0f);
         base = glm::rotate(base, lean, glm::vec3(0,0,1));
     }
-    glm::vec3 center_off = glm::vec3(d.model_center.x, d.model_foot_z, 0.0f);
+    glm::vec3 center_off = d.root_pivot;
     base = base
         * glm::translate(glm::mat4(1.0f), -center_off * d.model_scale)
         * glm::scale(glm::mat4(1.0f), glm::vec3(d.model_scale));
@@ -381,7 +382,7 @@ void driver_model_draw_pose(
     base = glm::rotate(base, glm::radians(90.0f), glm::vec3(0,1,0));
     // OBJ is Z-up
     base = glm::rotate(base, glm::radians(-90.0f), glm::vec3(1,0,0));
-    glm::vec3 center_off = glm::vec3(d.model_center.x, d.model_foot_z, 0.0f);
+    glm::vec3 center_off = d.root_pivot;
     base = base * glm::translate(glm::mat4(1.0f), -center_off * d.model_scale) * glm::scale(glm::mat4(1.0f), glm::vec3(d.model_scale));
 
     // sit pose as baseline
