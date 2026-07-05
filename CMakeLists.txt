@@ -22,7 +22,16 @@ add_executable(byahengine
     src/renderer/mesh_builder.cpp
     src/renderer/obj_loader.cpp
     src/renderer/obj_mesh.cpp
-    src/renderer/editor_renderer.cpp
+    src/renderer/render_textures.cpp
+    src/renderer/render_init.cpp
+    src/renderer/render_helpers.cpp
+    src/renderer/render_props.cpp
+    src/renderer/render_terrain.cpp
+    src/renderer/render_road.cpp
+    src/renderer/render_ocean.cpp
+    src/renderer/render_pose.cpp
+    src/renderer/render_gizmo.cpp
+    src/renderer/render_hud.cpp
     src/renderer/font.cpp
     src/renderer/hud.cpp
     src/renderer/scene.cpp

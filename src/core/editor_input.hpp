@@ -5,6 +5,7 @@
 #include "../world/height_field.hpp"
 #include "../world/ocean.hpp"
 #include "../renderer/editor_renderer.hpp"
+#include "../renderer/render_textures.hpp"
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 

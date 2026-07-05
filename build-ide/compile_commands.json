@@ -103,9 +103,63 @@
 },
 {
   "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
-  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/editor_renderer.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/editor_renderer.cpp",
-  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/editor_renderer.cpp",
-  "output": "CMakeFiles/byahengine.dir/src/renderer/editor_renderer.cpp.obj"
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_textures.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/render_textures.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_init.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/render_init.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_helpers.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/render_helpers.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_props.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/render_props.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_terrain.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/render_terrain.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_road.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/render_road.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_ocean.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/render_ocean.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_pose.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/render_pose.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_gizmo.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/render_gizmo.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_hud.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/render_hud.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj"
 },
 {
   "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",

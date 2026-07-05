@@ -138,60 +138,14 @@ struct EditorRenderer{
     int pose_npc_id = -1; // set during pose mode to suppress world render of that npc
 };
 
-// builds the static grid mesh and compiles the flat shader
-void editor_renderer_init(EditorRenderer& er);
-
-// draws:
-// 1. snap grid on xz plane
-// 2. placed WorldMap objects as colored boxes (color by behavior)
-// 3. ghost box at cursor showing where next obj will land
-// 4. highlight box around the currently selected object
-// 5. prop palette panel (left side)
-// 6. status HUD (bottom left)
-void editor_renderer_draw(EditorRenderer& er, const EditorState& editor, const WorldMap& map,
-    const glm::mat4& view, const glm::mat4& proj, bool show_hitboxes = false,
-    const std::vector<LightSource>& lights = {});
-
-// draws only placed obj meshes
-// called both in editor and drive mode
-// flash_map: world_object_id -> hit_timer value (0 = no flash)
-// dynamic_sims: when present, DYNAMIC objects render from sim position/angles instead of placed transform
-void editor_renderer_draw_props(EditorRenderer& er, const WorldMap& map,
-    const glm::mat4& view, const glm::mat4& proj,
-    const std::map<int,float>& flash_map = {},
-    const std::unordered_map<int, DynamicSim>& dynamic_sims = {},
-    const std::vector<LightSource>& lights = {},
-    bool skip_pedestrians = false);
-
-void editor_renderer_shadow_pass(EditorRenderer& er, const WorldMap& map,
-    const glm::mat4& light_space_mat,
-    const std::unordered_map<int, DynamicSim>& dynamic_sims = {});
-    
-
-void editor_renderer_destroy(EditorRenderer& er);
-
-float editor_get_y_floor_offset(EditorRenderer& er, const std::string& filename);
-
-void editor_renderer_preload_textures(EditorRenderer& er);
-
-void editor_renderer_build_terrain_mesh(EditorRenderer& er, const HeightField& hf);
-
-void editor_renderer_draw_terrain(EditorRenderer& er, const HeightField& hf, const glm::mat4& view, const glm::mat4& proj,
-    const glm::vec3& brush_pos, float brush_radius, bool placement_valid);
-
-void editor_renderer_build_terrain_surface(EditorRenderer& er, const HeightField& hf, const Ocean& ocean);
-void editor_renderer_draw_terrain_surface(EditorRenderer& er, const HeightField& hf,
-    const glm::mat4& view, const glm::mat4& proj, const Ocean& ocean);
-
-void editor_renderer_draw_roads(EditorRenderer& er, const std::vector<RoadSpline>& roads, const glm::mat4& view, const glm::mat4& proj);
-
-void editor_renderer_draw_ocean(EditorRenderer& er, Ocean& ocean, const HeightField& hf, const glm::mat4& view, const glm::mat4& proj, float dt, float terrain_x_min, float terrain_x_max, float terrain_z_min, float terrain_z_max);
-
-void editor_renderer_draw_pose_mode(EditorRenderer& er, const EditorState& editor,
-    const DriverModel& driver, const TrikeModel& trike,
-    const glm::mat4& view, const glm::mat4& proj,
-    const DriverModel* npc_model, const WorldMap& map = WorldMap{});
-
-void editor_renderer_draw_hud(EditorRenderer& er, const EditorState& editor, const WorldMap& map);
-
-void editor_renderer_draw_settings_menu(EditorRenderer& er, const EditorState& editor);
+// function declarations for EditorRenderer live in per-concern headers:
+//   render_textures.hpp  - texture/mesh caching
+//   render_init.hpp      - init + destroy
+//   render_helpers.hpp   - shared draw helpers
+//   render_props.hpp     - prop + shadow pass
+//   render_terrain.hpp   - terrain wireframe + surface
+//   render_road.hpp      - road splines
+//   render_ocean.hpp     - ocean
+//   render_pose.hpp      - pose mode
+//   render_gizmo.hpp     - editor gizmos/overlays
+//   render_hud.hpp       - HUD text + settings menu

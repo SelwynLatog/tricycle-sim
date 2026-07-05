@@ -513,30 +513,6 @@ src/physics/trike_physics.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.s
 .PHONY : src/physics/trike_physics.cpp.s
 
-src/renderer/editor_renderer.obj: src/renderer/editor_renderer.cpp.obj
-.PHONY : src/renderer/editor_renderer.obj
-
-# target to build an object file
-src/renderer/editor_renderer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/editor_renderer.cpp.obj
-.PHONY : src/renderer/editor_renderer.cpp.obj
-
-src/renderer/editor_renderer.i: src/renderer/editor_renderer.cpp.i
-.PHONY : src/renderer/editor_renderer.i
-
-# target to preprocess a source file
-src/renderer/editor_renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/editor_renderer.cpp.i
-.PHONY : src/renderer/editor_renderer.cpp.i
-
-src/renderer/editor_renderer.s: src/renderer/editor_renderer.cpp.s
-.PHONY : src/renderer/editor_renderer.s
-
-# target to generate assembly for a file
-src/renderer/editor_renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/editor_renderer.cpp.s
-.PHONY : src/renderer/editor_renderer.cpp.s
-
 src/renderer/font.obj: src/renderer/font.cpp.obj
 .PHONY : src/renderer/font.obj
 
@@ -680,6 +656,246 @@ src/renderer/obj_mesh.s: src/renderer/obj_mesh.cpp.s
 src/renderer/obj_mesh.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.s
 .PHONY : src/renderer/obj_mesh.cpp.s
+
+src/renderer/render_gizmo.obj: src/renderer/render_gizmo.cpp.obj
+.PHONY : src/renderer/render_gizmo.obj
+
+# target to build an object file
+src/renderer/render_gizmo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj
+.PHONY : src/renderer/render_gizmo.cpp.obj
+
+src/renderer/render_gizmo.i: src/renderer/render_gizmo.cpp.i
+.PHONY : src/renderer/render_gizmo.i
+
+# target to preprocess a source file
+src/renderer/render_gizmo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.i
+.PHONY : src/renderer/render_gizmo.cpp.i
+
+src/renderer/render_gizmo.s: src/renderer/render_gizmo.cpp.s
+.PHONY : src/renderer/render_gizmo.s
+
+# target to generate assembly for a file
+src/renderer/render_gizmo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.s
+.PHONY : src/renderer/render_gizmo.cpp.s
+
+src/renderer/render_helpers.obj: src/renderer/render_helpers.cpp.obj
+.PHONY : src/renderer/render_helpers.obj
+
+# target to build an object file
+src/renderer/render_helpers.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj
+.PHONY : src/renderer/render_helpers.cpp.obj
+
+src/renderer/render_helpers.i: src/renderer/render_helpers.cpp.i
+.PHONY : src/renderer/render_helpers.i
+
+# target to preprocess a source file
+src/renderer/render_helpers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.i
+.PHONY : src/renderer/render_helpers.cpp.i
+
+src/renderer/render_helpers.s: src/renderer/render_helpers.cpp.s
+.PHONY : src/renderer/render_helpers.s
+
+# target to generate assembly for a file
+src/renderer/render_helpers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.s
+.PHONY : src/renderer/render_helpers.cpp.s
+
+src/renderer/render_hud.obj: src/renderer/render_hud.cpp.obj
+.PHONY : src/renderer/render_hud.obj
+
+# target to build an object file
+src/renderer/render_hud.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj
+.PHONY : src/renderer/render_hud.cpp.obj
+
+src/renderer/render_hud.i: src/renderer/render_hud.cpp.i
+.PHONY : src/renderer/render_hud.i
+
+# target to preprocess a source file
+src/renderer/render_hud.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.i
+.PHONY : src/renderer/render_hud.cpp.i
+
+src/renderer/render_hud.s: src/renderer/render_hud.cpp.s
+.PHONY : src/renderer/render_hud.s
+
+# target to generate assembly for a file
+src/renderer/render_hud.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.s
+.PHONY : src/renderer/render_hud.cpp.s
+
+src/renderer/render_init.obj: src/renderer/render_init.cpp.obj
+.PHONY : src/renderer/render_init.obj
+
+# target to build an object file
+src/renderer/render_init.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj
+.PHONY : src/renderer/render_init.cpp.obj
+
+src/renderer/render_init.i: src/renderer/render_init.cpp.i
+.PHONY : src/renderer/render_init.i
+
+# target to preprocess a source file
+src/renderer/render_init.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.i
+.PHONY : src/renderer/render_init.cpp.i
+
+src/renderer/render_init.s: src/renderer/render_init.cpp.s
+.PHONY : src/renderer/render_init.s
+
+# target to generate assembly for a file
+src/renderer/render_init.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.s
+.PHONY : src/renderer/render_init.cpp.s
+
+src/renderer/render_ocean.obj: src/renderer/render_ocean.cpp.obj
+.PHONY : src/renderer/render_ocean.obj
+
+# target to build an object file
+src/renderer/render_ocean.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj
+.PHONY : src/renderer/render_ocean.cpp.obj
+
+src/renderer/render_ocean.i: src/renderer/render_ocean.cpp.i
+.PHONY : src/renderer/render_ocean.i
+
+# target to preprocess a source file
+src/renderer/render_ocean.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.i
+.PHONY : src/renderer/render_ocean.cpp.i
+
+src/renderer/render_ocean.s: src/renderer/render_ocean.cpp.s
+.PHONY : src/renderer/render_ocean.s
+
+# target to generate assembly for a file
+src/renderer/render_ocean.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.s
+.PHONY : src/renderer/render_ocean.cpp.s
+
+src/renderer/render_pose.obj: src/renderer/render_pose.cpp.obj
+.PHONY : src/renderer/render_pose.obj
+
+# target to build an object file
+src/renderer/render_pose.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj
+.PHONY : src/renderer/render_pose.cpp.obj
+
+src/renderer/render_pose.i: src/renderer/render_pose.cpp.i
+.PHONY : src/renderer/render_pose.i
+
+# target to preprocess a source file
+src/renderer/render_pose.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.i
+.PHONY : src/renderer/render_pose.cpp.i
+
+src/renderer/render_pose.s: src/renderer/render_pose.cpp.s
+.PHONY : src/renderer/render_pose.s
+
+# target to generate assembly for a file
+src/renderer/render_pose.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.s
+.PHONY : src/renderer/render_pose.cpp.s
+
+src/renderer/render_props.obj: src/renderer/render_props.cpp.obj
+.PHONY : src/renderer/render_props.obj
+
+# target to build an object file
+src/renderer/render_props.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj
+.PHONY : src/renderer/render_props.cpp.obj
+
+src/renderer/render_props.i: src/renderer/render_props.cpp.i
+.PHONY : src/renderer/render_props.i
+
+# target to preprocess a source file
+src/renderer/render_props.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.i
+.PHONY : src/renderer/render_props.cpp.i
+
+src/renderer/render_props.s: src/renderer/render_props.cpp.s
+.PHONY : src/renderer/render_props.s
+
+# target to generate assembly for a file
+src/renderer/render_props.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.s
+.PHONY : src/renderer/render_props.cpp.s
+
+src/renderer/render_road.obj: src/renderer/render_road.cpp.obj
+.PHONY : src/renderer/render_road.obj
+
+# target to build an object file
+src/renderer/render_road.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj
+.PHONY : src/renderer/render_road.cpp.obj
+
+src/renderer/render_road.i: src/renderer/render_road.cpp.i
+.PHONY : src/renderer/render_road.i
+
+# target to preprocess a source file
+src/renderer/render_road.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.i
+.PHONY : src/renderer/render_road.cpp.i
+
+src/renderer/render_road.s: src/renderer/render_road.cpp.s
+.PHONY : src/renderer/render_road.s
+
+# target to generate assembly for a file
+src/renderer/render_road.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.s
+.PHONY : src/renderer/render_road.cpp.s
+
+src/renderer/render_terrain.obj: src/renderer/render_terrain.cpp.obj
+.PHONY : src/renderer/render_terrain.obj
+
+# target to build an object file
+src/renderer/render_terrain.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj
+.PHONY : src/renderer/render_terrain.cpp.obj
+
+src/renderer/render_terrain.i: src/renderer/render_terrain.cpp.i
+.PHONY : src/renderer/render_terrain.i
+
+# target to preprocess a source file
+src/renderer/render_terrain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.i
+.PHONY : src/renderer/render_terrain.cpp.i
+
+src/renderer/render_terrain.s: src/renderer/render_terrain.cpp.s
+.PHONY : src/renderer/render_terrain.s
+
+# target to generate assembly for a file
+src/renderer/render_terrain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.s
+.PHONY : src/renderer/render_terrain.cpp.s
+
+src/renderer/render_textures.obj: src/renderer/render_textures.cpp.obj
+.PHONY : src/renderer/render_textures.obj
+
+# target to build an object file
+src/renderer/render_textures.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj
+.PHONY : src/renderer/render_textures.cpp.obj
+
+src/renderer/render_textures.i: src/renderer/render_textures.cpp.i
+.PHONY : src/renderer/render_textures.i
+
+# target to preprocess a source file
+src/renderer/render_textures.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.i
+.PHONY : src/renderer/render_textures.cpp.i
+
+src/renderer/render_textures.s: src/renderer/render_textures.cpp.s
+.PHONY : src/renderer/render_textures.s
+
+# target to generate assembly for a file
+src/renderer/render_textures.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.s
+.PHONY : src/renderer/render_textures.cpp.s
 
 src/renderer/scene.obj: src/renderer/scene.cpp.obj
 .PHONY : src/renderer/scene.obj
@@ -1146,9 +1362,6 @@ help:
 	@echo "... src/physics/trike_physics.obj"
 	@echo "... src/physics/trike_physics.i"
 	@echo "... src/physics/trike_physics.s"
-	@echo "... src/renderer/editor_renderer.obj"
-	@echo "... src/renderer/editor_renderer.i"
-	@echo "... src/renderer/editor_renderer.s"
 	@echo "... src/renderer/font.obj"
 	@echo "... src/renderer/font.i"
 	@echo "... src/renderer/font.s"
@@ -1167,6 +1380,36 @@ help:
 	@echo "... src/renderer/obj_mesh.obj"
 	@echo "... src/renderer/obj_mesh.i"
 	@echo "... src/renderer/obj_mesh.s"
+	@echo "... src/renderer/render_gizmo.obj"
+	@echo "... src/renderer/render_gizmo.i"
+	@echo "... src/renderer/render_gizmo.s"
+	@echo "... src/renderer/render_helpers.obj"
+	@echo "... src/renderer/render_helpers.i"
+	@echo "... src/renderer/render_helpers.s"
+	@echo "... src/renderer/render_hud.obj"
+	@echo "... src/renderer/render_hud.i"
+	@echo "... src/renderer/render_hud.s"
+	@echo "... src/renderer/render_init.obj"
+	@echo "... src/renderer/render_init.i"
+	@echo "... src/renderer/render_init.s"
+	@echo "... src/renderer/render_ocean.obj"
+	@echo "... src/renderer/render_ocean.i"
+	@echo "... src/renderer/render_ocean.s"
+	@echo "... src/renderer/render_pose.obj"
+	@echo "... src/renderer/render_pose.i"
+	@echo "... src/renderer/render_pose.s"
+	@echo "... src/renderer/render_props.obj"
+	@echo "... src/renderer/render_props.i"
+	@echo "... src/renderer/render_props.s"
+	@echo "... src/renderer/render_road.obj"
+	@echo "... src/renderer/render_road.i"
+	@echo "... src/renderer/render_road.s"
+	@echo "... src/renderer/render_terrain.obj"
+	@echo "... src/renderer/render_terrain.i"
+	@echo "... src/renderer/render_terrain.s"
+	@echo "... src/renderer/render_textures.obj"
+	@echo "... src/renderer/render_textures.i"
+	@echo "... src/renderer/render_textures.s"
 	@echo "... src/renderer/scene.obj"
 	@echo "... src/renderer/scene.i"
 	@echo "... src/renderer/scene.s"

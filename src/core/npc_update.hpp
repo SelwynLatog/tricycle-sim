@@ -1,6 +1,6 @@
 #pragma once
 #include "app.hpp"
-
+#include "../renderer/render_textures.hpp"
 // load NPC models and spawn NpcState for every PEDESTRIAN world object
 // called on init and on every editor->drive switch when map is dirty
 void init_npcs(App& app);
