@@ -20,6 +20,7 @@ struct DriverModel {
     float model_scale = 1.0f;
     glm::vec3 model_center = glm::vec3(0.0f); // XZ center for alignment
     float model_foot_z = 0.0f;  // min Z in model space, for foot anchoring
+    glm::vec3 root_pivot = glm::vec3(0.0f); // dedicated rotation anchor in model space
     float half_height = 1.0f;
 
     // for npc since we reuse the same model
