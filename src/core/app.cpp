@@ -14,6 +14,7 @@
 #include "editor.hpp"
 #include "drive.hpp"
 #include "editor_input.hpp"
+#include "asset_scan.hpp"
 #include "npc_update.hpp"
 #include "const.hpp"
 #include "settings.hpp"

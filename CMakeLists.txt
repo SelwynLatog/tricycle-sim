@@ -14,6 +14,17 @@ add_executable(byahengine
     src/core/window.cpp
     src/core/editor_cam.cpp
     src/core/editor_input.cpp
+    src/core/asset_scan.cpp
+    src/core/raycast.cpp
+    src/core/input_settings.cpp
+    src/core/input_object.cpp
+    src/core/input_terrain.cpp
+    src/core/input_road.cpp
+    src/core/input_ocean.cpp
+    src/core/input_light.cpp
+    src/core/input_audio.cpp
+    src/core/input_ambience.cpp
+    src/core/input_pose.cpp
     src/core/cam.cpp
     src/core/npc_update.cpp
     src/core/settings.cpp

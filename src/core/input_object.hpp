@@ -2,12 +2,12 @@
 #include "editor_state.hpp"
 #include "../world/world_map.hpp"
 #include "../renderer/editor_renderer.hpp"
-#include "../renderer/render_textures.hpp"
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
-// mode-switch keys (H/M/O/L/Z/I/K) + dispatches per-frame input to the
-// active mode's handler (input_object.cpp, input_terrain.cpp, etc.)
-void editor_input_update(EditorState& editor, WorldMap& map, EditorRenderer& er,
+// default editor mode: tool switching, transform (translate/rotate/scale),
+// placement, deletion, behavior/preset cycling, copy/paste, pedestrian config,
+// prop palette selection, F5 rescan
+void editor_input_object(EditorState& editor, WorldMap& map, EditorRenderer& er,
     GLFWwindow* window, const glm::mat4& view, const glm::mat4& proj,
     int screen_w, int screen_h, float dt, bool& map_dirty);

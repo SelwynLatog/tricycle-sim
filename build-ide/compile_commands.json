@@ -55,6 +55,72 @@
 },
 {
   "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/asset_scan.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/asset_scan.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/raycast.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/raycast.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_settings.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/input_settings.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_object.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/input_object.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_terrain.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/input_terrain.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_road.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/input_road.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_ocean.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/input_ocean.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_light.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/input_light.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_audio.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/input_audio.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_ambience.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/input_ambience.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_pose.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/core/input_pose.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
   "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/core/cam.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/cam.cpp",
   "file": "C:/Users/Selwyn/Documents/byahengine/src/core/cam.cpp",
   "output": "CMakeFiles/byahengine.dir/src/core/cam.cpp.obj"

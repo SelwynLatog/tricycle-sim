@@ -201,6 +201,30 @@ src/core/app_global_keys.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/app_global_keys.cpp.s
 .PHONY : src/core/app_global_keys.cpp.s
 
+src/core/asset_scan.obj: src/core/asset_scan.cpp.obj
+.PHONY : src/core/asset_scan.obj
+
+# target to build an object file
+src/core/asset_scan.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj
+.PHONY : src/core/asset_scan.cpp.obj
+
+src/core/asset_scan.i: src/core/asset_scan.cpp.i
+.PHONY : src/core/asset_scan.i
+
+# target to preprocess a source file
+src/core/asset_scan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.i
+.PHONY : src/core/asset_scan.cpp.i
+
+src/core/asset_scan.s: src/core/asset_scan.cpp.s
+.PHONY : src/core/asset_scan.s
+
+# target to generate assembly for a file
+src/core/asset_scan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.s
+.PHONY : src/core/asset_scan.cpp.s
+
 src/core/cam.obj: src/core/cam.cpp.obj
 .PHONY : src/core/cam.obj
 
@@ -345,6 +369,222 @@ src/core/editor_input.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/editor_input.cpp.s
 .PHONY : src/core/editor_input.cpp.s
 
+src/core/input_ambience.obj: src/core/input_ambience.cpp.obj
+.PHONY : src/core/input_ambience.obj
+
+# target to build an object file
+src/core/input_ambience.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj
+.PHONY : src/core/input_ambience.cpp.obj
+
+src/core/input_ambience.i: src/core/input_ambience.cpp.i
+.PHONY : src/core/input_ambience.i
+
+# target to preprocess a source file
+src/core/input_ambience.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.i
+.PHONY : src/core/input_ambience.cpp.i
+
+src/core/input_ambience.s: src/core/input_ambience.cpp.s
+.PHONY : src/core/input_ambience.s
+
+# target to generate assembly for a file
+src/core/input_ambience.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.s
+.PHONY : src/core/input_ambience.cpp.s
+
+src/core/input_audio.obj: src/core/input_audio.cpp.obj
+.PHONY : src/core/input_audio.obj
+
+# target to build an object file
+src/core/input_audio.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj
+.PHONY : src/core/input_audio.cpp.obj
+
+src/core/input_audio.i: src/core/input_audio.cpp.i
+.PHONY : src/core/input_audio.i
+
+# target to preprocess a source file
+src/core/input_audio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_audio.cpp.i
+.PHONY : src/core/input_audio.cpp.i
+
+src/core/input_audio.s: src/core/input_audio.cpp.s
+.PHONY : src/core/input_audio.s
+
+# target to generate assembly for a file
+src/core/input_audio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_audio.cpp.s
+.PHONY : src/core/input_audio.cpp.s
+
+src/core/input_light.obj: src/core/input_light.cpp.obj
+.PHONY : src/core/input_light.obj
+
+# target to build an object file
+src/core/input_light.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj
+.PHONY : src/core/input_light.cpp.obj
+
+src/core/input_light.i: src/core/input_light.cpp.i
+.PHONY : src/core/input_light.i
+
+# target to preprocess a source file
+src/core/input_light.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_light.cpp.i
+.PHONY : src/core/input_light.cpp.i
+
+src/core/input_light.s: src/core/input_light.cpp.s
+.PHONY : src/core/input_light.s
+
+# target to generate assembly for a file
+src/core/input_light.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_light.cpp.s
+.PHONY : src/core/input_light.cpp.s
+
+src/core/input_object.obj: src/core/input_object.cpp.obj
+.PHONY : src/core/input_object.obj
+
+# target to build an object file
+src/core/input_object.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj
+.PHONY : src/core/input_object.cpp.obj
+
+src/core/input_object.i: src/core/input_object.cpp.i
+.PHONY : src/core/input_object.i
+
+# target to preprocess a source file
+src/core/input_object.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_object.cpp.i
+.PHONY : src/core/input_object.cpp.i
+
+src/core/input_object.s: src/core/input_object.cpp.s
+.PHONY : src/core/input_object.s
+
+# target to generate assembly for a file
+src/core/input_object.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_object.cpp.s
+.PHONY : src/core/input_object.cpp.s
+
+src/core/input_ocean.obj: src/core/input_ocean.cpp.obj
+.PHONY : src/core/input_ocean.obj
+
+# target to build an object file
+src/core/input_ocean.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj
+.PHONY : src/core/input_ocean.cpp.obj
+
+src/core/input_ocean.i: src/core/input_ocean.cpp.i
+.PHONY : src/core/input_ocean.i
+
+# target to preprocess a source file
+src/core/input_ocean.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.i
+.PHONY : src/core/input_ocean.cpp.i
+
+src/core/input_ocean.s: src/core/input_ocean.cpp.s
+.PHONY : src/core/input_ocean.s
+
+# target to generate assembly for a file
+src/core/input_ocean.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.s
+.PHONY : src/core/input_ocean.cpp.s
+
+src/core/input_pose.obj: src/core/input_pose.cpp.obj
+.PHONY : src/core/input_pose.obj
+
+# target to build an object file
+src/core/input_pose.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj
+.PHONY : src/core/input_pose.cpp.obj
+
+src/core/input_pose.i: src/core/input_pose.cpp.i
+.PHONY : src/core/input_pose.i
+
+# target to preprocess a source file
+src/core/input_pose.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_pose.cpp.i
+.PHONY : src/core/input_pose.cpp.i
+
+src/core/input_pose.s: src/core/input_pose.cpp.s
+.PHONY : src/core/input_pose.s
+
+# target to generate assembly for a file
+src/core/input_pose.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_pose.cpp.s
+.PHONY : src/core/input_pose.cpp.s
+
+src/core/input_road.obj: src/core/input_road.cpp.obj
+.PHONY : src/core/input_road.obj
+
+# target to build an object file
+src/core/input_road.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj
+.PHONY : src/core/input_road.cpp.obj
+
+src/core/input_road.i: src/core/input_road.cpp.i
+.PHONY : src/core/input_road.i
+
+# target to preprocess a source file
+src/core/input_road.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_road.cpp.i
+.PHONY : src/core/input_road.cpp.i
+
+src/core/input_road.s: src/core/input_road.cpp.s
+.PHONY : src/core/input_road.s
+
+# target to generate assembly for a file
+src/core/input_road.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_road.cpp.s
+.PHONY : src/core/input_road.cpp.s
+
+src/core/input_settings.obj: src/core/input_settings.cpp.obj
+.PHONY : src/core/input_settings.obj
+
+# target to build an object file
+src/core/input_settings.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj
+.PHONY : src/core/input_settings.cpp.obj
+
+src/core/input_settings.i: src/core/input_settings.cpp.i
+.PHONY : src/core/input_settings.i
+
+# target to preprocess a source file
+src/core/input_settings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_settings.cpp.i
+.PHONY : src/core/input_settings.cpp.i
+
+src/core/input_settings.s: src/core/input_settings.cpp.s
+.PHONY : src/core/input_settings.s
+
+# target to generate assembly for a file
+src/core/input_settings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_settings.cpp.s
+.PHONY : src/core/input_settings.cpp.s
+
+src/core/input_terrain.obj: src/core/input_terrain.cpp.obj
+.PHONY : src/core/input_terrain.obj
+
+# target to build an object file
+src/core/input_terrain.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj
+.PHONY : src/core/input_terrain.cpp.obj
+
+src/core/input_terrain.i: src/core/input_terrain.cpp.i
+.PHONY : src/core/input_terrain.i
+
+# target to preprocess a source file
+src/core/input_terrain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.i
+.PHONY : src/core/input_terrain.cpp.i
+
+src/core/input_terrain.s: src/core/input_terrain.cpp.s
+.PHONY : src/core/input_terrain.s
+
+# target to generate assembly for a file
+src/core/input_terrain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.s
+.PHONY : src/core/input_terrain.cpp.s
+
 src/core/npc_update.obj: src/core/npc_update.cpp.obj
 .PHONY : src/core/npc_update.obj
 
@@ -368,6 +608,30 @@ src/core/npc_update.s: src/core/npc_update.cpp.s
 src/core/npc_update.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/npc_update.cpp.s
 .PHONY : src/core/npc_update.cpp.s
+
+src/core/raycast.obj: src/core/raycast.cpp.obj
+.PHONY : src/core/raycast.obj
+
+# target to build an object file
+src/core/raycast.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj
+.PHONY : src/core/raycast.cpp.obj
+
+src/core/raycast.i: src/core/raycast.cpp.i
+.PHONY : src/core/raycast.i
+
+# target to preprocess a source file
+src/core/raycast.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/raycast.cpp.i
+.PHONY : src/core/raycast.cpp.i
+
+src/core/raycast.s: src/core/raycast.cpp.s
+.PHONY : src/core/raycast.s
+
+# target to generate assembly for a file
+src/core/raycast.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/core/raycast.cpp.s
+.PHONY : src/core/raycast.cpp.s
 
 src/core/settings.obj: src/core/settings.cpp.obj
 .PHONY : src/core/settings.obj
@@ -1323,6 +1587,9 @@ help:
 	@echo "... src/core/app_global_keys.obj"
 	@echo "... src/core/app_global_keys.i"
 	@echo "... src/core/app_global_keys.s"
+	@echo "... src/core/asset_scan.obj"
+	@echo "... src/core/asset_scan.i"
+	@echo "... src/core/asset_scan.s"
 	@echo "... src/core/cam.obj"
 	@echo "... src/core/cam.i"
 	@echo "... src/core/cam.s"
@@ -1341,9 +1608,39 @@ help:
 	@echo "... src/core/editor_input.obj"
 	@echo "... src/core/editor_input.i"
 	@echo "... src/core/editor_input.s"
+	@echo "... src/core/input_ambience.obj"
+	@echo "... src/core/input_ambience.i"
+	@echo "... src/core/input_ambience.s"
+	@echo "... src/core/input_audio.obj"
+	@echo "... src/core/input_audio.i"
+	@echo "... src/core/input_audio.s"
+	@echo "... src/core/input_light.obj"
+	@echo "... src/core/input_light.i"
+	@echo "... src/core/input_light.s"
+	@echo "... src/core/input_object.obj"
+	@echo "... src/core/input_object.i"
+	@echo "... src/core/input_object.s"
+	@echo "... src/core/input_ocean.obj"
+	@echo "... src/core/input_ocean.i"
+	@echo "... src/core/input_ocean.s"
+	@echo "... src/core/input_pose.obj"
+	@echo "... src/core/input_pose.i"
+	@echo "... src/core/input_pose.s"
+	@echo "... src/core/input_road.obj"
+	@echo "... src/core/input_road.i"
+	@echo "... src/core/input_road.s"
+	@echo "... src/core/input_settings.obj"
+	@echo "... src/core/input_settings.i"
+	@echo "... src/core/input_settings.s"
+	@echo "... src/core/input_terrain.obj"
+	@echo "... src/core/input_terrain.i"
+	@echo "... src/core/input_terrain.s"
 	@echo "... src/core/npc_update.obj"
 	@echo "... src/core/npc_update.i"
 	@echo "... src/core/npc_update.s"
+	@echo "... src/core/raycast.obj"
+	@echo "... src/core/raycast.i"
+	@echo "... src/core/raycast.s"
 	@echo "... src/core/settings.obj"
 	@echo "... src/core/settings.i"
 	@echo "... src/core/settings.s"

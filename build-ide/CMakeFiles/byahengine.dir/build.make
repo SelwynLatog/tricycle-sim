@@ -207,11 +207,176 @@ CMakeFiles/byahengine.dir/src/core/editor_input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/editor_input.cpp.s"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/editor_input.cpp -o CMakeFiles/byahengine.dir/src/core/editor_input.cpp.s
 
+CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj: CMakeFiles/byahengine.dir/flags.make
+CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
+CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/asset_scan.cpp
+CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/asset_scan.cpp
+
+CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.i"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Selwyn/Documents/byahengine/src/core/asset_scan.cpp > CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.i
+
+CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.s"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/asset_scan.cpp -o CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.s
+
+CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj: CMakeFiles/byahengine.dir/flags.make
+CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
+CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/raycast.cpp
+CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/raycast.cpp
+
+CMakeFiles/byahengine.dir/src/core/raycast.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/byahengine.dir/src/core/raycast.cpp.i"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Selwyn/Documents/byahengine/src/core/raycast.cpp > CMakeFiles/byahengine.dir/src/core/raycast.cpp.i
+
+CMakeFiles/byahengine.dir/src/core/raycast.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/raycast.cpp.s"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/raycast.cpp -o CMakeFiles/byahengine.dir/src/core/raycast.cpp.s
+
+CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj: CMakeFiles/byahengine.dir/flags.make
+CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
+CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/input_settings.cpp
+CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_settings.cpp
+
+CMakeFiles/byahengine.dir/src/core/input_settings.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/byahengine.dir/src/core/input_settings.cpp.i"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Selwyn/Documents/byahengine/src/core/input_settings.cpp > CMakeFiles/byahengine.dir/src/core/input_settings.cpp.i
+
+CMakeFiles/byahengine.dir/src/core/input_settings.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/input_settings.cpp.s"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/input_settings.cpp -o CMakeFiles/byahengine.dir/src/core/input_settings.cpp.s
+
+CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj: CMakeFiles/byahengine.dir/flags.make
+CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
+CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/input_object.cpp
+CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_object.cpp
+
+CMakeFiles/byahengine.dir/src/core/input_object.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/byahengine.dir/src/core/input_object.cpp.i"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Selwyn/Documents/byahengine/src/core/input_object.cpp > CMakeFiles/byahengine.dir/src/core/input_object.cpp.i
+
+CMakeFiles/byahengine.dir/src/core/input_object.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/input_object.cpp.s"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/input_object.cpp -o CMakeFiles/byahengine.dir/src/core/input_object.cpp.s
+
+CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj: CMakeFiles/byahengine.dir/flags.make
+CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
+CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/input_terrain.cpp
+CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_terrain.cpp
+
+CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.i"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Selwyn/Documents/byahengine/src/core/input_terrain.cpp > CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.i
+
+CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.s"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/input_terrain.cpp -o CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.s
+
+CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj: CMakeFiles/byahengine.dir/flags.make
+CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
+CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/input_road.cpp
+CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_road.cpp
+
+CMakeFiles/byahengine.dir/src/core/input_road.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/byahengine.dir/src/core/input_road.cpp.i"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Selwyn/Documents/byahengine/src/core/input_road.cpp > CMakeFiles/byahengine.dir/src/core/input_road.cpp.i
+
+CMakeFiles/byahengine.dir/src/core/input_road.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/input_road.cpp.s"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/input_road.cpp -o CMakeFiles/byahengine.dir/src/core/input_road.cpp.s
+
+CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj: CMakeFiles/byahengine.dir/flags.make
+CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
+CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/input_ocean.cpp
+CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_ocean.cpp
+
+CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.i"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Selwyn/Documents/byahengine/src/core/input_ocean.cpp > CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.i
+
+CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.s"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/input_ocean.cpp -o CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.s
+
+CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj: CMakeFiles/byahengine.dir/flags.make
+CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
+CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/input_light.cpp
+CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_light.cpp
+
+CMakeFiles/byahengine.dir/src/core/input_light.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/byahengine.dir/src/core/input_light.cpp.i"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Selwyn/Documents/byahengine/src/core/input_light.cpp > CMakeFiles/byahengine.dir/src/core/input_light.cpp.i
+
+CMakeFiles/byahengine.dir/src/core/input_light.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/input_light.cpp.s"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/input_light.cpp -o CMakeFiles/byahengine.dir/src/core/input_light.cpp.s
+
+CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj: CMakeFiles/byahengine.dir/flags.make
+CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
+CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/input_audio.cpp
+CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_audio.cpp
+
+CMakeFiles/byahengine.dir/src/core/input_audio.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/byahengine.dir/src/core/input_audio.cpp.i"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Selwyn/Documents/byahengine/src/core/input_audio.cpp > CMakeFiles/byahengine.dir/src/core/input_audio.cpp.i
+
+CMakeFiles/byahengine.dir/src/core/input_audio.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/input_audio.cpp.s"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/input_audio.cpp -o CMakeFiles/byahengine.dir/src/core/input_audio.cpp.s
+
+CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj: CMakeFiles/byahengine.dir/flags.make
+CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
+CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/input_ambience.cpp
+CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_ambience.cpp
+
+CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.i"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Selwyn/Documents/byahengine/src/core/input_ambience.cpp > CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.i
+
+CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.s"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/input_ambience.cpp -o CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.s
+
+CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj: CMakeFiles/byahengine.dir/flags.make
+CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
+CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/input_pose.cpp
+CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/input_pose.cpp
+
+CMakeFiles/byahengine.dir/src/core/input_pose.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/byahengine.dir/src/core/input_pose.cpp.i"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Selwyn/Documents/byahengine/src/core/input_pose.cpp > CMakeFiles/byahengine.dir/src/core/input_pose.cpp.i
+
+CMakeFiles/byahengine.dir/src/core/input_pose.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/byahengine.dir/src/core/input_pose.cpp.s"
+	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Selwyn/Documents/byahengine/src/core/input_pose.cpp -o CMakeFiles/byahengine.dir/src/core/input_pose.cpp.s
+
 CMakeFiles/byahengine.dir/src/core/cam.cpp.obj: CMakeFiles/byahengine.dir/flags.make
 CMakeFiles/byahengine.dir/src/core/cam.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/core/cam.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/cam.cpp
 CMakeFiles/byahengine.dir/src/core/cam.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/byahengine.dir/src/core/cam.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/byahengine.dir/src/core/cam.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/cam.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/cam.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/cam.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/cam.cpp
 
 CMakeFiles/byahengine.dir/src/core/cam.cpp.i: cmake_force
@@ -226,7 +391,7 @@ CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj: CMakeFiles/byahengine.dir
 CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/npc_update.cpp
 CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/npc_update.cpp
 
 CMakeFiles/byahengine.dir/src/core/npc_update.cpp.i: cmake_force
@@ -241,7 +406,7 @@ CMakeFiles/byahengine.dir/src/core/settings.cpp.obj: CMakeFiles/byahengine.dir/f
 CMakeFiles/byahengine.dir/src/core/settings.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/core/settings.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/core/settings.cpp
 CMakeFiles/byahengine.dir/src/core/settings.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/byahengine.dir/src/core/settings.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/byahengine.dir/src/core/settings.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/core/settings.cpp.obj -MF CMakeFiles/byahengine.dir/src/core/settings.cpp.obj.d -o CMakeFiles/byahengine.dir/src/core/settings.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/core/settings.cpp
 
 CMakeFiles/byahengine.dir/src/core/settings.cpp.i: cmake_force
@@ -256,7 +421,7 @@ CMakeFiles/byahengine.dir/src/renderer/shader.cpp.obj: CMakeFiles/byahengine.dir
 CMakeFiles/byahengine.dir/src/renderer/shader.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/shader.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/shader.cpp
 CMakeFiles/byahengine.dir/src/renderer/shader.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/shader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/shader.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/shader.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/shader.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/shader.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/shader.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/shader.cpp.i: cmake_force
@@ -271,7 +436,7 @@ CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.obj: CMakeFiles/byahengine.dir/f
 CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/mesh.cpp
 CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/mesh.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/mesh.cpp.i: cmake_force
@@ -286,7 +451,7 @@ CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.obj: CMakeFiles/byahengi
 CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/mesh_builder.cpp
 CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/mesh_builder.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/mesh_builder.cpp.i: cmake_force
@@ -301,7 +466,7 @@ CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.obj: CMakeFiles/byahengine
 CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/obj_loader.cpp
 CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/obj_loader.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/obj_loader.cpp.i: cmake_force
@@ -316,7 +481,7 @@ CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.obj: CMakeFiles/byahengine.d
 CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/obj_mesh.cpp
 CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/obj_mesh.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/obj_mesh.cpp.i: cmake_force
@@ -331,7 +496,7 @@ CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj: CMakeFiles/byahe
 CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/render_textures.cpp
 CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_textures.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.i: cmake_force
@@ -346,7 +511,7 @@ CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj: CMakeFiles/byahengin
 CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/render_init.cpp
 CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_init.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/render_init.cpp.i: cmake_force
@@ -361,7 +526,7 @@ CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj: CMakeFiles/byahen
 CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/render_helpers.cpp
 CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_helpers.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/render_helpers.cpp.i: cmake_force
@@ -376,7 +541,7 @@ CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj: CMakeFiles/byahengi
 CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/render_props.cpp
 CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_props.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/render_props.cpp.i: cmake_force
@@ -391,7 +556,7 @@ CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj: CMakeFiles/byahen
 CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/render_terrain.cpp
 CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_terrain.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/render_terrain.cpp.i: cmake_force
@@ -406,7 +571,7 @@ CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj: CMakeFiles/byahengin
 CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/render_road.cpp
 CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_road.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/render_road.cpp.i: cmake_force
@@ -421,7 +586,7 @@ CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj: CMakeFiles/byahengi
 CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/render_ocean.cpp
 CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_ocean.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/render_ocean.cpp.i: cmake_force
@@ -436,7 +601,7 @@ CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj: CMakeFiles/byahengin
 CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/render_pose.cpp
 CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_pose.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/render_pose.cpp.i: cmake_force
@@ -451,7 +616,7 @@ CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj: CMakeFiles/byahengi
 CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/render_gizmo.cpp
 CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_gizmo.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/render_gizmo.cpp.i: cmake_force
@@ -466,7 +631,7 @@ CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj: CMakeFiles/byahengine
 CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/render_hud.cpp
 CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/render_hud.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/render_hud.cpp.i: cmake_force
@@ -481,7 +646,7 @@ CMakeFiles/byahengine.dir/src/renderer/font.cpp.obj: CMakeFiles/byahengine.dir/f
 CMakeFiles/byahengine.dir/src/renderer/font.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/font.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/font.cpp
 CMakeFiles/byahengine.dir/src/renderer/font.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/font.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/font.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/font.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/font.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/font.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/font.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/font.cpp.i: cmake_force
@@ -496,7 +661,7 @@ CMakeFiles/byahengine.dir/src/renderer/hud.cpp.obj: CMakeFiles/byahengine.dir/fl
 CMakeFiles/byahengine.dir/src/renderer/hud.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/hud.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/hud.cpp
 CMakeFiles/byahengine.dir/src/renderer/hud.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/hud.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/hud.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/hud.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/hud.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/hud.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/hud.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/hud.cpp.i: cmake_force
@@ -511,7 +676,7 @@ CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj: CMakeFiles/byahengine.dir/
 CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/renderer/scene.cpp
 CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj -MF CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj.d -o CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/scene.cpp
 
 CMakeFiles/byahengine.dir/src/renderer/scene.cpp.i: cmake_force
@@ -526,7 +691,7 @@ CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.obj: CMakeFiles/byaheng
 CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/tricycle/tricycle_mesh.cpp
 CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.obj -MF CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.obj.d -o CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/tricycle/tricycle_mesh.cpp
 
 CMakeFiles/byahengine.dir/src/tricycle/tricycle_mesh.cpp.i: cmake_force
@@ -541,7 +706,7 @@ CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.obj: CMakeFiles/byahen
 CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/tricycle/tricycle_model.cpp
 CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.obj -MF CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.obj.d -o CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/tricycle/tricycle_model.cpp
 
 CMakeFiles/byahengine.dir/src/tricycle/tricycle_model.cpp.i: cmake_force
@@ -556,7 +721,7 @@ CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.obj: CMakeFiles/byahengi
 CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/tricycle/driver_model.cpp
 CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.obj -MF CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.obj.d -o CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/tricycle/driver_model.cpp
 
 CMakeFiles/byahengine.dir/src/tricycle/driver_model.cpp.i: cmake_force
@@ -571,7 +736,7 @@ CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.obj: CMakeFiles/byahengin
 CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/tricycle/driver_anim.cpp
 CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.obj -MF CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.obj.d -o CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/tricycle/driver_anim.cpp
 
 CMakeFiles/byahengine.dir/src/tricycle/driver_anim.cpp.i: cmake_force
@@ -586,7 +751,7 @@ CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.obj: CMakeFiles/byahengi
 CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/physics/trike_physics.cpp
 CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.obj -MF CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.obj.d -o CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/physics/trike_physics.cpp
 
 CMakeFiles/byahengine.dir/src/physics/trike_physics.cpp.i: cmake_force
@@ -601,7 +766,7 @@ CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.obj: CMakeFiles/byahengine.
 CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/physics/trike_aabb.cpp
 CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.obj -MF CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.obj.d -o CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/physics/trike_aabb.cpp
 
 CMakeFiles/byahengine.dir/src/physics/trike_aabb.cpp.i: cmake_force
@@ -616,7 +781,7 @@ CMakeFiles/byahengine.dir/src/physics/collision.cpp.obj: CMakeFiles/byahengine.d
 CMakeFiles/byahengine.dir/src/physics/collision.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/physics/collision.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/physics/collision.cpp
 CMakeFiles/byahengine.dir/src/physics/collision.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/byahengine.dir/src/physics/collision.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/byahengine.dir/src/physics/collision.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/physics/collision.cpp.obj -MF CMakeFiles/byahengine.dir/src/physics/collision.cpp.obj.d -o CMakeFiles/byahengine.dir/src/physics/collision.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/physics/collision.cpp
 
 CMakeFiles/byahengine.dir/src/physics/collision.cpp.i: cmake_force
@@ -631,7 +796,7 @@ CMakeFiles/byahengine.dir/src/world/world_map.cpp.obj: CMakeFiles/byahengine.dir
 CMakeFiles/byahengine.dir/src/world/world_map.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/world/world_map.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/world/world_map.cpp
 CMakeFiles/byahengine.dir/src/world/world_map.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/byahengine.dir/src/world/world_map.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/byahengine.dir/src/world/world_map.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/world/world_map.cpp.obj -MF CMakeFiles/byahengine.dir/src/world/world_map.cpp.obj.d -o CMakeFiles/byahengine.dir/src/world/world_map.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/world_map.cpp
 
 CMakeFiles/byahengine.dir/src/world/world_map.cpp.i: cmake_force
@@ -646,7 +811,7 @@ CMakeFiles/byahengine.dir/src/world/road_builder.cpp.obj: CMakeFiles/byahengine.
 CMakeFiles/byahengine.dir/src/world/road_builder.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/world/road_builder.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/world/road_builder.cpp
 CMakeFiles/byahengine.dir/src/world/road_builder.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/byahengine.dir/src/world/road_builder.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/byahengine.dir/src/world/road_builder.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/world/road_builder.cpp.obj -MF CMakeFiles/byahengine.dir/src/world/road_builder.cpp.obj.d -o CMakeFiles/byahengine.dir/src/world/road_builder.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/road_builder.cpp
 
 CMakeFiles/byahengine.dir/src/world/road_builder.cpp.i: cmake_force
@@ -661,7 +826,7 @@ CMakeFiles/byahengine.dir/src/world/height_field.cpp.obj: CMakeFiles/byahengine.
 CMakeFiles/byahengine.dir/src/world/height_field.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/world/height_field.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/world/height_field.cpp
 CMakeFiles/byahengine.dir/src/world/height_field.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/byahengine.dir/src/world/height_field.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/byahengine.dir/src/world/height_field.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/world/height_field.cpp.obj -MF CMakeFiles/byahengine.dir/src/world/height_field.cpp.obj.d -o CMakeFiles/byahengine.dir/src/world/height_field.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/height_field.cpp
 
 CMakeFiles/byahengine.dir/src/world/height_field.cpp.i: cmake_force
@@ -676,7 +841,7 @@ CMakeFiles/byahengine.dir/src/world/road_spline.cpp.obj: CMakeFiles/byahengine.d
 CMakeFiles/byahengine.dir/src/world/road_spline.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/world/road_spline.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/world/road_spline.cpp
 CMakeFiles/byahengine.dir/src/world/road_spline.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/byahengine.dir/src/world/road_spline.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/byahengine.dir/src/world/road_spline.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/world/road_spline.cpp.obj -MF CMakeFiles/byahengine.dir/src/world/road_spline.cpp.obj.d -o CMakeFiles/byahengine.dir/src/world/road_spline.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/road_spline.cpp
 
 CMakeFiles/byahengine.dir/src/world/road_spline.cpp.i: cmake_force
@@ -691,7 +856,7 @@ CMakeFiles/byahengine.dir/src/world/ocean.cpp.obj: CMakeFiles/byahengine.dir/fla
 CMakeFiles/byahengine.dir/src/world/ocean.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/world/ocean.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/world/ocean.cpp
 CMakeFiles/byahengine.dir/src/world/ocean.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/byahengine.dir/src/world/ocean.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/byahengine.dir/src/world/ocean.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/world/ocean.cpp.obj -MF CMakeFiles/byahengine.dir/src/world/ocean.cpp.obj.d -o CMakeFiles/byahengine.dir/src/world/ocean.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/ocean.cpp
 
 CMakeFiles/byahengine.dir/src/world/ocean.cpp.i: cmake_force
@@ -706,7 +871,7 @@ CMakeFiles/byahengine.dir/src/world/npc.cpp.obj: CMakeFiles/byahengine.dir/flags
 CMakeFiles/byahengine.dir/src/world/npc.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/world/npc.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/world/npc.cpp
 CMakeFiles/byahengine.dir/src/world/npc.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/byahengine.dir/src/world/npc.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/byahengine.dir/src/world/npc.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/world/npc.cpp.obj -MF CMakeFiles/byahengine.dir/src/world/npc.cpp.obj.d -o CMakeFiles/byahengine.dir/src/world/npc.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/npc.cpp
 
 CMakeFiles/byahengine.dir/src/world/npc.cpp.i: cmake_force
@@ -721,7 +886,7 @@ CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.obj: CMakeFiles/byahengine.d
 CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/world/animal_anim.cpp
 CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.obj -MF CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.obj.d -o CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/animal_anim.cpp
 
 CMakeFiles/byahengine.dir/src/world/animal_anim.cpp.i: cmake_force
@@ -736,7 +901,7 @@ CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.obj: CMakeFiles/byahengine
 CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/world/ambience_zone.cpp
 CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.obj -MF CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.obj.d -o CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/ambience_zone.cpp
 
 CMakeFiles/byahengine.dir/src/world/ambience_zone.cpp.i: cmake_force
@@ -751,7 +916,7 @@ CMakeFiles/byahengine.dir/src/world/rain.cpp.obj: CMakeFiles/byahengine.dir/flag
 CMakeFiles/byahengine.dir/src/world/rain.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/world/rain.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/world/rain.cpp
 CMakeFiles/byahengine.dir/src/world/rain.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/byahengine.dir/src/world/rain.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/byahengine.dir/src/world/rain.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/world/rain.cpp.obj -MF CMakeFiles/byahengine.dir/src/world/rain.cpp.obj.d -o CMakeFiles/byahengine.dir/src/world/rain.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/world/rain.cpp
 
 CMakeFiles/byahengine.dir/src/world/rain.cpp.i: cmake_force
@@ -766,7 +931,7 @@ CMakeFiles/byahengine.dir/src/audio/audio.cpp.obj: CMakeFiles/byahengine.dir/fla
 CMakeFiles/byahengine.dir/src/audio/audio.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/audio/audio.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/audio/audio.cpp
 CMakeFiles/byahengine.dir/src/audio/audio.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/byahengine.dir/src/audio/audio.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/byahengine.dir/src/audio/audio.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/audio/audio.cpp.obj -MF CMakeFiles/byahengine.dir/src/audio/audio.cpp.obj.d -o CMakeFiles/byahengine.dir/src/audio/audio.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/audio/audio.cpp
 
 CMakeFiles/byahengine.dir/src/audio/audio.cpp.i: cmake_force
@@ -781,7 +946,7 @@ CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.obj: CMakeFiles/byahengine.dir/
 CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.obj: CMakeFiles/byahengine.dir/includes_C.rsp
 CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.obj: C:/Users/Selwyn/Documents/byahengine/vendor/glad/src/glad.c
 CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.obj"
 	C:/msys64/ucrt64/bin/gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.obj -MF CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.obj.d -o CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.obj -c C:/Users/Selwyn/Documents/byahengine/vendor/glad/src/glad.c
 
 CMakeFiles/byahengine.dir/vendor/glad/src/glad.c.i: cmake_force
@@ -796,7 +961,7 @@ CMakeFiles/byahengine.dir/src/stb_impl.cpp.obj: CMakeFiles/byahengine.dir/flags.
 CMakeFiles/byahengine.dir/src/stb_impl.cpp.obj: CMakeFiles/byahengine.dir/includes_CXX.rsp
 CMakeFiles/byahengine.dir/src/stb_impl.cpp.obj: C:/Users/Selwyn/Documents/byahengine/src/stb_impl.cpp
 CMakeFiles/byahengine.dir/src/stb_impl.cpp.obj: CMakeFiles/byahengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/byahengine.dir/src/stb_impl.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/byahengine.dir/src/stb_impl.cpp.obj"
 	C:/msys64/ucrt64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/byahengine.dir/src/stb_impl.cpp.obj -MF CMakeFiles/byahengine.dir/src/stb_impl.cpp.obj.d -o CMakeFiles/byahengine.dir/src/stb_impl.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/stb_impl.cpp
 
 CMakeFiles/byahengine.dir/src/stb_impl.cpp.i: cmake_force
@@ -818,6 +983,17 @@ byahengine_OBJECTS = \
 "CMakeFiles/byahengine.dir/src/core/window.cpp.obj" \
 "CMakeFiles/byahengine.dir/src/core/editor_cam.cpp.obj" \
 "CMakeFiles/byahengine.dir/src/core/editor_input.cpp.obj" \
+"CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj" \
+"CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj" \
+"CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj" \
+"CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj" \
+"CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj" \
+"CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj" \
+"CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj" \
+"CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj" \
+"CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj" \
+"CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj" \
+"CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj" \
 "CMakeFiles/byahengine.dir/src/core/cam.cpp.obj" \
 "CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj" \
 "CMakeFiles/byahengine.dir/src/core/settings.cpp.obj" \
@@ -871,6 +1047,17 @@ byahengine.exe: CMakeFiles/byahengine.dir/src/core/dynamics.cpp.obj
 byahengine.exe: CMakeFiles/byahengine.dir/src/core/window.cpp.obj
 byahengine.exe: CMakeFiles/byahengine.dir/src/core/editor_cam.cpp.obj
 byahengine.exe: CMakeFiles/byahengine.dir/src/core/editor_input.cpp.obj
+byahengine.exe: CMakeFiles/byahengine.dir/src/core/asset_scan.cpp.obj
+byahengine.exe: CMakeFiles/byahengine.dir/src/core/raycast.cpp.obj
+byahengine.exe: CMakeFiles/byahengine.dir/src/core/input_settings.cpp.obj
+byahengine.exe: CMakeFiles/byahengine.dir/src/core/input_object.cpp.obj
+byahengine.exe: CMakeFiles/byahengine.dir/src/core/input_terrain.cpp.obj
+byahengine.exe: CMakeFiles/byahengine.dir/src/core/input_road.cpp.obj
+byahengine.exe: CMakeFiles/byahengine.dir/src/core/input_ocean.cpp.obj
+byahengine.exe: CMakeFiles/byahengine.dir/src/core/input_light.cpp.obj
+byahengine.exe: CMakeFiles/byahengine.dir/src/core/input_audio.cpp.obj
+byahengine.exe: CMakeFiles/byahengine.dir/src/core/input_ambience.cpp.obj
+byahengine.exe: CMakeFiles/byahengine.dir/src/core/input_pose.cpp.obj
 byahengine.exe: CMakeFiles/byahengine.dir/src/core/cam.cpp.obj
 byahengine.exe: CMakeFiles/byahengine.dir/src/core/npc_update.cpp.obj
 byahengine.exe: CMakeFiles/byahengine.dir/src/core/settings.cpp.obj
@@ -915,7 +1102,7 @@ byahengine.exe: CMakeFiles/byahengine.dir/build.make
 byahengine.exe: C:/Users/Selwyn/Documents/byahengine/vendor/glfw/lib/libglfw3.a
 byahengine.exe: CMakeFiles/byahengine.dir/linkLibs.rsp
 byahengine.exe: CMakeFiles/byahengine.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Linking CXX executable byahengine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Linking CXX executable byahengine.exe"
 	"C:/Program Files/CMake/bin/cmake.exe" -E rm -f CMakeFiles/byahengine.dir/objects.a
 	C:/msys64/ucrt64/bin/ar.exe qc CMakeFiles/byahengine.dir/objects.a @CMakeFiles/byahengine.dir/objects1.rsp
 	C:/msys64/ucrt64/bin/g++.exe -g -Wl,--whole-archive CMakeFiles/byahengine.dir/objects.a -Wl,--no-whole-archive -o byahengine.exe -Wl,--out-implib,libbyahengine.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/byahengine.dir/linkLibs.rsp
