@@ -431,6 +431,6 @@ License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
 Texture: "assets/shaders/textures/"
 Author: <https://github.com/tuxalin>
 Source: <https://github.com/tuxalin/water-shader/tree/master/textures>
-Lincense: MIT
+License: MIT
 
 -----------------------------------------------------------------------------------------------------------
