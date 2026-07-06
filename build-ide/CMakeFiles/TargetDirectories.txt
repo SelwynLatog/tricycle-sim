@@ -1,3 +1,0 @@
-C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles/byahengine.dir
-C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles/edit_cache.dir
-C:/Users/Selwyn/Documents/byahengine/build-ide/CMakeFiles/rebuild_cache.dir
