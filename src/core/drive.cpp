@@ -1,5 +1,8 @@
 #include "drive.hpp"
 #include "const.hpp"
+#include "../renderer/scene_daytime_weather.hpp"
+#include "../renderer/scene_shadow.hpp"
+#include "../renderer/scene_draw.hpp"
 #include "settings.hpp"
 #include "../physics/trike_aabb.hpp"
 #include "../physics/collision.hpp"

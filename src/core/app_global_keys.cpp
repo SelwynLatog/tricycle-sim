@@ -1,5 +1,6 @@
 #include "app_global_keys.hpp"
 #include "editor_cam.hpp"
+#include "../renderer/scene_init.hpp"
 #include "const.hpp"
 #include "settings.hpp"
 #include "map_manager.hpp"

@@ -1,6 +1,7 @@
 #include "../renderer/editor_renderer.hpp"
 #include "../renderer/render_init.hpp"
 #include "../renderer/render_textures.hpp"
+#include "../renderer/scene_init.hpp"
 #include "../world/world_map.hpp"
 #include "../world/road_builder.hpp"
 #include "../world/ambience_zone.hpp"

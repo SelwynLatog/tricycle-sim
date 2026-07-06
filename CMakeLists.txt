@@ -45,7 +45,11 @@ add_executable(byahengine
     src/renderer/render_hud.cpp
     src/renderer/font.cpp
     src/renderer/hud.cpp
-    src/renderer/scene.cpp
+    src/renderer/scene_helper.cpp
+    src/renderer/scene_init.cpp
+    src/renderer/scene_daytime_weather.cpp
+    src/renderer/scene_shadow.cpp
+    src/renderer/scene_draw.cpp
     src/tricycle/tricycle_mesh.cpp
     src/tricycle/tricycle_model.cpp
     src/tricycle/driver_model.cpp

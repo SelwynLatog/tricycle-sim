@@ -1161,29 +1161,125 @@ src/renderer/render_textures.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/render_textures.cpp.s
 .PHONY : src/renderer/render_textures.cpp.s
 
-src/renderer/scene.obj: src/renderer/scene.cpp.obj
-.PHONY : src/renderer/scene.obj
+src/renderer/scene_daytime_weather.obj: src/renderer/scene_daytime_weather.cpp.obj
+.PHONY : src/renderer/scene_daytime_weather.obj
 
 # target to build an object file
-src/renderer/scene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj
-.PHONY : src/renderer/scene.cpp.obj
+src/renderer/scene_daytime_weather.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_daytime_weather.cpp.obj
+.PHONY : src/renderer/scene_daytime_weather.cpp.obj
 
-src/renderer/scene.i: src/renderer/scene.cpp.i
-.PHONY : src/renderer/scene.i
+src/renderer/scene_daytime_weather.i: src/renderer/scene_daytime_weather.cpp.i
+.PHONY : src/renderer/scene_daytime_weather.i
 
 # target to preprocess a source file
-src/renderer/scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene.cpp.i
-.PHONY : src/renderer/scene.cpp.i
+src/renderer/scene_daytime_weather.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_daytime_weather.cpp.i
+.PHONY : src/renderer/scene_daytime_weather.cpp.i
 
-src/renderer/scene.s: src/renderer/scene.cpp.s
-.PHONY : src/renderer/scene.s
+src/renderer/scene_daytime_weather.s: src/renderer/scene_daytime_weather.cpp.s
+.PHONY : src/renderer/scene_daytime_weather.s
 
 # target to generate assembly for a file
-src/renderer/scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene.cpp.s
-.PHONY : src/renderer/scene.cpp.s
+src/renderer/scene_daytime_weather.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_daytime_weather.cpp.s
+.PHONY : src/renderer/scene_daytime_weather.cpp.s
+
+src/renderer/scene_draw.obj: src/renderer/scene_draw.cpp.obj
+.PHONY : src/renderer/scene_draw.obj
+
+# target to build an object file
+src/renderer/scene_draw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_draw.cpp.obj
+.PHONY : src/renderer/scene_draw.cpp.obj
+
+src/renderer/scene_draw.i: src/renderer/scene_draw.cpp.i
+.PHONY : src/renderer/scene_draw.i
+
+# target to preprocess a source file
+src/renderer/scene_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_draw.cpp.i
+.PHONY : src/renderer/scene_draw.cpp.i
+
+src/renderer/scene_draw.s: src/renderer/scene_draw.cpp.s
+.PHONY : src/renderer/scene_draw.s
+
+# target to generate assembly for a file
+src/renderer/scene_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_draw.cpp.s
+.PHONY : src/renderer/scene_draw.cpp.s
+
+src/renderer/scene_helper.obj: src/renderer/scene_helper.cpp.obj
+.PHONY : src/renderer/scene_helper.obj
+
+# target to build an object file
+src/renderer/scene_helper.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_helper.cpp.obj
+.PHONY : src/renderer/scene_helper.cpp.obj
+
+src/renderer/scene_helper.i: src/renderer/scene_helper.cpp.i
+.PHONY : src/renderer/scene_helper.i
+
+# target to preprocess a source file
+src/renderer/scene_helper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_helper.cpp.i
+.PHONY : src/renderer/scene_helper.cpp.i
+
+src/renderer/scene_helper.s: src/renderer/scene_helper.cpp.s
+.PHONY : src/renderer/scene_helper.s
+
+# target to generate assembly for a file
+src/renderer/scene_helper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_helper.cpp.s
+.PHONY : src/renderer/scene_helper.cpp.s
+
+src/renderer/scene_init.obj: src/renderer/scene_init.cpp.obj
+.PHONY : src/renderer/scene_init.obj
+
+# target to build an object file
+src/renderer/scene_init.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_init.cpp.obj
+.PHONY : src/renderer/scene_init.cpp.obj
+
+src/renderer/scene_init.i: src/renderer/scene_init.cpp.i
+.PHONY : src/renderer/scene_init.i
+
+# target to preprocess a source file
+src/renderer/scene_init.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_init.cpp.i
+.PHONY : src/renderer/scene_init.cpp.i
+
+src/renderer/scene_init.s: src/renderer/scene_init.cpp.s
+.PHONY : src/renderer/scene_init.s
+
+# target to generate assembly for a file
+src/renderer/scene_init.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_init.cpp.s
+.PHONY : src/renderer/scene_init.cpp.s
+
+src/renderer/scene_shadow.obj: src/renderer/scene_shadow.cpp.obj
+.PHONY : src/renderer/scene_shadow.obj
+
+# target to build an object file
+src/renderer/scene_shadow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_shadow.cpp.obj
+.PHONY : src/renderer/scene_shadow.cpp.obj
+
+src/renderer/scene_shadow.i: src/renderer/scene_shadow.cpp.i
+.PHONY : src/renderer/scene_shadow.i
+
+# target to preprocess a source file
+src/renderer/scene_shadow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_shadow.cpp.i
+.PHONY : src/renderer/scene_shadow.cpp.i
+
+src/renderer/scene_shadow.s: src/renderer/scene_shadow.cpp.s
+.PHONY : src/renderer/scene_shadow.s
+
+# target to generate assembly for a file
+src/renderer/scene_shadow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/byahengine.dir/build.make CMakeFiles/byahengine.dir/src/renderer/scene_shadow.cpp.s
+.PHONY : src/renderer/scene_shadow.cpp.s
 
 src/renderer/shader.obj: src/renderer/shader.cpp.obj
 .PHONY : src/renderer/shader.obj
@@ -1707,9 +1803,21 @@ help:
 	@echo "... src/renderer/render_textures.obj"
 	@echo "... src/renderer/render_textures.i"
 	@echo "... src/renderer/render_textures.s"
-	@echo "... src/renderer/scene.obj"
-	@echo "... src/renderer/scene.i"
-	@echo "... src/renderer/scene.s"
+	@echo "... src/renderer/scene_daytime_weather.obj"
+	@echo "... src/renderer/scene_daytime_weather.i"
+	@echo "... src/renderer/scene_daytime_weather.s"
+	@echo "... src/renderer/scene_draw.obj"
+	@echo "... src/renderer/scene_draw.i"
+	@echo "... src/renderer/scene_draw.s"
+	@echo "... src/renderer/scene_helper.obj"
+	@echo "... src/renderer/scene_helper.i"
+	@echo "... src/renderer/scene_helper.s"
+	@echo "... src/renderer/scene_init.obj"
+	@echo "... src/renderer/scene_init.i"
+	@echo "... src/renderer/scene_init.s"
+	@echo "... src/renderer/scene_shadow.obj"
+	@echo "... src/renderer/scene_shadow.i"
+	@echo "... src/renderer/scene_shadow.s"
 	@echo "... src/renderer/shader.obj"
 	@echo "... src/renderer/shader.i"
 	@echo "... src/renderer/shader.s"

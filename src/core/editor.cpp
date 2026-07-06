@@ -1,6 +1,9 @@
 #include "editor.hpp"
 #include "editor_cam.hpp"
 #include "editor_input.hpp"
+#include "../renderer/scene_daytime_weather.hpp"
+#include "../renderer/scene_shadow.hpp"
+#include "../renderer/scene_draw.hpp"
 #include "const.hpp"
 #include "settings.hpp"
 #include <glm/gtc/matrix_transform.hpp>

@@ -241,9 +241,33 @@
 },
 {
   "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
-  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/scene.cpp",
-  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/scene.cpp",
-  "output": "CMakeFiles/byahengine.dir/src/renderer/scene.cpp.obj"
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/scene_helper.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/scene_helper.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/scene_helper.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/scene_helper.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/scene_init.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/scene_init.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/scene_init.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/scene_init.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/scene_daytime_weather.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/scene_daytime_weather.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/scene_daytime_weather.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/scene_daytime_weather.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/scene_shadow.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/scene_shadow.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/scene_shadow.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/scene_shadow.cpp.obj"
+},
+{
+  "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",
+  "command": "C:/msys64/ucrt64/bin/g++.exe  @CMakeFiles/byahengine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/byahengine.dir/src/renderer/scene_draw.cpp.obj -c C:/Users/Selwyn/Documents/byahengine/src/renderer/scene_draw.cpp",
+  "file": "C:/Users/Selwyn/Documents/byahengine/src/renderer/scene_draw.cpp",
+  "output": "CMakeFiles/byahengine.dir/src/renderer/scene_draw.cpp.obj"
 },
 {
   "directory": "C:/Users/Selwyn/Documents/byahengine/build-ide",

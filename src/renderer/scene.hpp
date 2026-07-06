@@ -118,45 +118,9 @@ struct SceneState {
 
 };
 
-void scene_init(SceneState& scene);
-void scene_destroy(SceneState& scene);
-
-// draws ground, gizmo, trike, obstacle solids, all AABB wireframes
-// view/proj come from app since camera lives there
-void scene_draw(
-    SceneState& scene,
-    const TrikeState& trike,
-    const std::vector<Obstacle>& obstacles,
-    const std::vector<LightSource>& lights,
-    const glm::mat4& view,
-    const glm::mat4& proj,
-    bool show_hitboxes = false
-);
-
-void scene_draw_sky(SceneState& scene, const glm::mat4& view, const glm::mat4& proj);
-
-void scene_update_daytime(SceneState& scene, float dt);
-
-void scene_shadow_pass(SceneState& scene, const std::vector<Obstacle>& obstacles, glm::vec3 center);
-
-void scene_trike_shadow_draw(SceneState& scene, const TrikeState& trike);
-
-void scene_draw_drop_marker(SceneState& scene, glm::vec3 pos, float pulse, const glm::mat4& view, const glm::mat4& proj);
-
-void scene_draw_driver(
-    SceneState& scene,
-    const PlayerState& player,
-    const TrikeState& trike,
-    const glm::mat4& view,
-    const glm::mat4& proj,
-    const Shader& lit_shader,
-    const glm::quat pose_quats[BONE_COUNT],
-    const glm::vec3 pose_offsets[BONE_COUNT],
-    glm::vec3 pose_seat);
-
-void scene_shadow_resize(SceneState& scene);
-
-// mirrors a view matrix across the horizontal plane y = water_y
-// used to render the world from the "other side" of the water surface for planar reflections
-// reused by both drive mode and editor mode.
-glm::mat4 scene_build_reflect_view(const glm::mat4& view, float water_y);
+// function declarations for SceneState live in per-concern headers:
+//   scene_helper.hpp         - shared uniform-upload helpers
+//   scene_init.hpp           - init, destroy, shadow resize
+//   scene_daytime_weather.hpp - day/night + weather simulation
+//   scene_shadow.hpp         - shadow pass, reflection view, trike shadow draw
+//   scene_draw.hpp           - sky, world, driver, drop marker draws
