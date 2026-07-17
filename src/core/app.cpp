@@ -14,13 +14,11 @@
 #include "app_global_keys.hpp"
 #include "editor.hpp"
 #include "drive.hpp"
-#include "editor_input.hpp"
 #include "asset_scan.hpp"
 #include "npc_update.hpp"
 #include "const.hpp"
 #include "settings.hpp"
 #include "map_manager.hpp"
-#include <cmath>
 #include <iostream>
 #include <fstream>
 #include <filesystem>
@@ -66,7 +64,7 @@ void app_init(App& app){
                   -(Const::TERRAIN_ROWS * Const::TERRAIN_CELL_SIZE) * 0.5f));
 
     editor_scan_props(app.editor, "../assets/props");
-    
+
     /*****************************************************
      LEGACY MAP MIGRATION
 
@@ -99,7 +97,7 @@ void app_init(App& app){
         }
         if (g_maps.maps.empty()) map_manager_new("Poblacion");
     }
-    
+
     world_map_load(app.map, g_maps.map_path());
     g_maps.loaded_index = g_maps.active_index;
     g_maps.loaded_dir = g_maps.maps[g_maps.active_index].dir;
@@ -202,7 +200,7 @@ void app_shutdown(App& app){
     window_destroy(app.window);
     world_map_save(app.map, g_maps.loaded_dir + "/map.txt");
     ambience_save(app.map.ambience_zones, app.map.ambience_count,
-        (g_maps.loaded_dir + "/_ambience.amb").c_str());    
+        (g_maps.loaded_dir + "/_ambience.amb").c_str());
     editor_renderer_destroy(app.editor_renderer);
     app.running = false;
 }
