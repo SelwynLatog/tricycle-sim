@@ -157,9 +157,10 @@ void driver_model_init(DriverModel& d, const char* path, NpcType type) {
 
     float model_height = maxZ - minZ;
     d.model_scale = (model_height > 0.0f) ? Const::DRIVER_TARGET_HEIGHT / model_height : 1.0f;
-    d.model_center = glm::vec3((minX+maxX)*0.5f, minY, (minZ+maxZ)*0.5f);
+    d.model_center = glm::vec3((minX+maxX)*0.5f, minY, (minZ+maxZ));
     d.half_height = model_height * d.model_scale;
     d.model_foot_z = minZ;
+    d.foot_pivot = glm::vec3(d.model_center.x, 0.0f, d.model_center.z);
 
     // slice and upload each bone part
     for (int b = 0; b < BONE_COUNT; b++) {
@@ -234,7 +235,7 @@ void driver_model_draw(
         float c = std::cos(trike.heading), s = std::sin(trike.heading);
         draw_pos = trike.position + glm::vec3( c*pose_seat.x - s*pose_seat.z, pose_seat.y, s*pose_seat.x + c*pose_seat.z);
         draw_yaw = trike.heading;
-    } 
+    }
     else {
         draw_pos = player.pos;
         draw_yaw = player.visual_yaw;
@@ -259,7 +260,9 @@ void driver_model_draw(
         float lean = glm::clamp(player.speed / 4.0f, 0.0f, 1.0f) * glm::radians(8.0f);
         base = glm::rotate(base, lean, glm::vec3(0,0,1));
     }
-    glm::vec3 center_off = glm::vec3(d.model_center.x, d.model_foot_z, 0.0f);
+    glm::vec3 center_off = (player.mode == PLAYER_FOOT)
+        ? d.foot_pivot
+        : glm::vec3(d.model_center.x, d.model_foot_z, 0.0f);
     base = base
         * glm::translate(glm::mat4(1.0f), -center_off * d.model_scale)
         * glm::scale(glm::mat4(1.0f), glm::vec3(d.model_scale));
@@ -274,7 +277,7 @@ void driver_model_draw(
         mount_t = 1.0f - glm::clamp(player.mount_timer / 0.3f, 0.0f, 1.0f);
     }
 
-    
+
     DriverPose pose;
     driver_pose_compute(pose, player.anim_timer, player.speed, anim_mode, mount_t);
     // apply saved pose editor quats on top of the sit pose when driving
@@ -282,7 +285,7 @@ void driver_model_draw(
         for (int b = 0; b < BONE_COUNT; b++)
             pose.local[b] = pose.local[b] * glm::mat4_cast(pose_quats[b]);
 
-        // arms tilt with steering 
+        // arms tilt with steering
         // left arm pushes forward, right pulls back on left turn
         float steer = trike.steer_angle; // radians, positive = right turn
         float arm_fwd  = steer * 0.6f;  // forward/back swing along X
@@ -346,11 +349,11 @@ void driver_model_draw(
                         glBindTexture(GL_TEXTURE_2D, tex);
                         glUniform1i(s_drv_locs.tex,    0);
                         glUniform1i(s_drv_locs.usetex, 1);
-                    } 
+                    }
                     else {
                         glUniform1i(s_drv_locs.usetex, 0);
                     }
-                } 
+                }
                 else {
                     glUniform1i(s_drv_locs.usetex, 0);
                 }
@@ -381,6 +384,7 @@ void driver_model_draw_pose(
     base = glm::rotate(base, glm::radians(90.0f), glm::vec3(0,1,0));
     // OBJ is Z-up
     base = glm::rotate(base, glm::radians(-90.0f), glm::vec3(1,0,0));
+    // glm::vec3 center_off = d.foot_pivot;
     glm::vec3 center_off = glm::vec3(d.model_center.x, d.model_foot_z, 0.0f);
     base = base * glm::translate(glm::mat4(1.0f), -center_off * d.model_scale) * glm::scale(glm::mat4(1.0f), glm::vec3(d.model_scale));
 
@@ -430,7 +434,7 @@ void driver_model_draw_pose(
                 if (b == highlight_bone) {
                     kd = glm::vec3(1.0f, 0.45f, 0.05f);
                     glUniform1i(s_drv_locs.usetex, 0);
-                } 
+                }
                 else if (mat && !mat->tex_path.empty()) {
                     GLuint tex = 0;
                     auto it = d.tex_cache.find(mat->tex_path);
@@ -440,11 +444,11 @@ void driver_model_draw_pose(
                         glBindTexture(GL_TEXTURE_2D, tex);
                         glUniform1i(s_drv_locs.tex,    0);
                         glUniform1i(s_drv_locs.usetex, 1);
-                    } 
+                    }
                     else {
                         glUniform1i(s_drv_locs.usetex, 0);
                     }
-                } 
+                }
                 else {
                     glUniform1i(s_drv_locs.usetex, 0);
                 }
